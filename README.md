@@ -1,6 +1,10 @@
 ![LineLay](http://i.imgur.com/hs1h6jX.png)
+
+
 LineLay is a CSS port of Android's LinearLayout, a layout system that works very well when you need to save space to fit content in small screens.
 It's not a grid system but have many similarities. It's main advantage is the vertical abilities: you can do everything you do horizontally.
+
+**[Demo](https://codepen.io/melanke/embed/rwZpPM?height=475&theme-id=dark&default-tab=result&embed-version=2)**
 
 ## Orientation
 You are able to control your rows the same way you control your columns, make use of it using nested elements with different orientations.
