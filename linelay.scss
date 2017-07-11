@@ -1,0 +1,444 @@
+$tablet-max: 768px;
+$phone-max: 544px;
+$tablet-min: $phone-max + 1;
+$desktop-min: $tablet-max + 1;
+
+$only-desktop: "screen and (min-width : " + $desktop-min + ")";
+$only-tablet: "screen and (min-width: " + $tablet-min + ") and (max-width: " + $tablet-max+ ")";
+$only-phone: "screen and (max-width : " + $phone-max + ")";
+$desktop-and-tablet: "screen and (min-width: " + $tablet-min + ")";
+$phone-and-tablet: "screen and (max-width : " + $tablet-max + ")";
+
+$desktop-prefix: "des-";
+$tablet-prefix: "tab-";
+$phone-prefix: "mob-";
+
+.desktop {
+  @media #{$phone-and-tablet} {
+    display: none;
+  }
+}
+
+.desktop-tablet {
+  @media #{$only-phone} {
+    display: none;
+  }
+}
+
+.mobile {
+  @media #{$desktop-and-tablet} {
+    display: none;
+  }
+}
+
+.mobile-tablet {
+  @media #{$only-desktop} {
+    display: none;
+  }
+}
+
+@mixin main-generator($prefix) {
+  .#{$prefix}horiz {
+      display: flex;
+      flex-direction: row;
+    * {
+      flex-shrink: 0;
+    }
+  }
+
+  .#{$prefix}verti {
+      display: flex;
+      flex-direction: column;
+    * {
+      flex-shrink: 0;
+    }
+  }
+  
+  .#{$prefix}verti.items-center-top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .#{$prefix}verti.items-right-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+
+  .#{$prefix}verti.items-left-center {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .#{$prefix}verti.items-right-center {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .#{$prefix}verti.items-left-bottom {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+
+  .#{$prefix}verti.items-center-bottom {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .#{$prefix}items-left-top {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+  }
+
+  .#{$prefix}items-left-center {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+  }
+
+  .#{$prefix}items-left-bottom {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+  }
+
+  .#{$prefix}items-center-top {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+  }
+
+  .#{$prefix}items-center-bottom {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+  }
+
+  .#{$prefix}items-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .#{$prefix}items-right-top {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+  }
+
+  .#{$prefix}items-right-bottom {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+  }
+
+  .#{$prefix}items-right-center {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+  }
+
+  .#{$prefix}self-start, .#{$prefix}self-top, .#{$prefix}self-left {
+      align-self: flex-start;
+  }
+
+  .#{$prefix}self-end, .#{$prefix}self-bottom, .#{$prefix}self-right {
+      align-self: flex-end;
+  }
+
+  .#{$prefix}self-center {
+      align-self: center;
+  }
+
+  .#{$prefix}self-baseline {
+      align-self: baseline;
+  }
+
+  .#{$prefix}w-wrap {
+      display: inline-block;
+  }
+
+  .#{$prefix}h-wrap {
+      flex-basis: auto;
+  }
+
+  .#{$prefix}text-center {
+    text-align: center;
+  }
+
+  .#{$prefix}scroll {
+    overflow: scroll;
+  }
+
+  .#{$prefix}x-scroll {
+    overflow-x: scroll;
+  }
+
+  .#{$prefix}y-scroll {
+    overflow-y: scroll;
+  }
+
+  .#{$prefix}truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .#{$prefix}relative {
+    position: relative;
+    width: 0;
+    height: 0;
+    
+    > * {
+      position: absolute;
+    }
+  }
+
+  .#{$prefix}absolute {
+    position: absolute;
+  }
+
+  .#{$prefix}fixed {
+    position: fixed;
+  }
+
+  .#{$prefix}w-window {
+    width: 100vw;
+  }
+
+  .#{$prefix}h-window {
+    height: 100vh;
+  }
+
+  .#{$prefix}w-full {
+    width: 100%;
+  }
+
+  .#{$prefix}h-full {
+    height: 100%;
+  }
+}
+
+@mixin size-generator-generic($prefix, $i) {
+  .#{$prefix}weight-#{$i} { 
+    flex-grow: $i;
+    flex-shrink: unset;
+    flex-basis: 0;
+  }
+  
+  .#{$prefix}w-#{$i} { 
+    width: #{$i}px;
+  }
+  
+  .#{$prefix}h-#{$i} { 
+    height: #{$i}px;
+  }
+  
+  .#{$prefix}max-w-#{$i} { 
+    max-width: #{$i}px;
+  }
+  
+  .#{$prefix}max-h-#{$i} { 
+    max-height: #{$i}px;
+  }
+  
+  .#{$prefix}m-#{$i} { 
+    margin: #{$i}px
+  }
+  
+  .#{$prefix}p-#{$i} { 
+    padding: #{$i}px
+  }
+  
+  .#{$prefix}top-#{$i} { 
+    top: #{$i}px
+  }
+  
+  .#{$prefix}right-#{$i} { 
+    right: #{$i}px
+  }
+  
+  .#{$prefix}bottom-#{$i} { 
+    bottom: #{$i}px
+  }
+  
+  .#{$prefix}left-#{$i} { 
+    left: #{$i}px
+  }
+  
+  .#{$prefix}line-h-#{$i} { 
+    line-height: #{$i}px;
+  }
+  
+  .horiz.#{$prefix}gutter-#{$i}, .#{$prefix}horiz.#{$prefix}gutter-#{$i} {
+    > *:not(:last-child) {
+      margin-right: #{$i}px;
+    }
+  }
+  
+  .verti.#{$prefix}gutter-#{$i}, .#{$prefix}verti.#{$prefix}gutter-#{$i} {
+    > *:not(:last-child) {
+      margin-bottom: #{$i}px;
+    }
+  }
+}
+
+@mixin size-generator-h-or-v($prefix, $i) {
+  .#{$prefix}mx-#{$i} { 
+    margin-left: #{$i}px;
+    margin-right: #{$i}px
+  }
+  
+  .#{$prefix}my-#{$i} { 
+    margin-top: #{$i}px;
+    margin-bottom: #{$i}px
+  }
+  
+  .#{$prefix}px-#{$i} { 
+    padding-left: #{$i}px;
+    padding-right: #{$i}px
+  }
+  
+  .#{$prefix}py-#{$i} { 
+    padding-top: #{$i}px;
+    padding-bottom: #{$i}px;
+  }
+}
+  
+@mixin size-generator-specific($prefix, $i) {
+  .#{$prefix}mt-#{$i} { 
+    margin-top: #{$i}px;
+  }
+  
+  .#{$prefix}mr-#{$i} { 
+    margin-right: #{$i}px;
+  }
+  
+  .#{$prefix}mb-#{$i} { 
+    margin-bottom: #{$i}px;
+  }
+  
+  .#{$prefix}ml-#{$i} { 
+    margin-left: #{$i}px;
+  }
+  
+  .#{$prefix}pt-#{$i} { 
+    padding-top: #{$i}px;
+  }
+  
+  .#{$prefix}pr-#{$i} { 
+    padding-right: #{$i}px;
+  }
+  
+  .#{$prefix}pb-#{$i} { 
+    padding-bottom: #{$i}px;
+  }
+  
+  .#{$prefix}pl-#{$i} { 
+    padding-left: #{$i}px;
+  }
+}
+
+@include main-generator('');
+@media #{$only-desktop} {
+  @include main-generator($desktop-prefix);
+}
+@media #{$only-tablet} {
+  @include main-generator($tablet-prefix);
+}
+@media #{$only-phone} {
+  @include main-generator($phone-prefix);
+}
+
+$i: 0;
+@while $i < 2000 {
+  @include size-generator-generic('', $i);
+  @media #{$only-desktop} {
+    @include size-generator-generic($desktop-prefix, $i);
+  }
+  @media #{$only-tablet} {
+    @include size-generator-generic($tablet-prefix, $i);
+  }
+  @media #{$only-phone} {
+    @include size-generator-generic($phone-prefix, $i);
+  }
+  @if $i < 15 {
+    $i: $i + 1;
+  }
+  @else if $i < 30 {
+    $i: $i + 5;
+  }
+  @else if $i < 200 {
+    $i: $i + 10;
+  }
+  @else if $i < 1000 {
+    $i: $i + 50;
+  }
+  @else {
+    $i: $i + 100;
+  }
+}
+
+$i: 0;
+@while $i < 2000 {
+  @include size-generator-h-or-v('', $i);
+  @media #{$only-desktop} {
+    @include size-generator-h-or-v($desktop-prefix, $i);
+  }
+  @media #{$only-tablet} {
+    @include size-generator-h-or-v($tablet-prefix, $i);
+  }
+  @media #{$only-phone} {
+    @include size-generator-h-or-v($phone-prefix, $i);
+  }
+  @if $i < 15 {
+    $i: $i + 1;
+  }
+  @else if $i < 30 {
+    $i: $i + 5;
+  }
+  @else if $i < 200 {
+    $i: $i + 10;
+  }
+  @else if $i < 1000 {
+    $i: $i + 50;
+  }
+  @else {
+    $i: $i + 100;
+  }
+}
+
+$i: 0;
+@while $i < 2000 {
+  @include size-generator-specific('', $i);
+  @media #{$only-desktop} {
+    @include size-generator-specific($desktop-prefix, $i);
+  }
+  @media #{$only-tablet} {
+    @include size-generator-specific($tablet-prefix, $i);
+  }
+  @media #{$only-phone} {
+    @include size-generator-specific($phone-prefix, $i);
+  }
+  @if $i < 15 {
+    $i: $i + 1;
+  }
+  @else if $i < 30 {
+    $i: $i + 5;
+  }
+  @else if $i < 200 {
+    $i: $i + 10;
+  }
+  @else if $i < 1000 {
+    $i: $i + 50;
+  }
+  @else {
+    $i: $i + 100;
+  }
+}

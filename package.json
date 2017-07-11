@@ -1,0 +1,20 @@
+{
+  "name": "linelay",
+  "version": "1.0.0",
+  "description": "A CSS port of LinearLayout. Save space and work with vertical spacing too.",
+  "main": "linelay.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "flexbox",
+    "responsive",
+    "android",
+    "linearlayout",
+    "framework"
+  ],
+  "author": "Gil Bueno",
+  "license": "MIT"
+}
