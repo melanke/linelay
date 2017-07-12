@@ -82,7 +82,7 @@ The element will have the browser window's width.
 
 <sub><sup>With Sass you can use `width: 100vw`, `@include w-window()` or `@include w-window($mediaquery)`<sup><sub>
 
-[![Imgur](http://i.imgur.com/kCANdoe.png)(https://codepen.io/melanke/embed/KqJpXY?theme-id=dark&default-tab=result,html&embed-version=2)
+[![Imgur](http://i.imgur.com/kCANdoe.png)](https://codepen.io/melanke/embed/KqJpXY?theme-id=dark&default-tab=result,html&embed-version=2)
 
 ### .h-window
 The element will have the browser window's height.
