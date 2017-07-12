@@ -4,7 +4,9 @@
 LineLay is a CSS port of Android's LinearLayout, a layout system that works very well when you need to save space to fit content in small screens.
 It's not a grid system but have many similarities. It's main advantage is the vertical abilities: you can do everything you do horizontally.
 
-**[An extensive demo with almost all features](https://codepen.io/melanke/embed/rwZpPM?height=475&theme-id=dark&default-tab=result&embed-version=2)**
+**[Sample code with classes on HTML](https://codepen.io/melanke/embed/rwZpPM?height=475&theme-id=dark&default-tab=result&embed-version=2)**
+
+**[The same Sample but using @include on Scss](https://codepen.io/melanke/embed/OgrGKO?height=475&theme-id=dark&default-tab=result&embed-version=2)**
 
 # Table of contents
 - [Orientation](#orientation)
@@ -23,10 +25,15 @@ It's not a grid system but have many similarities. It's main advantage is the ve
 You are able to control your rows the same way you control your columns, make use of it using nested elements with different orientations.
 
 ### .horiz
+
 Elements inside it will be organized horizontally, like columns.
+
+<sub><sup>With Sass you can use `@include horiz()` or `@include horiz($mediaquery)`<sup><sub>
 
 ### .verti
 Elements inside it will be organized vertically, like rows.
+
+<sub><sup>With Sass you can use `@include verti()` or `@include verti($mediaquery)`<sup><sub>
 
 ## Sizing
 You can define fixed or dynamic sizes.
@@ -34,35 +41,57 @@ You can define fixed or dynamic sizes.
 ### .weight-{number}
 Controls the weight of the element compared to it's siblings. Siblings with same weight will occupy the remaining space of it's parent equaly, a weight-2 will occupy twice the space of a weight-1.
 
+<sub><sup>With Sass you can use `@include weight($number)` or `@include horiz($number, $mediaquery)`<sup><sub>
+
 ### .w-{number}
 The element will have a fixed width, w-25 will have width: 25px everytime, this doesn't count on weight sum, so elements that use weight will have to use other space.
+
+<sub><sup>With Sass you can use `width: {number}px`, `@include w($number)` or `@include w($number, $mediaquery)`<sup><sub>
 
 ### .h-{number}
 The element will have a fixed height, h-25 will have height: 25px everytime, this doesn't count on weight sum, so elements that use weight will have to use other space.
 
+<sub><sup>With Sass you can use `height: {number}px`, `@include h($number)` or `@include h($number, $mediaquery)`<sup><sub>
+
 ### .w-wrap
 The element will use as many space it needs.
+
+<sub><sup>With Sass you can use `@include w-wrap()` or `@include w-wrap($mediaquery)`<sup><sub>
 
 ### .h-wrap
 The element will use as many space it needs.
 
+<sub><sup>With Sass you can use `@include h-wrap()` or `@include h-wrap($mediaquery)`<sup><sub>
+
 ### .w-window
 The element will have the browser window's width.
+
+<sub><sup>With Sass you can use `width: 100vw`, `@include w-window()` or `@include w-window($mediaquery)`<sup><sub>
 
 ### .h-window
 The element will have the browser window's height.
 
+<sub><sup>With Sass you can use `height: 100vh`, `@include h-window()` or `@include h-window($mediaquery)`<sup><sub>
+
 ### .w-full
 width: 100%, usually this is not necessary, but in specific cases will be useful (with .truncate maybe).
+
+<sub><sup>With Sass you can use `width: 100%`, `@include w-full()` or `@include w-full($mediaquery)`<sup><sub>
 
 ### .h-full
 height: 100%, usually this is not necessary, but in specific cases will be useful.
 
+<sub><sup>With Sass you can use `height: 100%`, `@include h-full()` or `@include h-full($mediaquery)`<sup><sub>
+
 ### .max-w-{number}
 Defines the max width.
 
+<sub><sup>With Sass you can use `max-width: {number}px`, `@include max-w($number)` or `@include max-w($number, $mediaquery)`<sup><sub>
+
 ### .max-h-{number}
 Defines the max height.
+
+<sub><sup>With Sass you can use `max-height: {number}px`, `@include max-h($number)` or `@include max-h($number, $mediaquery)`<sup><sub>
 
 ## Margin
 Margin's can take too much space sometimes, so we define it with fixed values. Weight sum will not count it, like any other fixed value.
@@ -70,26 +99,42 @@ Margin's can take too much space sometimes, so we define it with fixed values. W
 ### .m-{number}
 Defines the margin of all sides.
 
+<sub><sup>With Sass you can use `margin: {number}px`, `@include m($number)` or `@include m($number, $mediaquery)`<sup><sub>
+
 ### .mx-{number}
 Defines the left and right margin.
+
+<sub><sup>With Sass you can use `@include mx($number)` or `@include mx($number, $mediaquery)`<sup><sub>
 
 ### .my-{number}
 Defines the top and bottom margin.
 
+<sub><sup>With Sass you can use `@include my($number)` or `@include my($number, $mediaquery)`<sup><sub>
+
 ### .mt-{number}
 Defines the top margin.
+
+<sub><sup>With Sass you can use `margin-top: {number}px`, `@include mt($number)` or `@include mt($number, $mediaquery)`<sup><sub>
 
 ### .mr-{number}
 Defines the right margin.
 
+<sub><sup>With Sass you can use `margin-right: {number}px`, `@include mr($number)` or `@include mr($number, $mediaquery)`<sup><sub>
+
 ### .mb-{number}
 Defines the bottom margin.
+
+<sub><sup>With Sass you can use `margin-bottom: {number}px`, `@include mb($number)` or `@include mb($number, $mediaquery)`<sup><sub>
 
 ### .ml-{number}
 Defines the left margin.
 
+<sub><sup>With Sass you can use `margin-left: {number}px`, `@include ml($number)` or `@include ml($number, $mediaquery)`<sup><sub>
+
 ### .gutter-{number}
 Defines margins between all children elements.
+
+<sub><sup>With Sass you can use `@include x-gutter($number)`, `@include y-gutter($number)`, `@include x-gutter($number, $mediaquery)` or `@include y-gutter($number, $mediaquery)`<sup><sub>
 
 ## Padding
 Just like margin, padding is defined with fixed values.
@@ -97,23 +142,37 @@ Just like margin, padding is defined with fixed values.
 ### .p-{number}
 Defines the padding of all sides.
 
+<sub><sup>With Sass you can use `padding: {number}px`, `@include p($number)` or `@include p($number, $mediaquery)`<sup><sub>
+
 ### .px-{number}
 Defines the left and right padding.
+
+<sub><sup>With Sass you can use `@include px($number)` or `@include p($number, $mediaquery)`<sup><sub>
 
 ### .py-{number}
 Defines the top and bottom padding.
 
+<sub><sup>With Sass you can use `@include py()` or `@include py($number, $mediaquery)`<sup><sub>
+
 ### .pt-{number}
 Defines the top padding.
+
+<sub><sup>With Sass you can use `padding-top: {number}px`, `@include pt($number)` or `@include pt($number, $mediaquery)`<sup><sub>
 
 ### .pr-{number}
 Defines the right padding.
 
+<sub><sup>With Sass you can use `padding-right: {number}px`, `@include pr($number)` or `@include pr($number, $mediaquery)`<sup><sub>
+
 ### .pb-{number}
 Defines the bottom padding.
 
+<sub><sup>With Sass you can use `padding-bottom: {number}px`, `@include pb($number)` or `@include pb($number, $mediaquery)`<sup><sub>
+
 ### .pl-{number}
 Defines the left padding.
+
+<sub><sup>With Sass you can use `padding-left: {number}px`, `@include pl($number)` or `@include pl($number, $mediaquery)`<sup><sub>
 
 ## Self Alignment
 You can define alignment of the element compared with it's parent.
@@ -121,26 +180,42 @@ You can define alignment of the element compared with it's parent.
 ### .self-top
 Aligns the element to the top of the parent. To be used only inside a `.horiz`.
 
+<sub><sup>With Sass you can use `@include self-start()` or `@include self-start($mediaquery)`<sup><sub>
+
 ### .self-left
 Aligns the element to the left of the parent. To be used only inside a `.verti`.
+
+<sub><sup>With Sass you can use `@include self-start()` or `@include self-start($mediaquery)`<sup><sub>
 
 ### .self-bottom
 Aligns the element to the bottom of the parent. To be used only inside a `.horiz`.
 
+<sub><sup>With Sass you can use `@include self-end()` or `@include self-end($mediaquery)`<sup><sub>
+
 ### .self-right
 Aligns the element to the right of the parent. To be used only inside a `.verti`.
+
+<sub><sup>With Sass you can use `@include self-end()` or `@include self-end($mediaquery)`<sup><sub>
 
 ### .self-center
 Aligns the element to the center of the parent. Can be used inside `.horiz` or `.verti`.
 
+<sub><sup>With Sass you can use `@include self-center()` or `@include self-center($mediaquery)`<sup><sub>
+
 ### .self-baseline
 Aligns the element to the baseline of the parent. To be used only inside a `.horiz`.
+
+<sub><sup>With Sass you can use `@include self-baseline()` or `@include self-baseline($mediaquery)`<sup><sub>
 
 ### .self-start
 Aligns the element at the start of the parent. If the parent is `.horiz`, then `.self-start` will align it to the top, if the parent is `.verti`, to the left.
 
+<sub><sup>With Sass you can use `@include self-start()` or `@include self-start($mediaquery)`<sup><sub>
+
 ### .self-end
 Aligns the element at the end of the parent. If the parent is `.horiz`, then `.self-end` will align it to the top, if the parent is `.verti`, to the top.
+
+<sub><sup>With Sass you can use `@include self-end()` or `@include self-end($mediaquery)`<sup><sub>
 
 ## Items Alignment
 You can align all items inside the element at once.
@@ -148,29 +223,47 @@ You can align all items inside the element at once.
 ### .items-center
 Aligns the children elements to the center of this element, horizontally and vertically. To be used with `.horiz` or `.verti`.
 
+<sub><sup>With Sass you can use `@include items-center()` or `@include items-center($mediaquery)`<sup><sub>
+
 ### .items-center-top
 Aligns the children elements to the center-top of this element. To be used with `.horiz` or `.verti`.
+
+<sub><sup>With Sass you can use `@include items-center-start()` or `@include items-center-start($mediaquery)`<sup><sub>
 
 ### .items-center-bottom
 Aligns the children elements to the center-bottom of this element. To be used with `.horiz` or `.verti`.
 
+<sub><sup>With Sass you can use `@include items-center-end()` or `@include items-center-end($mediaquery)`<sup><sub>
+
 ### .items-left-center
 Aligns the children elements to the left-center of this element. To be used with `.horiz` or `.verti`.
+
+<sub><sup>With Sass you can use `@include items-start-center()` or `@include items-start-center($mediaquery)`<sup><sub>
 
 ### .items-left-top
 Aligns the children elements to the left-top of this element. To be used with `.horiz` or `.verti`.
 
+<sub><sup>With Sass you can use `@include items-start()` or `@include items-start($mediaquery)`<sup><sub>
+
 ### .items-left-bottom
 Aligns the children elements to the left-bottom of this element. To be used with `.horiz` or `.verti`.
 
+<sub><sup>With Sass you can use `@include items-start-end()` or `@include items-start-end($mediaquery)`<sup><sub>
+
 ### .items-right-center
 Aligns the children elements to the right-center of this element. To be used with `.horiz` or `.verti`.
+
+<sub><sup>With Sass you can use `@include items-end-center()` or `@include items-end-center($mediaquery)`<sup><sub>
 
 ### .items-right-top
 Aligns the children elements to the right-top of this element. To be used with `.horiz` or `.verti`.
 
+<sub><sup>With Sass you can use `@include items-end-start()` or `@include items-end-start($mediaquery)`<sup><sub>
+
 ### .items-right-center
 Aligns the children elements to the right-center of this element. To be used with `.horiz` or `.verti`.
+
+<sub><sup>With Sass you can use `@include items-end-center()` or `@include items-end-center($mediaquery)`<sup><sub>
 
 ## Text Utils
 Some useful classes to deal with text.
@@ -178,11 +271,17 @@ Some useful classes to deal with text.
 ### .text-center
 Aligns the text inside the element. Avoid using this to center other kind of elements.
 
+<sub><sup>With Sass you can use `text-align: center`, `@include text-center()` or `@include text-center($mediaquery)`<sup><sub>
+
 ### .truncate
 Truncate the text putting "..." in the end if the text is too big for it's container. Maybe you will need to put it inside the container and use `.w-full`.
 
+<sub><sup>With Sass you can use `@include truncate()` or `@include truncate($mediaquery)`<sup><sub>
+
 ### .line-h-{number}
 Defines the line height, usefull to center text vertically. Avoid using this to center other kind of elements.
+
+<sub><sup>With Sass you can use `line-height: {number}px`, `@include line-h($number)` or `@include line-h($number, $mediaquery)`<sup><sub>
 
 ## Scroll
 Try to use a scrollable div inside your page instead of letting the whole page scrollable, you will have more control over what is fixed and what is scrollable.
@@ -190,11 +289,17 @@ Try to use a scrollable div inside your page instead of letting the whole page s
 ### .scroll
 Allow scroll in all directions.
 
+<sub><sup>With Sass you can use `overflow: scroll`, `@include scroll()` or `@include scroll($mediaquery)`<sup><sub>
+
 ### .x-scroll
 Allow vertical scroll.
 
+<sub><sup>With Sass you can use `overflow-x: scroll`, `@include x-scroll()` or `@include x-scroll($mediaquery)`<sup><sub>
+
 ### .y-scroll
 Allow horizontal scroll.
+
+<sub><sup>With Sass you can use `overflow-y: scroll`, `@include y-scroll()` or `@include y-scroll($mediaquery)`<sup><sub>
 
 ## Above the surface
 You can easily create floating elements above the others with 3 classes.
@@ -202,18 +307,35 @@ You can easily create floating elements above the others with 3 classes.
 ### .absolute
 The element is positioned relative to its first positioned (not static) ancestor element.
 
+<sub><sup>With Sass you can use `position: absolute`, `@include absolute()` or `@include absolute($mediaquery)`<sup><sub>
+
 ### .fixed
 The element is positioned relative to the browser window.
+
+<sub><sup>With Sass you can use `position: fixed`, `@include fixed()` or `@include fixed($mediaquery)`<sup><sub>
 
 ### .relative
 The child element is positioned relative to its normal position, so `left: 20px` adds 20 pixels to the element's LEFT position.
 
+<sub><sup>With Sass you can use `@include relative()` or `@include relative($mediaquery)`<sup><sub>
+
 ### Positioning those elements
 
 ##### .top-{number}
+
+<sub><sup>With Sass you can use `top: {number}px`, `@include top($number)` or `@include top($number, $mediaquery)`<sup><sub>
+
 ##### .right-{number}
+
+<sub><sup>With Sass you can use `right: {number}px`, `@include right($number)` or `@include right($number, $mediaquery)`<sup><sub>
+
 ##### .bottom-{number}
+
+<sub><sup>With Sass you can use `bottom: {number}px`, `@include bottom($number)` or `@include bottom($number, $mediaquery)`<sup><sub>
+
 ##### .left-{number}
+
+<sub><sup>With Sass you can use `left: {number}px`, `@include left($number)` or `@include left($number, $mediaquery)`<sup><sub>
 
 ## Breakpoints
 Breakpoints are useful when you want to change the layout depending on user's device. 
@@ -234,20 +356,34 @@ Breakpoints are useful when you want to change the layout depending on user's de
 ### .desktop
 Show this element only on desktop devices.
 
+<sub><sup>With Sass you can use `@extend %desktop`<sup><sub>
+
 ### .desktop-tablet
 Show this element only on desktop or tablet devices.
+
+<sub><sup>With Sass you can use `@extend %desktop-tablet`<sup><sub>
 
 ### .mobile
 Show this element only on mobile devices.
 
+<sub><sup>With Sass you can use `@extend %mobile`<sup><sub>
+
 ### .mobile-tablet
 Show this element only on mobile or tablet devices.
+
+<sub><sup>With Sass you can use `@extend %mobile-tablet`<sup><sub>
 
 ### .des-{class}
 Modify any class described here with `.des-` to make it work only on desktop devices.
 
+<sub><sup>With Sass you can pass `$only-desktop` in the last argument of the mixin<sup><sub>
+
 ### .tab-{class}
 Modify any class described here with `.tab-` to make it work only on tablet devices.
 
+<sub><sup>With Sass you can pass `$only-tablet` in the last argument of the mixin<sup><sub>
+
 ### .mob-{class}
 Modify any class described here with `.mob-` to make it work only on mobile devices.
+
+<sub><sup>With Sass you can pass `$only-mobile` in the last argument of the mixin<sup><sub>
