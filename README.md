@@ -30,6 +30,8 @@ Elements inside it will be organized horizontally, like columns.
 
 <sub><sup>With Sass you can use `@include horiz()` or `@include horiz($mediaquery)`<sup><sub>
 
+[![.horiz](http://i.imgur.com/qZg2Jyp.png)](https://codepen.io/melanke/embed/ZyVKGg?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### .verti
 Elements inside it will be organized vertically, like rows.
 
