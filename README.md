@@ -37,6 +37,8 @@ Elements inside it will be organized vertically, like rows.
 
 <sub><sup>With Sass you can use `@include verti()` or `@include verti($mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/Mn2YkU1.png)](https://codepen.io/melanke/embed/WOPbqJ?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ## Sizing
 You can define fixed or dynamic sizes.
 
@@ -45,30 +47,42 @@ Controls the weight of the element compared to it's siblings. Siblings with same
 
 <sub><sup>With Sass you can use `@include weight($number)` or `@include weight($number, $mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/QXQ2fN6.png)](https://codepen.io/melanke/embed/GEzJKE?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### .w-{number}
 The element will have a fixed width, w-25 will have width: 25px everytime, this doesn't count on weight sum, so elements that use weight will have to use other space.
 
 <sub><sup>With Sass you can use `width: {number}px`, `@include w($number)` or `@include w($number, $mediaquery)`<sup><sub>
+
+[![Imgur](http://i.imgur.com/4njGGz8.png)](https://codepen.io/melanke/embed/pwGJEY?theme-id=dark&default-tab=result,html&embed-version=2)
 
 ### .h-{number}
 The element will have a fixed height, h-25 will have height: 25px everytime, this doesn't count on weight sum, so elements that use weight will have to use other space.
 
 <sub><sup>With Sass you can use `height: {number}px`, `@include h($number)` or `@include h($number, $mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/qhL0tzH.png)](https://codepen.io/melanke/embed/BZMNQx?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### .w-wrap
 The element will use as many space it needs.
 
 <sub><sup>With Sass you can use `@include w-wrap()` or `@include w-wrap($mediaquery)`<sup><sub>
+
+[![Imgur](http://i.imgur.com/6rzraV0.png)](https://codepen.io/melanke/embed/bRzdgj?theme-id=dark&default-tab=result,html&embed-version=2)
 
 ### .h-wrap
 The element will use as many space it needs.
 
 <sub><sup>With Sass you can use `@include h-wrap()` or `@include h-wrap($mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/W3bOa8q.png)](https://codepen.io/melanke/embed/xrMGLO?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### .w-window
 The element will have the browser window's width.
 
 <sub><sup>With Sass you can use `width: 100vw`, `@include w-window()` or `@include w-window($mediaquery)`<sup><sub>
+
+[![Imgur](http://i.imgur.com/kCANdoe.png)(https://codepen.io/melanke/embed/KqJpXY?theme-id=dark&default-tab=result,html&embed-version=2)
 
 ### .h-window
 The element will have the browser window's height.
