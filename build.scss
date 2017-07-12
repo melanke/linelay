@@ -1,0 +1,324 @@
+@import 'linelay.scss';
+
+@mixin main-generator($prefix, $media: null) {
+  .#{$prefix}horiz {
+    @include horiz($media);
+  }
+
+  .#{$prefix}verti {
+    @include verti($media);
+  }
+
+  .#{$prefix}items-left-top, .#{$prefix}items-start {
+    @include items-start($media);
+  }
+
+  .#{$prefix}items-left-center, .#{$prefix}verti.items-center-top, .#{$prefix}items-start-center {
+    @include items-start-center($media);
+  }
+
+  .#{$prefix}items-left-bottom, .#{$prefix}verti.items-right-top, .#{$prefix}items-start-end {
+    @include items-start-end($media);
+  }
+
+  .#{$prefix}items-center-top, .#{$prefix}verti.items-left-center, .#{$prefix}items-center-start {
+    @include items-center-start($media);
+  }
+
+  .#{$prefix}items-center {
+    @include items-center($media);
+  }
+
+  .#{$prefix}items-center-bottom, .#{$prefix}verti.items-right-center, .#{$prefix}items-center-end {
+    @include items-center-end($media);
+  }
+
+  .#{$prefix}items-right-top, .#{$prefix}verti.items-left-bottom, .#{$prefix}items-end-start {
+    @include items-end-start($media);
+  }
+
+  .#{$prefix}items-right-center, .#{$prefix}verti.items-center-bottom, .#{$prefix}items-end-center {
+    @include items-end-center($media);
+  }
+
+  .#{$prefix}items-right-bottom, .#{$prefix}items-end {
+    @include items-end($media);
+  }
+
+  .#{$prefix}self-start, .#{$prefix}self-top, .#{$prefix}self-left {
+    @include self-start($media);
+  }
+
+  .#{$prefix}self-end, .#{$prefix}self-bottom, .#{$prefix}self-right {
+    @include self-end($media);
+  }
+
+  .#{$prefix}self-center {
+    @include self-center($media);
+  }
+
+  .#{$prefix}self-baseline {
+    @include self-baseline($media);
+  }
+
+  .#{$prefix}w-wrap {
+    @include w-wrap($media);
+  }
+
+  .#{$prefix}h-wrap {
+    @include h-wrap($media);
+  }
+
+  .#{$prefix}text-center {
+    @include text-center($media);
+  }
+
+  .#{$prefix}scroll {
+    @include scroll($media);
+  }
+
+  .#{$prefix}x-scroll {
+    @include x-scroll($media);
+  }
+
+  .#{$prefix}y-scroll {
+    @include y-scroll($media);
+  }
+
+  .#{$prefix}truncate {
+    @include truncate($media);
+  }
+
+  .#{$prefix}relative {
+    @include relative($media);
+  }
+
+  .#{$prefix}absolute {
+    @include absolute($media);
+  }
+
+  .#{$prefix}fixed {
+    @include fixed($media);
+  }
+
+  .#{$prefix}w-window {
+    @include w-window($media);
+  }
+
+  .#{$prefix}h-window {
+    @include h-window($media);
+  }
+
+  .#{$prefix}w-full {
+    @include w-full($media);
+  }
+
+  .#{$prefix}h-full {
+    @include h-full($media);
+  }
+}
+
+@mixin size-generator-generic($prefix, $i, $media: null) {
+  .#{$prefix}weight-#{$i} { 
+    @include weight($i, $media);
+  }
+  
+  .#{$prefix}w-#{$i} { 
+    @include w($i, $media);
+  }
+  
+  .#{$prefix}h-#{$i} { 
+    @include h($i, $media);
+  }
+  
+  .#{$prefix}max-w-#{$i} { 
+    @include max-w($i, $media);
+  }
+  
+  .#{$prefix}max-h-#{$i} { 
+    @include max-h($i, $media);
+  }
+  
+  .#{$prefix}m-#{$i} { 
+    @include m($i, $media);
+  }
+  
+  .#{$prefix}p-#{$i} { 
+    @include p($i, $media);
+  }
+  
+  .#{$prefix}top-#{$i} { 
+    @include top($i, $media);
+  }
+  
+  .#{$prefix}right-#{$i} { 
+    @include right($i, $media);
+  }
+  
+  .#{$prefix}bottom-#{$i} { 
+    @include bottom($i, $media);
+  }
+  
+  .#{$prefix}left-#{$i} { 
+    @include left($i, $media);
+  }
+  
+  .#{$prefix}line-h-#{$i} { 
+    @include line-h($i, $media);
+  }
+  
+  .horiz.#{$prefix}gutter-#{$i}, .#{$prefix}horiz.#{$prefix}gutter-#{$i} {
+    @include x-gutter($i, $media);
+  }
+  
+  .verti.#{$prefix}gutter-#{$i}, .#{$prefix}verti.#{$prefix}gutter-#{$i} {
+    > *:not(:last-child) {
+      @include y-gutter($i, $media);
+    }
+  }
+}
+
+@mixin size-generator-h-or-v($prefix, $i, $media: null) {
+  .#{$prefix}mx-#{$i} { 
+    @include mx($i, $media);
+  }
+  
+  .#{$prefix}my-#{$i} { 
+    @include my($i, $media);
+  }
+  
+  .#{$prefix}px-#{$i} { 
+    @include px($i, $media);
+  }
+  
+  .#{$prefix}py-#{$i} { 
+    @include py($i, $media);
+  }
+}
+  
+@mixin size-generator-specific($prefix, $i, $media: null) {
+  .#{$prefix}mt-#{$i} { 
+    @include mt($i, $media);
+  }
+  
+  .#{$prefix}mr-#{$i} { 
+    @include mr($i, $media);
+  }
+  
+  .#{$prefix}mb-#{$i} { 
+    @include mb($i, $media);
+  }
+  
+  .#{$prefix}ml-#{$i} { 
+    @include ml($i, $media);
+  }
+  
+  .#{$prefix}pt-#{$i} { 
+    @include pt($i, $media);
+  }
+  
+  .#{$prefix}pr-#{$i} { 
+    @include pr($i, $media);
+  }
+  
+  .#{$prefix}pb-#{$i} { 
+    @include pb($i, $media);
+  }
+  
+  .#{$prefix}pl-#{$i} { 
+    @include pl($i, $media);
+  }
+}
+
+.desktop {
+  @extend %desktop;
+}
+
+.desktop-tablet {
+  @extend %desktop-tablet;
+}
+
+.mobile {
+  @extend %mobile;
+}
+
+.mobile-tablet {
+  @extend %mobile-tablet;
+}
+
+@include main-generator('');
+@include main-generator($desktop-prefix, $only-desktop);
+@include main-generator($tablet-prefix, $only-tablet);
+@include main-generator($phone-prefix, $only-phone);
+
+$i: 0;
+@while $i < 2000 {
+  @include size-generator-generic('', $i);
+  @include size-generator-generic($desktop-prefix, $i, $only-desktop);
+  @include size-generator-generic($tablet-prefix, $i, $only-tablet);
+  @include size-generator-generic($phone-prefix, $i, $only-phone);
+
+  @if $i < 15 {
+    $i: $i + 1;
+  }
+  @else if $i < 30 {
+    $i: $i + 5;
+  }
+  @else if $i < 200 {
+    $i: $i + 10;
+  }
+  @else if $i < 1000 {
+    $i: $i + 50;
+  }
+  @else {
+    $i: $i + 100;
+  }
+}
+
+$i: 0;
+@while $i < 2000 {
+  @include size-generator-h-or-v('', $i);
+  @include size-generator-h-or-v('', $i, $only-desktop);
+  @include size-generator-h-or-v('', $i, $only-tablet);
+  @include size-generator-h-or-v('', $i, $only-phone);
+
+  @if $i < 15 {
+    $i: $i + 1;
+  }
+  @else if $i < 30 {
+    $i: $i + 5;
+  }
+  @else if $i < 200 {
+    $i: $i + 10;
+  }
+  @else if $i < 1000 {
+    $i: $i + 50;
+  }
+  @else {
+    $i: $i + 100;
+  }
+}
+
+$i: 0;
+@while $i < 2000 {
+  @include size-generator-specific('', $i);
+  @include size-generator-specific('', $i, $only-desktop);
+  @include size-generator-specific('', $i, $only-tablet);
+  @include size-generator-specific('', $i, $only-phone);
+
+  @if $i < 15 {
+    $i: $i + 1;
+  }
+  @else if $i < 30 {
+    $i: $i + 5;
+  }
+  @else if $i < 200 {
+    $i: $i + 10;
+  }
+  @else if $i < 1000 {
+    $i: $i + 50;
+  }
+  @else {
+    $i: $i + 100;
+  }
+}

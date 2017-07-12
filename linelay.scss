@@ -13,184 +13,203 @@ $desktop-prefix: "des-";
 $tablet-prefix: "tab-";
 $phone-prefix: "mob-";
 
-.desktop {
+%desktop {
   @media #{$phone-and-tablet} {
     display: none;
   }
 }
 
-.desktop-tablet {
+%desktop-tablet {
   @media #{$only-phone} {
     display: none;
   }
 }
 
-.mobile {
+%mobile {
   @media #{$desktop-and-tablet} {
     display: none;
   }
 }
 
-.mobile-tablet {
+%mobile-tablet {
   @media #{$only-desktop} {
     display: none;
   }
 }
 
-@mixin main-generator($prefix) {
-  .#{$prefix}horiz {
-      display: flex;
-      flex-direction: row;
+@mixin mediaOrNot($media: null) {
+  @if ($media) {
+    @media #{$media} {
+      @content;
+    }
+  }
+  @else {
+    @content;
+  }
+}
+
+@mixin horiz($media: null) {
+  @include mediaOrNot($media) {
+    display: flex;
+    flex-direction: row;
     * {
       flex-shrink: 0;
     }
   }
+}
 
-  .#{$prefix}verti {
-      display: flex;
-      flex-direction: column;
+@mixin verti($media: null) {
+  @include mediaOrNot($media) {
+    display: flex;
+    flex-direction: column;
     * {
       flex-shrink: 0;
     }
   }
-  
-  .#{$prefix}verti.items-center-top {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
+}
 
-  .#{$prefix}verti.items-right-top {
+@mixin items-start($media: null) {
+  @include mediaOrNot($media) {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+  }
+}
+
+@mixin items-start-center($media: null) {
+  @include mediaOrNot($media) {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+  }
+}
+
+@mixin items-start-end($media: null) {
+  @include mediaOrNot($media) {
     display: flex;
+    justify-content: flex-start;
     align-items: flex-end;
-    justify-content: flex-start;
   }
+}
 
-  .#{$prefix}verti.items-left-center {
+@mixin items-center-start($media: null) {
+  @include mediaOrNot($media) {
     display: flex;
     justify-content: center;
     align-items: flex-start;
   }
+}
 
-  .#{$prefix}verti.items-right-center {
+@mixin items-center($media: null) {
+  @include mediaOrNot($media) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+}
+
+@mixin items-center-end($media: null) {
+  @include mediaOrNot($media) {
     display: flex;
     justify-content: center;
     align-items: flex-end;
   }
+}
 
-  .#{$prefix}verti.items-left-bottom {
+@mixin items-end-start($media: null) {
+  @include mediaOrNot($media) {
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
   }
+}
 
-  .#{$prefix}verti.items-center-bottom {
+@mixin items-end-center($media: null) {
+  @include mediaOrNot($media) {
     display: flex;
     justify-content: flex-end;
     align-items: center;
   }
+}
 
-  .#{$prefix}items-left-top {
-      display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
-  }
-
-  .#{$prefix}items-left-center {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-  }
-
-  .#{$prefix}items-left-bottom {
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-start;
-  }
-
-  .#{$prefix}items-center-top {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-  }
-
-  .#{$prefix}items-center-bottom {
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-  }
-
-  .#{$prefix}items-center {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-
-  .#{$prefix}items-right-top {
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-start;
-  }
-
-  .#{$prefix}items-right-bottom {
+@mixin items-end($media: null) {
+  @include mediaOrNot($media) {
       display: flex;
       justify-content: flex-end;
       align-items: flex-end;
   }
+}
 
-  .#{$prefix}items-right-center {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
+@mixin self-start($media: null) {
+  @include mediaOrNot($media) {
+    align-self: flex-start;
   }
+}
 
-  .#{$prefix}self-start, .#{$prefix}self-top, .#{$prefix}self-left {
-      align-self: flex-start;
+@mixin self-end($media: null) {
+  @include mediaOrNot($media) {
+    align-self: flex-end;
   }
+}
 
-  .#{$prefix}self-end, .#{$prefix}self-bottom, .#{$prefix}self-right {
-      align-self: flex-end;
+@mixin self-center($media: null) {
+  @include mediaOrNot($media) {
+    align-self: center;
   }
+}
 
-  .#{$prefix}self-center {
-      align-self: center;
+@mixin self-baseline($media: null) {
+  @include mediaOrNot($media) {
+    align-self: baseline;
   }
+}
 
-  .#{$prefix}self-baseline {
-      align-self: baseline;
+@mixin w-wrap($media: null) {
+  @include mediaOrNot($media) {
+    display: inline-block;
   }
+}
 
-  .#{$prefix}w-wrap {
-      display: inline-block;
+@mixin h-wrap($media: null) {
+  @include mediaOrNot($media) {
+    flex-basis: auto;
   }
+}
 
-  .#{$prefix}h-wrap {
-      flex-basis: auto;
-  }
-
-  .#{$prefix}text-center {
+@mixin text-center($media: null) {
+  @include mediaOrNot($media) {
     text-align: center;
   }
+}
 
-  .#{$prefix}scroll {
+@mixin scroll($media: null) {
+  @include mediaOrNot($media) {
     overflow: scroll;
   }
+}
 
-  .#{$prefix}x-scroll {
+@mixin x-scroll($media: null) {
+  @include mediaOrNot($media) {
     overflow-x: scroll;
   }
+}
 
-  .#{$prefix}y-scroll {
+@mixin y-scroll($media: null) {
+  @include mediaOrNot($media) {
     overflow-y: scroll;
   }
+}
 
-  .#{$prefix}truncate {
+@mixin truncate($media: null) {
+  @include mediaOrNot($media) {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
+}
 
-  .#{$prefix}relative {
+@mixin relative($media: null) {
+  @include mediaOrNot($media) {
     position: relative;
     width: 0;
     height: 0;
@@ -199,246 +218,225 @@ $phone-prefix: "mob-";
       position: absolute;
     }
   }
+}
 
-  .#{$prefix}absolute {
+@mixin absolute($media: null) {
+  @include mediaOrNot($media) {
     position: absolute;
   }
+}
 
-  .#{$prefix}fixed {
+@mixin fixed($media: null) {
+  @include mediaOrNot($media) {
     position: fixed;
   }
+}
 
-  .#{$prefix}w-window {
+@mixin w-window($media: null) {
+  @include mediaOrNot($media) {
     width: 100vw;
   }
+}
 
-  .#{$prefix}h-window {
+@mixin h-window($media: null) {
+  @include mediaOrNot($media) {
     height: 100vh;
   }
+}
 
-  .#{$prefix}w-full {
+@mixin w-full($media: null) {
+  @include mediaOrNot($media) {
     width: 100%;
   }
+}
 
-  .#{$prefix}h-full {
+@mixin h-full($media: null) {
+  @include mediaOrNot($media) {
     height: 100%;
   }
 }
 
-@mixin size-generator-generic($prefix, $i) {
-  .#{$prefix}weight-#{$i} { 
+
+
+
+
+
+
+
+@mixin weight($i, $media: null) {
+  @include mediaOrNot($media) {
     flex-grow: $i;
     flex-shrink: unset;
     flex-basis: 0;
   }
+}
   
-  .#{$prefix}w-#{$i} { 
+@mixin w($i, $media: null) {
+  @include mediaOrNot($media) {
     width: #{$i}px;
   }
+}
   
-  .#{$prefix}h-#{$i} { 
+@mixin h($i, $media: null) {
+  @include mediaOrNot($media) {
     height: #{$i}px;
   }
+}
   
-  .#{$prefix}max-w-#{$i} { 
+@mixin max-w($i, $media: null) {
+  @include mediaOrNot($media) {
     max-width: #{$i}px;
   }
+}
   
-  .#{$prefix}max-h-#{$i} { 
+@mixin max-h($i, $media: null) {
+  @include mediaOrNot($media) {
     max-height: #{$i}px;
   }
+}
   
-  .#{$prefix}m-#{$i} { 
+@mixin m($i, $media: null) {
+  @include mediaOrNot($media) {
     margin: #{$i}px
   }
+}
   
-  .#{$prefix}p-#{$i} { 
+@mixin p($i, $media: null) {
+  @include mediaOrNot($media) {
     padding: #{$i}px
   }
+}
   
-  .#{$prefix}top-#{$i} { 
+@mixin top($i, $media: null) {
+  @include mediaOrNot($media) {
     top: #{$i}px
   }
+}
   
-  .#{$prefix}right-#{$i} { 
+@mixin right($i, $media: null) {
+  @include mediaOrNot($media) {
     right: #{$i}px
   }
+}
   
-  .#{$prefix}bottom-#{$i} { 
+@mixin bottom($i, $media: null) {
+  @include mediaOrNot($media) {
     bottom: #{$i}px
   }
+}
   
-  .#{$prefix}left-#{$i} { 
+@mixin left($i, $media: null) {
+  @include mediaOrNot($media) {
     left: #{$i}px
   }
+}
   
-  .#{$prefix}line-h-#{$i} { 
+@mixin line-h($i, $media: null) {
+  @include mediaOrNot($media) {
     line-height: #{$i}px;
   }
-  
-  .horiz.#{$prefix}gutter-#{$i}, .#{$prefix}horiz.#{$prefix}gutter-#{$i} {
+}
+
+@mixin x-gutter($i, $media: null) {
+  @include mediaOrNot($media) {
     > *:not(:last-child) {
       margin-right: #{$i}px;
     }
   }
-  
-  .verti.#{$prefix}gutter-#{$i}, .#{$prefix}verti.#{$prefix}gutter-#{$i} {
+}
+
+@mixin y-gutter($i, $media: null) {
+  @include mediaOrNot($media) {
     > *:not(:last-child) {
       margin-bottom: #{$i}px;
     }
   }
 }
 
-@mixin size-generator-h-or-v($prefix, $i) {
-  .#{$prefix}mx-#{$i} { 
+
+
+
+
+
+
+@mixin mx($i, $media: null) {
+  @include mediaOrNot($media) {
     margin-left: #{$i}px;
     margin-right: #{$i}px
   }
+}
   
-  .#{$prefix}my-#{$i} { 
+@mixin my($i, $media: null) {
+  @include mediaOrNot($media) {
     margin-top: #{$i}px;
     margin-bottom: #{$i}px
   }
+}
   
-  .#{$prefix}px-#{$i} { 
+@mixin px($i, $media: null) {
+  @include mediaOrNot($media) {
     padding-left: #{$i}px;
     padding-right: #{$i}px
   }
+}
   
-  .#{$prefix}py-#{$i} { 
+@mixin py($i, $media: null) {
+  @include mediaOrNot($media) {
     padding-top: #{$i}px;
     padding-bottom: #{$i}px;
   }
 }
-  
-@mixin size-generator-specific($prefix, $i) {
-  .#{$prefix}mt-#{$i} { 
+
+
+
+
+
+
+
+@mixin mt($i, $media: null) {
+  @include mediaOrNot($media) {
     margin-top: #{$i}px;
   }
+}
   
-  .#{$prefix}mr-#{$i} { 
+@mixin mr($i, $media: null) {
+  @include mediaOrNot($media) {
     margin-right: #{$i}px;
   }
+}
   
-  .#{$prefix}mb-#{$i} { 
+@mixin mb($i, $media: null) {
+  @include mediaOrNot($media) {
     margin-bottom: #{$i}px;
   }
+}
   
-  .#{$prefix}ml-#{$i} { 
+@mixin ml($i, $media: null) {
+  @include mediaOrNot($media) {
     margin-left: #{$i}px;
   }
+}
   
-  .#{$prefix}pt-#{$i} { 
+@mixin pt($i, $media: null) {
+  @include mediaOrNot($media) {
     padding-top: #{$i}px;
   }
+}
   
-  .#{$prefix}pr-#{$i} { 
+@mixin pr($i, $media: null) {
+  @include mediaOrNot($media) {
     padding-right: #{$i}px;
   }
+}
   
-  .#{$prefix}pb-#{$i} { 
+@mixin pb($i, $media: null) {
+  @include mediaOrNot($media) {
     padding-bottom: #{$i}px;
   }
+}
   
-  .#{$prefix}pl-#{$i} { 
+@mixin pl($i, $media: null) {
+  @include mediaOrNot($media) {
     padding-left: #{$i}px;
-  }
-}
-
-@include main-generator('');
-@media #{$only-desktop} {
-  @include main-generator($desktop-prefix);
-}
-@media #{$only-tablet} {
-  @include main-generator($tablet-prefix);
-}
-@media #{$only-phone} {
-  @include main-generator($phone-prefix);
-}
-
-$i: 0;
-@while $i < 2000 {
-  @include size-generator-generic('', $i);
-  @media #{$only-desktop} {
-    @include size-generator-generic($desktop-prefix, $i);
-  }
-  @media #{$only-tablet} {
-    @include size-generator-generic($tablet-prefix, $i);
-  }
-  @media #{$only-phone} {
-    @include size-generator-generic($phone-prefix, $i);
-  }
-  @if $i < 15 {
-    $i: $i + 1;
-  }
-  @else if $i < 30 {
-    $i: $i + 5;
-  }
-  @else if $i < 200 {
-    $i: $i + 10;
-  }
-  @else if $i < 1000 {
-    $i: $i + 50;
-  }
-  @else {
-    $i: $i + 100;
-  }
-}
-
-$i: 0;
-@while $i < 2000 {
-  @include size-generator-h-or-v('', $i);
-  @media #{$only-desktop} {
-    @include size-generator-h-or-v($desktop-prefix, $i);
-  }
-  @media #{$only-tablet} {
-    @include size-generator-h-or-v($tablet-prefix, $i);
-  }
-  @media #{$only-phone} {
-    @include size-generator-h-or-v($phone-prefix, $i);
-  }
-  @if $i < 15 {
-    $i: $i + 1;
-  }
-  @else if $i < 30 {
-    $i: $i + 5;
-  }
-  @else if $i < 200 {
-    $i: $i + 10;
-  }
-  @else if $i < 1000 {
-    $i: $i + 50;
-  }
-  @else {
-    $i: $i + 100;
-  }
-}
-
-$i: 0;
-@while $i < 2000 {
-  @include size-generator-specific('', $i);
-  @media #{$only-desktop} {
-    @include size-generator-specific($desktop-prefix, $i);
-  }
-  @media #{$only-tablet} {
-    @include size-generator-specific($tablet-prefix, $i);
-  }
-  @media #{$only-phone} {
-    @include size-generator-specific($phone-prefix, $i);
-  }
-  @if $i < 15 {
-    $i: $i + 1;
-  }
-  @else if $i < 30 {
-    $i: $i + 5;
-  }
-  @else if $i < 200 {
-    $i: $i + 10;
-  }
-  @else if $i < 1000 {
-    $i: $i + 50;
-  }
-  @else {
-    $i: $i + 100;
   }
 }
