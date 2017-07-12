@@ -41,7 +41,7 @@ You can define fixed or dynamic sizes.
 ### .weight-{number}
 Controls the weight of the element compared to it's siblings. Siblings with same weight will occupy the remaining space of it's parent equaly, a weight-2 will occupy twice the space of a weight-1.
 
-<sub><sup>With Sass you can use `@include weight($number)` or `@include horiz($number, $mediaquery)`<sup><sub>
+<sub><sup>With Sass you can use `@include weight($number)` or `@include weight($number, $mediaquery)`<sup><sub>
 
 ### .w-{number}
 The element will have a fixed width, w-25 will have width: 25px everytime, this doesn't count on weight sum, so elements that use weight will have to use other space.
