@@ -1,10 +1,12 @@
 {
   "name": "linelay",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A CSS port of LinearLayout. Save space and work with vertical spacing too.",
   "main": "linelay.scss",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run build-clean && npm run build-sass",
+    "build-clean": "rimraf css",
+    "build-sass": "node-sass --output-style compressed --source-map true build.scss linelay.min.css"
   },
   "keywords": [
     "css",
@@ -22,10 +24,5 @@
     "node-sass": "^4.5.3",
     "postcss-cli": "^4.1.0",
     "rimraf": "^2.6.1"
-  },
-  "scripts": {
-    "build": "npm run build-clean && npm run build-sass",
-    "build-clean": "rimraf css",
-    "build-sass": "node-sass --output-style compressed --source-map true build.scss linelay.min.css"
   }
 }
