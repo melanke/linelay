@@ -1,14 +1,34 @@
 ![LineLay](http://i.imgur.com/hs1h6jX.png)
 
 
-LineLay is a CSS port of Android's LinearLayout, a layout system that works very well when you need to save space to fit content in small screens.
-It's not a grid system but have many similarities. It's main advantage is the vertical abilities: you can do everything you do horizontally.
+LineLay is a CSS port of Android's LinearLayout, a layout system that works very well when you need to save space to fit content in small screens. It's main advantage is the vertical abilities: you can do everything you do horizontally.
 
-**[Sample code with classes on HTML](https://codepen.io/melanke/embed/rwZpPM?height=475&theme-id=dark&default-tab=result&embed-version=2)**
+# Installation
 
-**[The same Sample but using @include on Scss](https://codepen.io/melanke/embed/OgrGKO?height=475&theme-id=dark&default-tab=result&embed-version=2)**
+### Npm
+```
+npm install --save linelay
+```
 
-# Table of contents
+or
+### CDN
+```
+https://cdn.rawgit.com/melanke/linelay/master/linelay.min.css
+```
+or
+### Download
+[master.zip](https://github.com/melanke/linelay/archive/master.zip)
+
+# Samples
+**[Complete example with classes on HTML](https://codepen.io/melanke/embed/rwZpPM?height=475&theme-id=dark&default-tab=result&embed-version=2)**
+
+**[The same example but using @include on Scss](https://codepen.io/melanke/embed/OgrGKO?height=475&theme-id=dark&default-tab=result&embed-version=2)**
+
+# Using with Sass
+- If you import `linelay.scss` you will have only the variables, extensions and mixins.
+- If you import `build.scss` you will have the classes too.
+
+# Docs
 - [Orientation](#orientation)
 - [Sizing](#sizing)
 - [Margin](#margin)
