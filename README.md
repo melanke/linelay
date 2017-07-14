@@ -22,7 +22,7 @@ or
 # Samples
 - **[Complete example with classes on HTML](https://codepen.io/melanke/embed/rwZpPM?height=475&theme-id=dark&default-tab=result&embed-version=2)**
 - **[The same example but using @include on Scss](https://codepen.io/melanke/embed/OgrGKO?height=475&theme-id=dark&default-tab=result&embed-version=2)**
-- **[Golden Ratio!](https://codepen.io/melanke/embed/YQgKRx?theme-id=dark&default-tab=result,html&embed-version=2)
+- **[Golden Ratio!](https://codepen.io/melanke/embed/YQgKRx?theme-id=dark&default-tab=result,html&embed-version=2)**
 - **You can click in the image samples below to try them too.**
 
 # Using with Sass
