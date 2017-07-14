@@ -20,9 +20,10 @@ or
 [master.zip](https://github.com/melanke/linelay/archive/master.zip)
 
 # Samples
-**[Complete example with classes on HTML](https://codepen.io/melanke/embed/rwZpPM?height=475&theme-id=dark&default-tab=result&embed-version=2)**
-
-**[The same example but using @include on Scss](https://codepen.io/melanke/embed/OgrGKO?height=475&theme-id=dark&default-tab=result&embed-version=2)**
+- **[Complete example with classes on HTML](https://codepen.io/melanke/embed/rwZpPM?height=475&theme-id=dark&default-tab=result&embed-version=2)**
+- **[The same example but using @include on Scss](https://codepen.io/melanke/embed/OgrGKO?height=475&theme-id=dark&default-tab=result&embed-version=2)**
+- **[Golden Ratio!](https://codepen.io/melanke/embed/YQgKRx?theme-id=dark&default-tab=result,html&embed-version=2)
+- **You can click in the image samples below to try them too.**
 
 # Using with Sass
 - If you import `linelay.scss` you will have only the variables, extensions and mixins.
@@ -109,13 +110,15 @@ The element will have the browser window's height.
 
 <sub><sup>With Sass you can use `height: 100vh`, `@include h-window()` or `@include h-window($mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/SzMuKur.png)](https://codepen.io/melanke/embed/RgvXBW?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### .w-full
-width: 100%, usually this is not necessary, but in specific cases will be useful (with .truncate maybe).
+**width: 100%**, usually this is not necessary, but in specific cases will be useful (with .truncate maybe).
 
 <sub><sup>With Sass you can use `width: 100%`, `@include w-full()` or `@include w-full($mediaquery)`<sup><sub>
 
 ### .h-full
-height: 100%, usually this is not necessary, but in specific cases will be useful.
+**height: 100%**, usually this is not necessary, but in specific cases will be useful.
 
 <sub><sup>With Sass you can use `height: 100%`, `@include h-full()` or `@include h-full($mediaquery)`<sup><sub>
 
@@ -124,13 +127,19 @@ Defines the max width.
 
 <sub><sup>With Sass you can use `max-width: {number}px`, `@include max-w($number)` or `@include max-w($number, $mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/rf04rNN.png)](https://codepen.io/melanke/embed/JJxgaq?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### .max-h-{number}
 Defines the max height.
 
 <sub><sup>With Sass you can use `max-height: {number}px`, `@include max-h($number)` or `@include max-h($number, $mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/s5GgeRZ.png)](https://codepen.io/melanke/embed/XgOvyy?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ## Margin
 Margin's can take too much space sometimes, so we define it with fixed values. Weight sum will not count it, like any other fixed value.
+
+[![Imgur](http://i.imgur.com/LaCu6eJ.png)](https://codepen.io/melanke/embed/OgdKdp?theme-id=dark&default-tab=result,html&embed-version=2)
 
 ### .m-{number}
 Defines the margin of all sides.
@@ -172,8 +181,12 @@ Defines margins between all children elements.
 
 <sub><sup>With Sass you can use `@include x-gutter($number)`, `@include y-gutter($number)`, `@include x-gutter($number, $mediaquery)` or `@include y-gutter($number, $mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/qqHWGet.png)](https://codepen.io/melanke/embed/weOwvr?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ## Padding
 Just like margin, padding is defined with fixed values.
+
+[![Imgur](http://i.imgur.com/perjrT0.png)](https://codepen.io/melanke/embed/bRZbNY?theme-id=dark&default-tab=result,html&embed-version=2)
 
 ### .p-{number}
 Defines the padding of all sides.
@@ -212,6 +225,8 @@ Defines the left padding.
 
 ## Self Alignment
 You can define alignment of the element compared with it's parent.
+
+[![Imgur](http://i.imgur.com/0Oyz5Mf.png)](https://codepen.io/melanke/embed/PjLYWJ?theme-id=dark&default-tab=result,html&embed-version=2)
 
 ### .self-top
 Aligns the element to the top of the parent. To be used only inside a `.horiz`.
