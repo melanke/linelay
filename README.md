@@ -1,14 +1,35 @@
 ![LineLay](http://i.imgur.com/hs1h6jX.png)
 
 
-LineLay is a CSS port of Android's LinearLayout, a layout system that works very well when you need to save space to fit content in small screens.
-It's not a grid system but have many similarities. It's main advantage is the vertical abilities: you can do everything you do horizontally.
+LineLay is a CSS port of Android's LinearLayout, a layout system that works very well when you need to save space to fit content in small screens. It's main advantage is the vertical abilities: you can do everything you do horizontally.
 
-**[Sample code with classes on HTML](https://codepen.io/melanke/embed/rwZpPM?height=475&theme-id=dark&default-tab=result&embed-version=2)**
+# Installation
 
-**[The same Sample but using @include on Scss](https://codepen.io/melanke/embed/OgrGKO?height=475&theme-id=dark&default-tab=result&embed-version=2)**
+### Npm
+```
+npm install --save linelay
+```
 
-# Table of contents
+or
+### CDN
+```
+https://cdn.rawgit.com/melanke/linelay/master/linelay.min.css
+```
+or
+### Download
+[master.zip](https://github.com/melanke/linelay/archive/master.zip)
+
+# Samples
+- **[Complete example with classes on HTML](https://codepen.io/melanke/embed/rwZpPM?height=475&theme-id=dark&default-tab=result&embed-version=2)**
+- **[The same example but using @include on Scss](https://codepen.io/melanke/embed/OgrGKO?height=475&theme-id=dark&default-tab=result&embed-version=2)**
+- **[Golden Ratio!](https://codepen.io/melanke/embed/YQgKRx?theme-id=dark&default-tab=result,html&embed-version=2)**
+- **You can click in the image samples below to try them too.**
+
+# Using with Sass
+- If you import `linelay.scss` you will have only the variables, extensions and mixins.
+- If you import `build.scss` you will have the classes too.
+
+# Docs
 - [Orientation](#orientation)
 - [Sizing](#sizing)
 - [Margin](#margin)
@@ -89,13 +110,15 @@ The element will have the browser window's height.
 
 <sub><sup>With Sass you can use `height: 100vh`, `@include h-window()` or `@include h-window($mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/SzMuKur.png)](https://codepen.io/melanke/embed/RgvXBW?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### .w-full
-width: 100%, usually this is not necessary, but in specific cases will be useful (with .truncate maybe).
+**width: 100%**, usually this is not necessary, but in specific cases will be useful (with .truncate maybe).
 
 <sub><sup>With Sass you can use `width: 100%`, `@include w-full()` or `@include w-full($mediaquery)`<sup><sub>
 
 ### .h-full
-height: 100%, usually this is not necessary, but in specific cases will be useful.
+**height: 100%**, usually this is not necessary, but in specific cases will be useful.
 
 <sub><sup>With Sass you can use `height: 100%`, `@include h-full()` or `@include h-full($mediaquery)`<sup><sub>
 
@@ -104,13 +127,19 @@ Defines the max width.
 
 <sub><sup>With Sass you can use `max-width: {number}px`, `@include max-w($number)` or `@include max-w($number, $mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/rf04rNN.png)](https://codepen.io/melanke/embed/JJxgaq?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### .max-h-{number}
 Defines the max height.
 
 <sub><sup>With Sass you can use `max-height: {number}px`, `@include max-h($number)` or `@include max-h($number, $mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/s5GgeRZ.png)](https://codepen.io/melanke/embed/XgOvyy?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ## Margin
 Margin's can take too much space sometimes, so we define it with fixed values. Weight sum will not count it, like any other fixed value.
+
+[![Imgur](http://i.imgur.com/LaCu6eJ.png)](https://codepen.io/melanke/embed/OgdKdp?theme-id=dark&default-tab=result,html&embed-version=2)
 
 ### .m-{number}
 Defines the margin of all sides.
@@ -152,8 +181,12 @@ Defines margins between all children elements.
 
 <sub><sup>With Sass you can use `@include x-gutter($number)`, `@include y-gutter($number)`, `@include x-gutter($number, $mediaquery)` or `@include y-gutter($number, $mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/qqHWGet.png)](https://codepen.io/melanke/embed/weOwvr?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ## Padding
 Just like margin, padding is defined with fixed values.
+
+[![Imgur](http://i.imgur.com/perjrT0.png)](https://codepen.io/melanke/embed/bRZbNY?theme-id=dark&default-tab=result,html&embed-version=2)
 
 ### .p-{number}
 Defines the padding of all sides.
@@ -192,6 +225,8 @@ Defines the left padding.
 
 ## Self Alignment
 You can define alignment of the element compared with it's parent.
+
+[![Imgur](http://i.imgur.com/0Oyz5Mf.png)](https://codepen.io/melanke/embed/PjLYWJ?theme-id=dark&default-tab=result,html&embed-version=2)
 
 ### .self-top
 Aligns the element to the top of the parent. To be used only inside a `.horiz`.
@@ -241,45 +276,63 @@ Aligns the children elements to the center of this element, horizontally and ver
 
 <sub><sup>With Sass you can use `@include items-center()` or `@include items-center($mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/PndsWMb.png)](https://codepen.io/melanke/embed/rwRqXa?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### .items-center-top
 Aligns the children elements to the center-top of this element. To be used with `.horiz` or `.verti`.
 
 <sub><sup>With Sass you can use `@include items-center-start()` or `@include items-center-start($mediaquery)`<sup><sub>
+
+[![Imgur](http://i.imgur.com/DnXCbBX.png)](https://codepen.io/melanke/embed/yXwRmd?theme-id=dark&default-tab=result,html&embed-version=2)
 
 ### .items-center-bottom
 Aligns the children elements to the center-bottom of this element. To be used with `.horiz` or `.verti`.
 
 <sub><sup>With Sass you can use `@include items-center-end()` or `@include items-center-end($mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/r3h3lYK.png)](https://codepen.io/melanke/embed/awMQoN?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### .items-left-center
 Aligns the children elements to the left-center of this element. To be used with `.horiz` or `.verti`.
 
 <sub><sup>With Sass you can use `@include items-start-center()` or `@include items-start-center($mediaquery)`<sup><sub>
+
+[![Imgur](http://i.imgur.com/1RmBl1c.png)](https://codepen.io/melanke/embed/VWRVZW?theme-id=dark&default-tab=result,html&embed-version=2)
 
 ### .items-left-top
 Aligns the children elements to the left-top of this element. To be used with `.horiz` or `.verti`.
 
 <sub><sup>With Sass you can use `@include items-start()` or `@include items-start($mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/Pv5vLG6.png)](https://codepen.io/melanke/embed/NgJEKE?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### .items-left-bottom
 Aligns the children elements to the left-bottom of this element. To be used with `.horiz` or `.verti`.
 
 <sub><sup>With Sass you can use `@include items-start-end()` or `@include items-start-end($mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/clPP69n.png)](https://codepen.io/melanke/embed/yXwQBd?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### .items-right-center
 Aligns the children elements to the right-center of this element. To be used with `.horiz` or `.verti`.
 
 <sub><sup>With Sass you can use `@include items-end-center()` or `@include items-end-center($mediaquery)`<sup><sub>
+
+[![Imgur](http://i.imgur.com/udOA9Ta.png)](https://codepen.io/melanke/embed/gREQOe?theme-id=dark&default-tab=result,html&embed-version=2)
 
 ### .items-right-top
 Aligns the children elements to the right-top of this element. To be used with `.horiz` or `.verti`.
 
 <sub><sup>With Sass you can use `@include items-end-start()` or `@include items-end-start($mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/Sg99lGw.png)](https://codepen.io/melanke/embed/awMQzZ?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### .items-right-center
 Aligns the children elements to the right-center of this element. To be used with `.horiz` or `.verti`.
 
 <sub><sup>With Sass you can use `@include items-end-center()` or `@include items-end-center($mediaquery)`<sup><sub>
+
+[![Imgur](http://i.imgur.com/ExKiz3Y.png)](https://codepen.io/melanke/embed/GEewgx?theme-id=dark&default-tab=result,html&embed-version=2)
 
 ## Text Utils
 Some useful classes to deal with text.
@@ -289,15 +342,21 @@ Aligns the text inside the element. Avoid using this to center other kind of ele
 
 <sub><sup>With Sass you can use `text-align: center`, `@include text-center()` or `@include text-center($mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/lOlj4cb.png)](https://codepen.io/melanke/embed/yXwQym?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### .truncate
 Truncate the text putting "..." in the end if the text is too big for it's container. Maybe you will need to put it inside the container and use `.w-full`.
 
 <sub><sup>With Sass you can use `@include truncate()` or `@include truncate($mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/4CwZwR3.png)](https://codepen.io/melanke/embed/OgqaVw?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### .line-h-{number}
 Defines the line height, usefull to center text vertically. Avoid using this to center other kind of elements.
 
 <sub><sup>With Sass you can use `line-height: {number}px`, `@include line-h($number)` or `@include line-h($number, $mediaquery)`<sup><sub>
+
+[![Imgur](http://i.imgur.com/btHE9B2.png)](https://codepen.io/melanke/embed/bRZQVQ?theme-id=dark&default-tab=result,html&embed-version=2)
 
 ## Scroll
 Try to use a scrollable div inside your page instead of letting the whole page scrollable, you will have more control over what is fixed and what is scrollable.

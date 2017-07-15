@@ -191,12 +191,14 @@ $phone-prefix: "mob-";
 @mixin x-scroll($media: null) {
   @include mediaOrNot($media) {
     overflow-x: scroll;
+    overflow-y: hidden;
   }
 }
 
 @mixin y-scroll($media: null) {
   @include mediaOrNot($media) {
     overflow-y: scroll;
+    overflow-x: hidden;
   }
 }
 
