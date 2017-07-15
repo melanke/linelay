@@ -23,7 +23,7 @@ or
 - **[Complete example with classes on HTML](https://codepen.io/melanke/embed/rwZpPM?height=475&theme-id=dark&default-tab=result&embed-version=2)**
 - **[The same example but using @include on Scss](https://codepen.io/melanke/embed/OgrGKO?height=475&theme-id=dark&default-tab=result&embed-version=2)**
 - **[Golden Ratio!](https://codepen.io/melanke/embed/YQgKRx?theme-id=dark&default-tab=result,html&embed-version=2)**
-- **You can click in the image samples below to try them too.**
+- **[Browse our codepen collection](https://codepen.io/collection/DyVKbb) or click on the images in samples below.**
 
 # Using with Sass
 - If you import `linelay.scss` you will have only the variables, extensions and mixins.
@@ -51,7 +51,8 @@ Elements inside it will be organized horizontally, like columns.
 
 <sub><sup>With Sass you can use `@include horiz()` or `@include horiz($mediaquery)`<sup><sub>
 
-[![.horiz](http://i.imgur.com/qZg2Jyp.png)](https://codepen.io/melanke/embed/ZyVKGg?theme-id=dark&default-tab=result,html&embed-version=2)
+[![Imgur](http://i.imgur.com/qZg2Jyp.png)](https://codepen.io/melanke/embed/ZyVKGg?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ### .verti
 Elements inside it will be organized vertically, like rows.
@@ -59,6 +60,7 @@ Elements inside it will be organized vertically, like rows.
 <sub><sup>With Sass you can use `@include verti()` or `@include verti($mediaquery)`<sup><sub>
 
 [![Imgur](http://i.imgur.com/Mn2YkU1.png)](https://codepen.io/melanke/embed/WOPbqJ?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ## Sizing
 You can define fixed or dynamic sizes.
@@ -69,6 +71,7 @@ Controls the weight of the element compared to it's siblings. Siblings with same
 <sub><sup>With Sass you can use `@include weight($number)` or `@include weight($number, $mediaquery)`<sup><sub>
 
 [![Imgur](http://i.imgur.com/QXQ2fN6.png)](https://codepen.io/melanke/embed/GEzJKE?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ### .w-{number}
 The element will have a fixed width, w-25 will have width: 25px everytime, this doesn't count on weight sum, so elements that use weight will have to use other space.
@@ -76,6 +79,7 @@ The element will have a fixed width, w-25 will have width: 25px everytime, this 
 <sub><sup>With Sass you can use `width: {number}px`, `@include w($number)` or `@include w($number, $mediaquery)`<sup><sub>
 
 [![Imgur](http://i.imgur.com/4njGGz8.png)](https://codepen.io/melanke/embed/pwGJEY?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ### .h-{number}
 The element will have a fixed height, h-25 will have height: 25px everytime, this doesn't count on weight sum, so elements that use weight will have to use other space.
@@ -83,6 +87,7 @@ The element will have a fixed height, h-25 will have height: 25px everytime, thi
 <sub><sup>With Sass you can use `height: {number}px`, `@include h($number)` or `@include h($number, $mediaquery)`<sup><sub>
 
 [![Imgur](http://i.imgur.com/qhL0tzH.png)](https://codepen.io/melanke/embed/BZMNQx?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ### .w-wrap
 The element will use as many space it needs.
@@ -90,6 +95,7 @@ The element will use as many space it needs.
 <sub><sup>With Sass you can use `@include w-wrap()` or `@include w-wrap($mediaquery)`<sup><sub>
 
 [![Imgur](http://i.imgur.com/6rzraV0.png)](https://codepen.io/melanke/embed/bRzdgj?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ### .h-wrap
 The element will use as many space it needs.
@@ -97,6 +103,7 @@ The element will use as many space it needs.
 <sub><sup>With Sass you can use `@include h-wrap()` or `@include h-wrap($mediaquery)`<sup><sub>
 
 [![Imgur](http://i.imgur.com/W3bOa8q.png)](https://codepen.io/melanke/embed/xrMGLO?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ### .w-window
 The element will have the browser window's width.
@@ -104,6 +111,7 @@ The element will have the browser window's width.
 <sub><sup>With Sass you can use `width: 100vw`, `@include w-window()` or `@include w-window($mediaquery)`<sup><sub>
 
 [![Imgur](http://i.imgur.com/kCANdoe.png)](https://codepen.io/melanke/embed/KqJpXY?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ### .h-window
 The element will have the browser window's height.
@@ -111,6 +119,7 @@ The element will have the browser window's height.
 <sub><sup>With Sass you can use `height: 100vh`, `@include h-window()` or `@include h-window($mediaquery)`<sup><sub>
 
 [![Imgur](http://i.imgur.com/SzMuKur.png)](https://codepen.io/melanke/embed/RgvXBW?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ### .w-full
 **width: 100%**, usually this is not necessary, but in specific cases will be useful (with .truncate maybe).
@@ -128,6 +137,7 @@ Defines the max width.
 <sub><sup>With Sass you can use `max-width: {number}px`, `@include max-w($number)` or `@include max-w($number, $mediaquery)`<sup><sub>
 
 [![Imgur](http://i.imgur.com/rf04rNN.png)](https://codepen.io/melanke/embed/JJxgaq?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ### .max-h-{number}
 Defines the max height.
@@ -135,11 +145,13 @@ Defines the max height.
 <sub><sup>With Sass you can use `max-height: {number}px`, `@include max-h($number)` or `@include max-h($number, $mediaquery)`<sup><sub>
 
 [![Imgur](http://i.imgur.com/s5GgeRZ.png)](https://codepen.io/melanke/embed/XgOvyy?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ## Margin
 Margin's can take too much space sometimes, so we define it with fixed values. Weight sum will not count it, like any other fixed value.
 
 [![Imgur](http://i.imgur.com/LaCu6eJ.png)](https://codepen.io/melanke/embed/OgdKdp?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ### .m-{number}
 Defines the margin of all sides.
@@ -182,11 +194,13 @@ Defines margins between all children elements.
 <sub><sup>With Sass you can use `@include x-gutter($number)`, `@include y-gutter($number)`, `@include x-gutter($number, $mediaquery)` or `@include y-gutter($number, $mediaquery)`<sup><sub>
 
 [![Imgur](http://i.imgur.com/qqHWGet.png)](https://codepen.io/melanke/embed/weOwvr?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ## Padding
 Just like margin, padding is defined with fixed values.
 
 [![Imgur](http://i.imgur.com/perjrT0.png)](https://codepen.io/melanke/embed/bRZbNY?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ### .p-{number}
 Defines the padding of all sides.
@@ -227,6 +241,7 @@ Defines the left padding.
 You can define alignment of the element compared with it's parent.
 
 [![Imgur](http://i.imgur.com/0Oyz5Mf.png)](https://codepen.io/melanke/embed/PjLYWJ?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ### .self-top
 Aligns the element to the top of the parent. To be used only inside a `.horiz`.
@@ -277,6 +292,7 @@ Aligns the children elements to the center of this element, horizontally and ver
 <sub><sup>With Sass you can use `@include items-center()` or `@include items-center($mediaquery)`<sup><sub>
 
 [![Imgur](http://i.imgur.com/PndsWMb.png)](https://codepen.io/melanke/embed/rwRqXa?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ### .items-center-top
 Aligns the children elements to the center-top of this element. To be used with `.horiz` or `.verti`.
@@ -284,6 +300,7 @@ Aligns the children elements to the center-top of this element. To be used with 
 <sub><sup>With Sass you can use `@include items-center-start()` or `@include items-center-start($mediaquery)`<sup><sub>
 
 [![Imgur](http://i.imgur.com/DnXCbBX.png)](https://codepen.io/melanke/embed/yXwRmd?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ### .items-center-bottom
 Aligns the children elements to the center-bottom of this element. To be used with `.horiz` or `.verti`.
@@ -291,6 +308,7 @@ Aligns the children elements to the center-bottom of this element. To be used wi
 <sub><sup>With Sass you can use `@include items-center-end()` or `@include items-center-end($mediaquery)`<sup><sub>
 
 [![Imgur](http://i.imgur.com/r3h3lYK.png)](https://codepen.io/melanke/embed/awMQoN?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ### .items-left-center
 Aligns the children elements to the left-center of this element. To be used with `.horiz` or `.verti`.
@@ -298,6 +316,7 @@ Aligns the children elements to the left-center of this element. To be used with
 <sub><sup>With Sass you can use `@include items-start-center()` or `@include items-start-center($mediaquery)`<sup><sub>
 
 [![Imgur](http://i.imgur.com/1RmBl1c.png)](https://codepen.io/melanke/embed/VWRVZW?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ### .items-left-top
 Aligns the children elements to the left-top of this element. To be used with `.horiz` or `.verti`.
@@ -305,6 +324,7 @@ Aligns the children elements to the left-top of this element. To be used with `.
 <sub><sup>With Sass you can use `@include items-start()` or `@include items-start($mediaquery)`<sup><sub>
 
 [![Imgur](http://i.imgur.com/Pv5vLG6.png)](https://codepen.io/melanke/embed/NgJEKE?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ### .items-left-bottom
 Aligns the children elements to the left-bottom of this element. To be used with `.horiz` or `.verti`.
@@ -312,6 +332,7 @@ Aligns the children elements to the left-bottom of this element. To be used with
 <sub><sup>With Sass you can use `@include items-start-end()` or `@include items-start-end($mediaquery)`<sup><sub>
 
 [![Imgur](http://i.imgur.com/clPP69n.png)](https://codepen.io/melanke/embed/yXwQBd?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ### .items-right-center
 Aligns the children elements to the right-center of this element. To be used with `.horiz` or `.verti`.
@@ -319,6 +340,7 @@ Aligns the children elements to the right-center of this element. To be used wit
 <sub><sup>With Sass you can use `@include items-end-center()` or `@include items-end-center($mediaquery)`<sup><sub>
 
 [![Imgur](http://i.imgur.com/udOA9Ta.png)](https://codepen.io/melanke/embed/gREQOe?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ### .items-right-top
 Aligns the children elements to the right-top of this element. To be used with `.horiz` or `.verti`.
@@ -326,6 +348,7 @@ Aligns the children elements to the right-top of this element. To be used with `
 <sub><sup>With Sass you can use `@include items-end-start()` or `@include items-end-start($mediaquery)`<sup><sub>
 
 [![Imgur](http://i.imgur.com/Sg99lGw.png)](https://codepen.io/melanke/embed/awMQzZ?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ### .items-right-center
 Aligns the children elements to the right-center of this element. To be used with `.horiz` or `.verti`.
@@ -333,6 +356,7 @@ Aligns the children elements to the right-center of this element. To be used wit
 <sub><sup>With Sass you can use `@include items-end-center()` or `@include items-end-center($mediaquery)`<sup><sub>
 
 [![Imgur](http://i.imgur.com/ExKiz3Y.png)](https://codepen.io/melanke/embed/GEewgx?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ## Text Utils
 Some useful classes to deal with text.
@@ -343,6 +367,7 @@ Aligns the text inside the element. Avoid using this to center other kind of ele
 <sub><sup>With Sass you can use `text-align: center`, `@include text-center()` or `@include text-center($mediaquery)`<sup><sub>
 
 [![Imgur](http://i.imgur.com/lOlj4cb.png)](https://codepen.io/melanke/embed/yXwQym?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ### .truncate
 Truncate the text putting "..." in the end if the text is too big for it's container. Maybe you will need to put it inside the container and use `.w-full`.
@@ -350,6 +375,7 @@ Truncate the text putting "..." in the end if the text is too big for it's conta
 <sub><sup>With Sass you can use `@include truncate()` or `@include truncate($mediaquery)`<sup><sub>
 
 [![Imgur](http://i.imgur.com/4CwZwR3.png)](https://codepen.io/melanke/embed/OgqaVw?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ### .line-h-{number}
 Defines the line height, usefull to center text vertically. Avoid using this to center other kind of elements.
@@ -357,6 +383,7 @@ Defines the line height, usefull to center text vertically. Avoid using this to 
 <sub><sup>With Sass you can use `line-height: {number}px`, `@include line-h($number)` or `@include line-h($number, $mediaquery)`<sup><sub>
 
 [![Imgur](http://i.imgur.com/btHE9B2.png)](https://codepen.io/melanke/embed/bRZQVQ?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ## Scroll
 Try to use a scrollable div inside your page instead of letting the whole page scrollable, you will have more control over what is fixed and what is scrollable.
@@ -366,15 +393,24 @@ Allow scroll in all directions.
 
 <sub><sup>With Sass you can use `overflow: scroll`, `@include scroll()` or `@include scroll($mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/XVQeguY.png)](https://codepen.io/melanke/embed/jwJorz?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
+
 ### .x-scroll
 Allow vertical scroll.
 
-<sub><sup>With Sass you can use `overflow-x: scroll`, `@include x-scroll()` or `@include x-scroll($mediaquery)`<sup><sub>
+<sub><sup>With Sass you can use `@include x-scroll()` or `@include x-scroll($mediaquery)`<sup><sub>
+
+[![Imgur](http://i.imgur.com/c7xXpsW.png)](https://codepen.io/melanke/embed/jwJowK?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ### .y-scroll
 Allow horizontal scroll.
 
-<sub><sup>With Sass you can use `overflow-y: scroll`, `@include y-scroll()` or `@include y-scroll($mediaquery)`<sup><sub>
+<sub><sup>With Sass you can use `@include y-scroll()` or `@include y-scroll($mediaquery)`<sup><sub>
+
+[![Imgur](http://i.imgur.com/Ex4mE28.png)](https://codepen.io/melanke/embed/NgJVay?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
 
 ## Above the surface
 You can easily create floating elements above the others with 3 classes.
