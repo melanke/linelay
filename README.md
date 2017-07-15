@@ -276,45 +276,63 @@ Aligns the children elements to the center of this element, horizontally and ver
 
 <sub><sup>With Sass you can use `@include items-center()` or `@include items-center($mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/PndsWMb.png)](https://codepen.io/melanke/embed/rwRqXa?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### .items-center-top
 Aligns the children elements to the center-top of this element. To be used with `.horiz` or `.verti`.
 
 <sub><sup>With Sass you can use `@include items-center-start()` or `@include items-center-start($mediaquery)`<sup><sub>
+
+[![Imgur](http://i.imgur.com/DnXCbBX.png)](https://codepen.io/melanke/embed/yXwRmd?theme-id=dark&default-tab=result,html&embed-version=2)
 
 ### .items-center-bottom
 Aligns the children elements to the center-bottom of this element. To be used with `.horiz` or `.verti`.
 
 <sub><sup>With Sass you can use `@include items-center-end()` or `@include items-center-end($mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/r3h3lYK.png)](https://codepen.io/melanke/embed/awMQoN?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### .items-left-center
 Aligns the children elements to the left-center of this element. To be used with `.horiz` or `.verti`.
 
 <sub><sup>With Sass you can use `@include items-start-center()` or `@include items-start-center($mediaquery)`<sup><sub>
+
+[![Imgur](http://i.imgur.com/1RmBl1c.png)](https://codepen.io/melanke/embed/VWRVZW?theme-id=dark&default-tab=result,html&embed-version=2)
 
 ### .items-left-top
 Aligns the children elements to the left-top of this element. To be used with `.horiz` or `.verti`.
 
 <sub><sup>With Sass you can use `@include items-start()` or `@include items-start($mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/Pv5vLG6.png)](https://codepen.io/melanke/embed/NgJEKE?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### .items-left-bottom
 Aligns the children elements to the left-bottom of this element. To be used with `.horiz` or `.verti`.
 
 <sub><sup>With Sass you can use `@include items-start-end()` or `@include items-start-end($mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/clPP69n.png)](https://codepen.io/melanke/embed/yXwQBd?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### .items-right-center
 Aligns the children elements to the right-center of this element. To be used with `.horiz` or `.verti`.
 
 <sub><sup>With Sass you can use `@include items-end-center()` or `@include items-end-center($mediaquery)`<sup><sub>
+
+[![Imgur](http://i.imgur.com/udOA9Ta.png)](https://codepen.io/melanke/embed/gREQOe?theme-id=dark&default-tab=result,html&embed-version=2)
 
 ### .items-right-top
 Aligns the children elements to the right-top of this element. To be used with `.horiz` or `.verti`.
 
 <sub><sup>With Sass you can use `@include items-end-start()` or `@include items-end-start($mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/Sg99lGw.png)](https://codepen.io/melanke/embed/awMQzZ?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### .items-right-center
 Aligns the children elements to the right-center of this element. To be used with `.horiz` or `.verti`.
 
 <sub><sup>With Sass you can use `@include items-end-center()` or `@include items-end-center($mediaquery)`<sup><sub>
+
+[![Imgur](http://i.imgur.com/ExKiz3Y.png)](https://codepen.io/melanke/embed/GEewgx?theme-id=dark&default-tab=result,html&embed-version=2)
 
 ## Text Utils
 Some useful classes to deal with text.
@@ -324,15 +342,21 @@ Aligns the text inside the element. Avoid using this to center other kind of ele
 
 <sub><sup>With Sass you can use `text-align: center`, `@include text-center()` or `@include text-center($mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/lOlj4cb.png)](https://codepen.io/melanke/embed/yXwQym?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### .truncate
 Truncate the text putting "..." in the end if the text is too big for it's container. Maybe you will need to put it inside the container and use `.w-full`.
 
 <sub><sup>With Sass you can use `@include truncate()` or `@include truncate($mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/4CwZwR3.png)](https://codepen.io/melanke/embed/OgqaVw?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### .line-h-{number}
 Defines the line height, usefull to center text vertically. Avoid using this to center other kind of elements.
 
 <sub><sup>With Sass you can use `line-height: {number}px`, `@include line-h($number)` or `@include line-h($number, $mediaquery)`<sup><sub>
+
+[![Imgur](http://i.imgur.com/btHE9B2.png)](https://codepen.io/melanke/embed/bRZQVQ?theme-id=dark&default-tab=result,html&embed-version=2)
 
 ## Scroll
 Try to use a scrollable div inside your page instead of letting the whole page scrollable, you will have more control over what is fixed and what is scrollable.
