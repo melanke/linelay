@@ -416,21 +416,29 @@ Allow horizontal scroll.
 You can easily create floating elements above the others with 3 classes.
 
 ### .absolute
-The element is positioned relative to its first positioned (not static) ancestor element.
+The element is positioned relative to its first positioned (not static) ancestor element. It's recommended to be placed as the last element on Html.
 
 <sub><sup>With Sass you can use `position: absolute`, `@include absolute()` or `@include absolute($mediaquery)`<sup><sub>
+
+[![Imgur](http://i.imgur.com/7yln4LA.png)](https://codepen.io/melanke/embed/qjwBZR?theme-id=dark&default-tab=result,html&embed-version=2)
 
 ### .fixed
 The element is positioned relative to the browser window.
 
 <sub><sup>With Sass you can use `position: fixed`, `@include fixed()` or `@include fixed($mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/Bg1nlC6.png)](https://codepen.io/melanke/embed/MoRrOo?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### .relative
 The child element is positioned relative to its normal position, so `left: 20px` adds 20 pixels to the element's LEFT position.
 
 <sub><sup>With Sass you can use `@include relative()` or `@include relative($mediaquery)`<sup><sub>
 
+[![Imgur](http://i.imgur.com/lnWWIfP.png)](https://codepen.io/melanke/embed/KqYZZa?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### Positioning those elements
+
+[![Imgur](http://i.imgur.com/zrP3IRE.png)](https://codepen.io/melanke/embed/mwgpXZ?theme-id=dark&default-tab=result,html&embed-version=2)
 
 ##### .top-{number}
 
