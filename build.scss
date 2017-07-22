@@ -246,6 +246,10 @@
   @extend %mobile-tablet;
 }
 
+.tablet {
+  @extend %tablet;
+}
+
 @include main-generator('');
 @include main-generator($desktop-prefix, $only-desktop);
 @include main-generator($tablet-prefix, $only-tablet);

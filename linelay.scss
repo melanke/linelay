@@ -37,6 +37,11 @@ $phone-prefix: "mob-";
   }
 }
 
+%tablet {
+  @extend %mobile-tablet;
+  @extend %desktop-tablet;
+}
+
 @mixin mediaOrNot($media: null) {
   @if ($media) {
     @media #{$media} {
