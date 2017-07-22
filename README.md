@@ -1,4 +1,4 @@
-![LineLay](http://i.imgur.com/hs1h6jX.png)
+![LineLay](http://i.imgur.com/VddYz5e.png)
 
 
 LineLay is a CSS port of Android's LinearLayout, a layout system that works very well when you need to save space to fit content in small screens. It's main advantage is the vertical abilities: you can do everything you do horizontally.
