@@ -472,20 +472,27 @@ Breakpoints are useful when you want to change the layout depending on user's de
 	</tr>
 </table>
 
+[![Imgur](http://i.imgur.com/DqlpXxN.png)](https://codepen.io/melanke/embed/ZJzjaR?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ### .desktop
 Show this element only on desktop devices.
 
 <sub><sup>With Sass you can use `@extend %desktop`<sup><sub>
 
-### .desktop-tablet
-Show this element only on desktop or tablet devices.
+### .tablet
+Show this element only on tablet devices.
 
-<sub><sup>With Sass you can use `@extend %desktop-tablet`<sup><sub>
+<sub><sup>With Sass you can use `@extend %tablet`<sup><sub>
 
 ### .mobile
 Show this element only on mobile devices.
 
 <sub><sup>With Sass you can use `@extend %mobile`<sup><sub>
+
+### .desktop-tablet
+Show this element only on desktop or tablet devices.
+
+<sub><sup>With Sass you can use `@extend %desktop-tablet`<sup><sub>
 
 ### .mobile-tablet
 Show this element only on mobile or tablet devices.
