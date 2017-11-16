@@ -152,31 +152,17 @@ $phone-prefix: "mob-";
   }
 }
 
-@mixin items-horiz-space-around($media: null) {
+@mixin items-space-around($media: null) {
   @include mediaOrNot($media) {
       display: flex;
       justify-content: space-around;
   }
 }
 
-@mixin items-horiz-space-between($media: null) {
+@mixin items-space-between($media: null) {
   @include mediaOrNot($media) {
       display: flex;
       justify-content: space-between;
-  }
-}
-
-@mixin items-verti-space-around($media: null) {
-  @include mediaOrNot($media) {
-      display: flex;
-      align-items: space-around;
-  }
-}
-
-@mixin items-verti-space-between($media: null) {
-  @include mediaOrNot($media) {
-      display: flex;
-      align-items: space-between;
   }
 }
 

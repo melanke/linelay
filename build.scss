@@ -45,20 +45,12 @@
     @include items-end-center($media);
   }
 
-  .#{$prefix}horiz.items-space-around, .#{$prefix}horiz.#{$prefix}items-space-around, .horiz.#{$prefix}items-space-around {
-    @include items-horiz-space-around($media);
+  .#{$prefix}items-space-around {
+    @include items-space-around($media);
   }
 
-  .#{$prefix}verti.items-space-around, .#{$prefix}verti.#{$prefix}items-space-around, .verti.#{$prefix}items-space-around {
-    @include items-verti-space-around($media);
-  }
-
-  .#{$prefix}horiz.items-space-between, .#{$prefix}horiz.#{$prefix}items-space-between, .horiz.#{$prefix}items-space-between {
-    @include items-horiz-space-between($media);
-  }
-
-  .#{$prefix}verti.items-space-between, .#{$prefix}verti.#{$prefix}items-space-between, .verti.#{$prefix}items-space-between {
-    @include items-verti-space-between($media);
+  .#{$prefix}items-space-between {
+    @include items-space-between($media);
   }
 
   .#{$prefix}items-right-bottom, .#{$prefix}items-end {
