@@ -57,6 +57,7 @@ $phone-prefix: "mob-";
   @include mediaOrNot($media) {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     * {
       flex-shrink: 0;
     }
@@ -70,6 +71,12 @@ $phone-prefix: "mob-";
     * {
       flex-shrink: 0;
     }
+  }
+}
+
+@mixin nowrap($media: null) {
+  @include mediaOrNot($media) {
+    flex-wrap: nowrap;
   }
 }
 
@@ -145,6 +152,34 @@ $phone-prefix: "mob-";
   }
 }
 
+@mixin items-horiz-space-around($media: null) {
+  @include mediaOrNot($media) {
+      display: flex;
+      justify-content: space-around;
+  }
+}
+
+@mixin items-horiz-space-between($media: null) {
+  @include mediaOrNot($media) {
+      display: flex;
+      justify-content: space-between;
+  }
+}
+
+@mixin items-verti-space-around($media: null) {
+  @include mediaOrNot($media) {
+      display: flex;
+      align-items: space-around;
+  }
+}
+
+@mixin items-verti-space-between($media: null) {
+  @include mediaOrNot($media) {
+      display: flex;
+      align-items: space-between;
+  }
+}
+
 @mixin self-start($media: null) {
   @include mediaOrNot($media) {
     align-self: flex-start;
@@ -169,13 +204,13 @@ $phone-prefix: "mob-";
   }
 }
 
-@mixin w-wrap($media: null) {
+@mixin w-auto($media: null) {
   @include mediaOrNot($media) {
     display: inline-block;
   }
 }
 
-@mixin h-wrap($media: null) {
+@mixin h-auto($media: null) {
   @include mediaOrNot($media) {
     flex-basis: auto;
   }
@@ -187,6 +222,24 @@ $phone-prefix: "mob-";
   }
 }
 
+@mixin text-left($media: null) {
+  @include mediaOrNot($media) {
+    text-align: left;
+  }
+}
+
+@mixin text-right($media: null) {
+  @include mediaOrNot($media) {
+    text-align: right;
+  }
+}
+
+@mixin text-justify($media: null) {
+  @include mediaOrNot($media) {
+    text-align: justify;
+  }
+}
+
 @mixin scroll($media: null) {
   @include mediaOrNot($media) {
     overflow: scroll;
@@ -195,14 +248,14 @@ $phone-prefix: "mob-";
 
 @mixin x-scroll($media: null) {
   @include mediaOrNot($media) {
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: hidden;
   }
 }
 
 @mixin y-scroll($media: null) {
   @include mediaOrNot($media) {
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
   }
 }
@@ -299,6 +352,18 @@ $phone-prefix: "mob-";
 @mixin max-h($i, $media: null) {
   @include mediaOrNot($media) {
     max-height: #{$i}px;
+  }
+}
+  
+@mixin min-w($i, $media: null) {
+  @include mediaOrNot($media) {
+    min-width: #{$i}px;
+  }
+}
+  
+@mixin min-h($i, $media: null) {
+  @include mediaOrNot($media) {
+    min-height: #{$i}px;
   }
 }
   

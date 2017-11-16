@@ -9,6 +9,10 @@
     @include verti($media);
   }
 
+  .#{$prefix}nowrap {
+    @include nowrap($media);
+  }
+
   .#{$prefix}items-left-top, .#{$prefix}items-start {
     @include items-start($media);
   }
@@ -41,6 +45,22 @@
     @include items-end-center($media);
   }
 
+  .#{$prefix}horiz.items-space-around, .#{$prefix}horiz.#{$prefix}items-space-around, .horiz.#{$prefix}items-space-around {
+    @include items-horiz-space-around($media);
+  }
+
+  .#{$prefix}verti.items-space-around, .#{$prefix}verti.#{$prefix}items-space-around, .verti.#{$prefix}items-space-around {
+    @include items-verti-space-around($media);
+  }
+
+  .#{$prefix}horiz.items-space-between, .#{$prefix}horiz.#{$prefix}items-space-between, .horiz.#{$prefix}items-space-between {
+    @include items-horiz-space-between($media);
+  }
+
+  .#{$prefix}verti.items-space-between, .#{$prefix}verti.#{$prefix}items-space-between, .verti.#{$prefix}items-space-between {
+    @include items-verti-space-between($media);
+  }
+
   .#{$prefix}items-right-bottom, .#{$prefix}items-end {
     @include items-end($media);
   }
@@ -61,16 +81,28 @@
     @include self-baseline($media);
   }
 
-  .#{$prefix}w-wrap {
-    @include w-wrap($media);
+  .#{$prefix}w-auto {
+    @include w-auto($media);
   }
 
-  .#{$prefix}h-wrap {
-    @include h-wrap($media);
+  .#{$prefix}h-auto {
+    @include h-auto($media);
   }
 
   .#{$prefix}text-center {
     @include text-center($media);
+  }
+
+  .#{$prefix}text-left {
+    @include text-left($media);
+  }
+
+  .#{$prefix}text-right {
+    @include text-right($media);
+  }
+
+  .#{$prefix}text-justify {
+    @include text-justify($media);
   }
 
   .#{$prefix}scroll {
@@ -137,6 +169,14 @@
   
   .#{$prefix}max-h-#{$i} { 
     @include max-h($i, $media);
+  }
+  
+  .#{$prefix}min-w-#{$i} { 
+    @include min-w($i, $media);
+  }
+  
+  .#{$prefix}min-h-#{$i} { 
+    @include min-h($i, $media);
   }
   
   .#{$prefix}m-#{$i} { 
