@@ -51,7 +51,7 @@ Elements inside it will be organized horizontally, like columns.
 
 <sub><sup>With Sass you can use `@include horiz()` or `@include horiz($mediaquery)`<sup><sub>
 
-[![Imgur](http://i.imgur.com/qZg2Jyp.png)](https://codepen.io/melanke/embed/ZyVKGg?theme-id=dark&default-tab=result,html&embed-version=2)
+[![Imgur](http://i.imgur.com/4Ru7keX.png)](https://codepen.io/melanke/embed/ZyVKGg?theme-id=dark&default-tab=result,html&embed-version=2)
 <br/>Click to explore
 
 ### .verti
@@ -59,7 +59,7 @@ Elements inside it will be organized vertically, like rows.
 
 <sub><sup>With Sass you can use `@include verti()` or `@include verti($mediaquery)`<sup><sub>
 
-[![Imgur](http://i.imgur.com/Mn2YkU1.png)](https://codepen.io/melanke/embed/WOPbqJ?theme-id=dark&default-tab=result,html&embed-version=2)
+[![Imgur](http://i.imgur.com/fGGmihw.png)](https://codepen.io/melanke/embed/WOPbqJ?theme-id=dark&default-tab=result,html&embed-version=2)
 <br/>Click to explore
 
 ### .nowrap
@@ -67,7 +67,7 @@ The `.horiz` has `flex-wrap: wrap` by default, it means it will break the line w
 
 <sub><sup>With Sass you can use `@include nowrap()` or `@include nowrap($mediaquery)`<sup><sub>
 
-[![Imgur](http://i.imgur.com/qa0rR.png)](https://codepen.io/melanke/embed/xPPxRM?theme-id=dark&default-tab=result,html&embed-version=2)
+[![Imgur](http://i.imgur.com/B3v51zl.png)](https://codepen.io/melanke/embed/xPPxRM?theme-id=dark&default-tab=result,html&embed-version=2)
 <br/>Click to explore
 
 ## Sizing
@@ -102,7 +102,7 @@ The element will use as many space it needs.
 
 <sub><sup>With Sass you can use `@include w-auto()` or `@include w-auto($mediaquery)`<sup><sub>
 
-[![Imgur](http://i.imgur.com/6rzraV0.png)](https://codepen.io/melanke/embed/bRzdgj?theme-id=dark&default-tab=result,html&embed-version=2)
+[![Imgur](http://i.imgur.com/GszepGe.png)](https://codepen.io/melanke/embed/bRzdgj?theme-id=dark&default-tab=result,html&embed-version=2)
 <br/>Click to explore
 
 ### .h-auto
@@ -110,7 +110,7 @@ The element will use as many space it needs.
 
 <sub><sup>With Sass you can use `@include h-auto()` or `@include h-auto($mediaquery)`<sup><sub>
 
-[![Imgur](http://i.imgur.com/W3bOa8q.png)](https://codepen.io/melanke/embed/xrMGLO?theme-id=dark&default-tab=result,html&embed-version=2)
+[![Imgur](http://i.imgur.com/m59BrIp.png)](https://codepen.io/melanke/embed/xrMGLO?theme-id=dark&default-tab=result,html&embed-version=2)
 <br/>Click to explore
 
 ### .w-window
@@ -144,7 +144,7 @@ Defines the max width.
 
 <sub><sup>With Sass you can use `max-width: {number}px`, `@include max-w($number)` or `@include max-w($number, $mediaquery)`<sup><sub>
 
-[![Imgur](http://i.imgur.com/rf04rNN.png)](https://codepen.io/melanke/embed/JJxgaq?theme-id=dark&default-tab=result,html&embed-version=2)
+[![Imgur](http://i.imgur.com/kCNCrgx.png)](https://codepen.io/melanke/embed/JJxgaq?theme-id=dark&default-tab=result,html&embed-version=2)
 <br/>Click to explore
 
 ### .max-h-{number}
@@ -152,7 +152,7 @@ Defines the max height.
 
 <sub><sup>With Sass you can use `max-height: {number}px`, `@include max-h($number)` or `@include max-h($number, $mediaquery)`<sup><sub>
 
-[![Imgur](http://i.imgur.com/s5GgeRZ.png)](https://codepen.io/melanke/embed/XgOvyy?theme-id=dark&default-tab=result,html&embed-version=2)
+[![Imgur](http://i.imgur.com/IjeT9kP.png)](https://codepen.io/melanke/embed/XgOvyy?theme-id=dark&default-tab=result,html&embed-version=2)
 <br/>Click to explore
 
 ### .min-w-{number}
@@ -160,7 +160,7 @@ Defines the min width.
 
 <sub><sup>With Sass you can use `min-width: {number}px`, `@include min-w($number)` or `@include min-w($number, $mediaquery)`<sup><sub>
 
-[![Imgur](http://i.imgur.com/rf04rNN.png)](https://codepen.io/melanke/embed/JJxgaq?theme-id=dark&default-tab=result,html&embed-version=2)
+[![Imgur](http://i.imgur.com/DBCxBIA.png)](https://codepen.io/melanke/embed/bYYeLR?theme-id=dark&default-tab=result,html&embed-version=2)
 <br/>Click to explore
 
 ### .min-h-{number}
@@ -168,7 +168,7 @@ Defines the min height.
 
 <sub><sup>With Sass you can use `min-height: {number}px`, `@include min-h($number)` or `@include min-h($number, $mediaquery)`<sup><sub>
 
-[![Imgur](http://i.imgur.com/s5GgeRZ.png)](https://codepen.io/melanke/embed/XgOvyy?theme-id=dark&default-tab=result,html&embed-version=2)
+[![Imgur](http://i.imgur.com/ESrhFtP.png)](https://codepen.io/melanke/embed/MOOeVB?theme-id=dark&default-tab=result,html&embed-version=2)
 <br/>Click to explore
 
 ## Margin
@@ -385,17 +385,17 @@ Aligns the children elements to the right-center of this element. To be used wit
 ### .items-space-around
 Arrange elements with equal space around them. To be used with `.horiz` or `.verti`.
 
-<sub><sup>With Sass you can use `@include items-horiz-space-around()`, `@include items-horiz-space-around($mediaquery)`, `@include items-verti-space-around()` or `@include items-verti-space-around($mediaquery)`<sup><sub>
+<sub><sup>With Sass you can use `@include items-space-around()` or `@include items-space-around($mediaquery)`<sup><sub>
 
-[![Imgur](http://i.imgur.com/ExKiz3Y.png)](https://codepen.io/melanke/embed/GEewgx?theme-id=dark&default-tab=result,html&embed-version=2)
+[![Imgur](http://i.imgur.com/G7efVYp.png)](https://codepen.io/melanke/embed/wPPzwp?theme-id=dark&default-tab=result,html&embed-version=2)
 <br/>Click to explore
 
 ### .items-space-between
 Arrange elements with equal space between them. To be used with `.horiz` or `.verti`.
 
-<sub><sup>With Sass you can use `@include items-horiz-space-between()`, `@include items-horiz-space-between($mediaquery)`, `@include items-verti-space-between()` or `@include items-verti-space-between($mediaquery)`<sup><sub>
+<sub><sup>With Sass you can use `@include items-space-between()` or `@include items-space-between($mediaquery)`<sup><sub>
 
-[![Imgur](http://i.imgur.com/ExKiz3Y.png)](https://codepen.io/melanke/embed/GEewgx?theme-id=dark&default-tab=result,html&embed-version=2)
+[![Imgur](http://i.imgur.com/3mqnD6A.png)](https://codepen.io/melanke/embed/vWWXEg?theme-id=dark&default-tab=result,html&embed-version=2)
 <br/>Click to explore
 
 ## Text Utils
@@ -414,7 +414,7 @@ Aligns the text to the left inside the element.
 
 <sub><sup>With Sass you can use `text-align: left`, `@include text-left()` or `@include text-left($mediaquery)`<sup><sub>
 
-[![Imgur](http://i.imgur.com/lOlj4cb.png)](https://codepen.io/melanke/embed/yXwQym?theme-id=dark&default-tab=result,html&embed-version=2)
+[![Imgur](http://i.imgur.com/vclsHiR.png)](https://codepen.io/melanke/embed/rYYMVg?theme-id=dark&default-tab=result,html&embed-version=2)
 <br/>Click to explore
 
 ### .text-right
@@ -422,7 +422,7 @@ Aligns the text to the right inside the element.
 
 <sub><sup>With Sass you can use `text-align: right`, `@include text-right()` or `@include text-right($mediaquery)`<sup><sub>
 
-[![Imgur](http://i.imgur.com/lOlj4cb.png)](https://codepen.io/melanke/embed/yXwQym?theme-id=dark&default-tab=result,html&embed-version=2)
+[![Imgur](http://i.imgur.com/bPajyJF.png)](https://codepen.io/melanke/embed/NwwRGM?theme-id=dark&default-tab=result,html&embed-version=2)
 <br/>Click to explore
 
 ### .text-justify
@@ -430,7 +430,7 @@ Aligns the text justifying inside the element.
 
 <sub><sup>With Sass you can use `text-align: justify`, `@include text-justify()` or `@include text-justify($mediaquery)`<sup><sub>
 
-[![Imgur](http://i.imgur.com/lOlj4cb.png)](https://codepen.io/melanke/embed/yXwQym?theme-id=dark&default-tab=result,html&embed-version=2)
+[![Imgur](http://i.imgur.com/mRuQO2L.png)](https://codepen.io/melanke/embed/JOORGY?theme-id=dark&default-tab=result,html&embed-version=2)
 <br/>Click to explore
 
 ### .truncate
