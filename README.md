@@ -118,7 +118,7 @@ The element will have the browser window's width.
 
 <sub><sup>With Sass you can use `width: 100vw`, `@include w-window()` or `@include w-window($mediaquery)`<sup><sub>
 
-[![Imgur](http://i.imgur.com/kCANdoe.png)](https://codepen.io/melanke/embed/KqJpXY?theme-id=dark&default-tab=result,html&embed-version=2)
+[![Imgur](http://i.imgur.com/hRIyUMp.png)](https://codepen.io/melanke/embed/KqJpXY?theme-id=dark&default-tab=result,html&embed-version=2)
 <br/>Click to explore
 
 ### .h-window
@@ -457,7 +457,7 @@ Allow scroll in all directions.
 
 <sub><sup>With Sass you can use `overflow: scroll`, `@include scroll()` or `@include scroll($mediaquery)`<sup><sub>
 
-[![Imgur](http://i.imgur.com/XVQeguY.png)](https://codepen.io/melanke/embed/jwJorz?theme-id=dark&default-tab=result,html&embed-version=2)
+[![Imgur](http://i.imgur.com/iAGQCSS.png)](https://codepen.io/melanke/embed/jwJorz?theme-id=dark&default-tab=result,html&embed-version=2)
 <br/>Click to explore
 
 ### .x-scroll
@@ -465,7 +465,7 @@ Allow vertical scroll.
 
 <sub><sup>With Sass you can use `@include x-scroll()` or `@include x-scroll($mediaquery)`<sup><sub>
 
-[![Imgur](http://i.imgur.com/c7xXpsW.png)](https://codepen.io/melanke/embed/jwJowK?theme-id=dark&default-tab=result,html&embed-version=2)
+[![Imgur](http://i.imgur.com/e141oH7.png)](https://codepen.io/melanke/embed/jwJowK?theme-id=dark&default-tab=result,html&embed-version=2)
 <br/>Click to explore
 
 ### .y-scroll
@@ -473,7 +473,7 @@ Allow horizontal scroll.
 
 <sub><sup>With Sass you can use `@include y-scroll()` or `@include y-scroll($mediaquery)`<sup><sub>
 
-[![Imgur](http://i.imgur.com/Ex4mE28.png)](https://codepen.io/melanke/embed/NgJVay?theme-id=dark&default-tab=result,html&embed-version=2)
+[![Imgur](http://i.imgur.com/LIP8tvd.png)](https://codepen.io/melanke/embed/NgJVay?theme-id=dark&default-tab=result,html&embed-version=2)
 <br/>Click to explore
 
 ## Above the surface
