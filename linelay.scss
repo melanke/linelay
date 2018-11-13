@@ -58,7 +58,7 @@ $phone-prefix: "mob-";
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    * {
+    & > * {
       flex-shrink: 0;
     }
   }
@@ -68,7 +68,7 @@ $phone-prefix: "mob-";
   @include mediaOrNot($media) {
     display: flex;
     flex-direction: column;
-    * {
+    & > * {
       flex-shrink: 0;
     }
   }
