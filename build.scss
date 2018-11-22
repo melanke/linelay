@@ -133,6 +133,14 @@
     @include h-window($media);
   }
 
+  .#{$prefix}min-w-window {
+    @include w-window($media);
+  }
+
+  .#{$prefix}min-h-window {
+    @include h-window($media);
+  }
+
   .#{$prefix}w-full {
     @include w-full($media);
   }
@@ -204,9 +212,7 @@
   }
   
   .verti.#{$prefix}gutter-#{$i}, .#{$prefix}verti.#{$prefix}gutter-#{$i} {
-    > *:not(:last-child) {
-      @include y-gutter($i, $media);
-    }
+    @include y-gutter($i, $media);
   }
 }
 
@@ -314,9 +320,9 @@ $i: 0;
 $i: 0;
 @while $i < 2000 {
   @include size-generator-h-or-v('', $i);
-  @include size-generator-h-or-v('', $i, $only-desktop);
-  @include size-generator-h-or-v('', $i, $only-tablet);
-  @include size-generator-h-or-v('', $i, $only-phone);
+  @include size-generator-h-or-v($desktop-prefix, $i, $only-desktop);
+  @include size-generator-h-or-v($tablet-prefix, $i, $only-tablet);
+  @include size-generator-h-or-v($phone-prefix, $i, $only-phone);
 
   @if $i < 15 {
     $i: $i + 1;
@@ -338,9 +344,9 @@ $i: 0;
 $i: 0;
 @while $i < 2000 {
   @include size-generator-specific('', $i);
-  @include size-generator-specific('', $i, $only-desktop);
-  @include size-generator-specific('', $i, $only-tablet);
-  @include size-generator-specific('', $i, $only-phone);
+  @include size-generator-specific($desktop-prefix, $i, $only-desktop);
+  @include size-generator-specific($tablet-prefix, $i, $only-tablet);
+  @include size-generator-specific($phone-prefix, $i, $only-phone);
 
   @if $i < 15 {
     $i: $i + 1;

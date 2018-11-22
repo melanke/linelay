@@ -290,6 +290,18 @@ $phone-prefix: "mob-";
   }
 }
 
+@mixin min-w-window($media: null) {
+  @include mediaOrNot($media) {
+    min-width: 100vw;
+  }
+}
+
+@mixin min-h-window($media: null) {
+  @include mediaOrNot($media) {
+    min-height: 100vh;
+  }
+}
+
 @mixin w-full($media: null) {
   @include mediaOrNot($media) {
     width: 100%;
@@ -397,7 +409,7 @@ $phone-prefix: "mob-";
 
 @mixin x-gutter($i, $media: null) {
   @include mediaOrNot($media) {
-    > *:not(:last-child) {
+    > *:not(:last-of-type) {
       margin-right: #{$i}px;
     }
   }
@@ -405,7 +417,7 @@ $phone-prefix: "mob-";
 
 @mixin y-gutter($i, $media: null) {
   @include mediaOrNot($media) {
-    > *:not(:last-child) {
+    > *:not(:last-of-type) {
       margin-bottom: #{$i}px;
     }
   }
