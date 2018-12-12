@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run build-clean && npm run build-sass",
     "build-clean": "rimraf css",
-    "build-sass": "node-sass --output-style compressed --source-map true build.scss linelay.min.css"
+    "build-sass": "node-sass --output-style compressed --source-map true defaultBuild.scss linelay.min.css"
   },
   "keywords": [
     "css",

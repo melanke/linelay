@@ -255,201 +255,162 @@
 
 }
 
-@mixin size-generator-generic($prefix, $i, $media: null, $append: null) {
-  .#{$prefix}weight-#{$i} { 
-    @include weight($i, $media, $append);
-  }
-  
-  .#{$prefix}w-#{$i} { 
+@mixin size-generator-generic($prefix, $i, $iname, $media: null, $append: null) {
+  .#{$prefix}w-#{$iname} { 
     @include w($i, $media, $append);
   }
   
-  .#{$prefix}h-#{$i} { 
+  .#{$prefix}h-#{$iname} { 
     @include h($i, $media, $append);
   }
   
-  .#{$prefix}max-w-#{$i} { 
+  .#{$prefix}max-w-#{$iname} { 
     @include max-w($i, $media, $append);
   }
   
-  .#{$prefix}max-h-#{$i} { 
+  .#{$prefix}max-h-#{$iname} { 
     @include max-h($i, $media, $append);
   }
   
-  .#{$prefix}min-w-#{$i} { 
+  .#{$prefix}min-w-#{$iname} { 
     @include min-w($i, $media, $append);
   }
   
-  .#{$prefix}min-h-#{$i} { 
+  .#{$prefix}min-h-#{$iname} { 
     @include min-h($i, $media, $append);
   }
   
-  .#{$prefix}m-#{$i} { 
+  .#{$prefix}m-#{$iname} { 
     @include m($i, $media, $append);
   }
   
-  .#{$prefix}p-#{$i} { 
+  .#{$prefix}p-#{$iname} { 
     @include p($i, $media, $append);
   }
   
-  .#{$prefix}top-#{$i} { 
+  .#{$prefix}top-#{$iname} { 
     @include top($i, $media, $append);
   }
   
-  .#{$prefix}right-#{$i} { 
+  .#{$prefix}right-#{$iname} { 
     @include right($i, $media, $append);
   }
   
-  .#{$prefix}bottom-#{$i} { 
+  .#{$prefix}bottom-#{$iname} { 
     @include bottom($i, $media, $append);
   }
   
-  .#{$prefix}left-#{$i} { 
+  .#{$prefix}left-#{$iname} { 
     @include left($i, $media, $append);
   }
   
-  .#{$prefix}line-h-#{$i} { 
+  .#{$prefix}line-h-#{$iname} { 
     @include line-h($i, $media, $append);
   }
   
-  .horiz.#{$prefix}gutter-#{$i}, .#{$prefix}horiz.#{$prefix}gutter-#{$i} {
+  .horiz.#{$prefix}gutter-#{$iname}, .#{$prefix}horiz.#{$prefix}gutter-#{$iname} {
     @include x-gutter($i, $media, $append);
   }
   
-  .verti.#{$prefix}gutter-#{$i}, .#{$prefix}verti.#{$prefix}gutter-#{$i} {
+  .verti.#{$prefix}gutter-#{$iname}, .#{$prefix}verti.#{$prefix}gutter-#{$iname} {
     @include y-gutter($i, $media, $append);
   }
 }
 
-@mixin size-generator-h-or-v($prefix, $i, $media: null, $append: null) {
-  .#{$prefix}mx-#{$i} { 
+@mixin size-generator-h-or-v($prefix, $i, $iname, $media: null, $append: null) {
+  .#{$prefix}mx-#{$iname} { 
     @include mx($i, $media, $append);
   }
   
-  .#{$prefix}my-#{$i} { 
+  .#{$prefix}my-#{$iname} { 
     @include my($i, $media, $append);
   }
   
-  .#{$prefix}px-#{$i} { 
+  .#{$prefix}px-#{$iname} { 
     @include px($i, $media, $append);
   }
   
-  .#{$prefix}py-#{$i} { 
+  .#{$prefix}py-#{$iname} { 
     @include py($i, $media, $append);
   }
 }
   
-@mixin size-generator-specific($prefix, $i, $media: null, $append: null) {
-  .#{$prefix}mt-#{$i} { 
+@mixin size-generator-specific($prefix, $i, $iname, $media: null, $append: null) {
+  .#{$prefix}mt-#{$iname} { 
     @include mt($i, $media, $append);
   }
   
-  .#{$prefix}mr-#{$i} { 
+  .#{$prefix}mr-#{$iname} { 
     @include mr($i, $media, $append);
   }
   
-  .#{$prefix}mb-#{$i} { 
+  .#{$prefix}mb-#{$iname} { 
     @include mb($i, $media, $append);
   }
   
-  .#{$prefix}ml-#{$i} { 
+  .#{$prefix}ml-#{$iname} { 
     @include ml($i, $media, $append);
   }
   
-  .#{$prefix}pt-#{$i} { 
+  .#{$prefix}pt-#{$iname} { 
     @include pt($i, $media, $append);
   }
   
-  .#{$prefix}pr-#{$i} { 
+  .#{$prefix}pr-#{$iname} { 
     @include pr($i, $media, $append);
   }
   
-  .#{$prefix}pb-#{$i} { 
+  .#{$prefix}pb-#{$iname} { 
     @include pb($i, $media, $append);
   }
   
-  .#{$prefix}pl-#{$i} { 
+  .#{$prefix}pl-#{$iname} { 
     @include pl($i, $media, $append);
   }
 }
 
-@mixin build($append-prefix: '', $append: null) {
+@mixin weight-generator($prefix, $i, $media: null, $append: null) {
+  .#{$prefix}weight-#{$i} { 
+    @include weight($i, $media, $append);
+  }
+}
+
+@mixin build($sizes, $append-prefix: '', $append: null) {
 
   @include main-generator($append-prefix, null, $append);
   @include main-generator($append-prefix + $desktop-prefix, $only-desktop, $append);
   @include main-generator($append-prefix + $tablet-prefix, $only-tablet, $append);
   @include main-generator($append-prefix + $phone-prefix, $only-phone, $append);
 
-  $i: 0;
-  @while $i < 2000 {
-    @include size-generator-generic($append-prefix, $i, null, $append);
-    @include size-generator-generic($append-prefix + $desktop-prefix, $i, $only-desktop, $append);
-    @include size-generator-generic($append-prefix + $tablet-prefix, $i, $only-tablet, $append);
-    @include size-generator-generic($append-prefix + $phone-prefix, $i, $only-phone, $append);
-
-    @if $i < 15 {
-      $i: $i + 1;
-    }
-    @else if $i < 30 {
-      $i: $i + 5;
-    }
-    @else if $i < 200 {
-      $i: $i + 10;
-    }
-    @else if $i < 1000 {
-      $i: $i + 50;
-    }
-    @else {
-      $i: $i + 100;
-    }
+  @each $iname, $i in $sizes {
+    @include size-generator-generic($append-prefix, $i, $iname, null, $append);
+    @include size-generator-generic($append-prefix + $desktop-prefix, $i, $iname, $only-desktop, $append);
+    @include size-generator-generic($append-prefix + $tablet-prefix, $i, $iname, $only-tablet, $append);
+    @include size-generator-generic($append-prefix + $phone-prefix, $i, $iname, $only-phone, $append);
   }
 
-  $i: 0;
-  @while $i < 2000 {
-    @include size-generator-h-or-v($append-prefix, $i, null, $append);
-    @include size-generator-h-or-v($append-prefix + $desktop-prefix, $i, $only-desktop, $append);
-    @include size-generator-h-or-v($append-prefix + $tablet-prefix, $i, $only-tablet, $append);
-    @include size-generator-h-or-v($append-prefix + $phone-prefix, $i, $only-phone, $append);
-
-    @if $i < 15 {
-      $i: $i + 1;
-    }
-    @else if $i < 30 {
-      $i: $i + 5;
-    }
-    @else if $i < 200 {
-      $i: $i + 10;
-    }
-    @else if $i < 1000 {
-      $i: $i + 50;
-    }
-    @else {
-      $i: $i + 100;
-    }
+  // we dont use the same loop because the importance priority
+  @each $iname, $i in $sizes {
+    @include size-generator-h-or-v($append-prefix, $i, $iname, null, $append);
+    @include size-generator-h-or-v($append-prefix + $desktop-prefix, $i, $iname, $only-desktop, $append);
+    @include size-generator-h-or-v($append-prefix + $tablet-prefix, $i, $iname, $only-tablet, $append);
+    @include size-generator-h-or-v($append-prefix + $phone-prefix, $i, $iname, $only-phone, $append);
   }
 
-  $i: 0;
-  @while $i < 2000 {
-    @include size-generator-specific($append-prefix, $i, null, $append);
-    @include size-generator-specific($append-prefix + $desktop-prefix, $i, $only-desktop, $append);
-    @include size-generator-specific($append-prefix + $tablet-prefix, $i, $only-tablet, $append);
-    @include size-generator-specific($append-prefix + $phone-prefix, $i, $only-phone, $append);
+  // we dont use the same loop because the importance priority
+  @each $iname, $i in $sizes {
+    @include size-generator-specific($append-prefix, $i, $iname, null, $append);
+    @include size-generator-specific($append-prefix + $desktop-prefix, $i, $iname, $only-desktop, $append);
+    @include size-generator-specific($append-prefix + $tablet-prefix, $i, $iname, $only-tablet, $append);
+    @include size-generator-specific($append-prefix + $phone-prefix, $i, $iname, $only-phone, $append);
+  }
 
-    @if $i < 15 {
-      $i: $i + 1;
-    }
-    @else if $i < 30 {
-      $i: $i + 5;
-    }
-    @else if $i < 200 {
-      $i: $i + 10;
-    }
-    @else if $i < 1000 {
-      $i: $i + 50;
-    }
-    @else {
-      $i: $i + 100;
-    }
+  // weight is always 1 to 100
+  @for $i from 1 through 100 {
+    @include weight-generator($append-prefix, $i, null, $append);
+    @include weight-generator($append-prefix + $desktop-prefix, $i, $only-desktop, $append);
+    @include weight-generator($append-prefix + $tablet-prefix, $i, $only-tablet, $append);
+    @include weight-generator($append-prefix + $phone-prefix, $i, $only-phone, $append);
   }
 
   .#{$append-prefix}desktop {
@@ -472,6 +433,3 @@
     @include tablet($append);
   }
 }
-
-@include build();
-@include build('force-', !important)
