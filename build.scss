@@ -1,366 +1,477 @@
 @import 'linelay.scss';
 
-@mixin main-generator($prefix, $media: null) {
+@mixin main-generator($prefix, $media: null, $append: null) {
   .#{$prefix}horiz {
-    @include horiz($media);
+    @include horiz($media, $append);
   }
 
   .#{$prefix}verti {
-    @include verti($media);
+    @include verti($media, $append);
   }
 
   .#{$prefix}nowrap {
-    @include nowrap($media);
+    @include nowrap($media, $append);
   }
 
   .#{$prefix}items-left-top, .#{$prefix}items-start {
-    @include items-start($media);
+    @include items-start($media, $append);
   }
 
   .#{$prefix}items-left-center, .#{$prefix}verti.items-center-top, .#{$prefix}items-start-center {
-    @include items-start-center($media);
+    @include items-start-center($media, $append);
   }
 
   .#{$prefix}items-left-bottom, .#{$prefix}verti.items-right-top, .#{$prefix}items-start-end {
-    @include items-start-end($media);
+    @include items-start-end($media, $append);
   }
 
   .#{$prefix}items-center-top, .#{$prefix}verti.items-left-center, .#{$prefix}items-center-start {
-    @include items-center-start($media);
+    @include items-center-start($media, $append);
   }
 
   .#{$prefix}items-center {
-    @include items-center($media);
+    @include items-center($media, $append);
   }
 
   .#{$prefix}items-center-bottom, .#{$prefix}verti.items-right-center, .#{$prefix}items-center-end {
-    @include items-center-end($media);
+    @include items-center-end($media, $append);
   }
 
   .#{$prefix}items-right-top, .#{$prefix}verti.items-left-bottom, .#{$prefix}items-end-start {
-    @include items-end-start($media);
+    @include items-end-start($media, $append);
   }
 
   .#{$prefix}items-right-center, .#{$prefix}verti.items-center-bottom, .#{$prefix}items-end-center {
-    @include items-end-center($media);
+    @include items-end-center($media, $append);
   }
 
   .#{$prefix}items-space-around {
-    @include items-space-around($media);
+    @include items-space-around($media, $append);
   }
 
   .#{$prefix}items-space-between {
-    @include items-space-between($media);
+    @include items-space-between($media, $append);
   }
 
   .#{$prefix}items-right-bottom, .#{$prefix}items-end {
-    @include items-end($media);
+    @include items-end($media, $append);
   }
 
   .#{$prefix}self-start, .#{$prefix}self-top, .#{$prefix}self-left {
-    @include self-start($media);
+    @include self-start($media, $append);
   }
 
   .#{$prefix}self-end, .#{$prefix}self-bottom, .#{$prefix}self-right {
-    @include self-end($media);
+    @include self-end($media, $append);
   }
 
   .#{$prefix}self-center {
-    @include self-center($media);
+    @include self-center($media, $append);
   }
 
   .#{$prefix}self-baseline {
-    @include self-baseline($media);
+    @include self-baseline($media, $append);
   }
 
   .#{$prefix}w-auto {
-    @include w-auto($media);
+    @include w-auto($media, $append);
   }
 
   .#{$prefix}h-auto {
-    @include h-auto($media);
+    @include h-auto($media, $append);
   }
 
   .#{$prefix}text-center {
-    @include text-center($media);
+    @include text-center($media, $append);
   }
 
   .#{$prefix}text-left {
-    @include text-left($media);
+    @include text-left($media, $append);
   }
 
   .#{$prefix}text-right {
-    @include text-right($media);
+    @include text-right($media, $append);
   }
 
   .#{$prefix}text-justify {
-    @include text-justify($media);
+    @include text-justify($media, $append);
   }
 
   .#{$prefix}scroll {
-    @include scroll($media);
+    @include scroll($media, $append);
   }
 
   .#{$prefix}x-scroll {
-    @include x-scroll($media);
+    @include x-scroll($media, $append);
   }
 
   .#{$prefix}y-scroll {
-    @include y-scroll($media);
+    @include y-scroll($media, $append);
   }
 
   .#{$prefix}truncate {
-    @include truncate($media);
+    @include truncate($media, $append);
   }
 
   .#{$prefix}relative {
-    @include relative($media);
+    @include relative($media, $append);
   }
 
   .#{$prefix}absolute {
-    @include absolute($media);
+    @include absolute($media, $append);
   }
 
   .#{$prefix}fixed {
-    @include fixed($media);
+    @include fixed($media, $append);
   }
 
   .#{$prefix}w-window {
-    @include w-window($media);
+    @include w-window($media, $append);
   }
 
   .#{$prefix}h-window {
-    @include h-window($media);
+    @include h-window($media, $append);
   }
 
   .#{$prefix}min-w-window {
-    @include w-window($media);
+    @include w-window($media, $append);
   }
 
   .#{$prefix}min-h-window {
-    @include h-window($media);
+    @include h-window($media, $append);
   }
 
   .#{$prefix}w-full {
-    @include w-full($media);
+    @include w-full($media, $append);
   }
 
   .#{$prefix}h-full {
-    @include h-full($media);
+    @include h-full($media, $append);
   }
+
+  .#{$prefix}f-bold {
+    @include f-bold($media, $append);
+  }
+
+  .#{$prefix}f-normal {
+    @include f-normal($media, $append);
+  }
+
+  .#{$prefix}ff-primary {
+    @include ff('primary', $media, $append);
+  }
+
+  .#{$prefix}ff-secondary {
+    @include ff('secondary', $media, $append);
+  }
+
+  .#{$prefix}fs-9, .#{$prefix}fs-min {
+    @include fs(9, $media, $append);
+  }
+
+  .#{$prefix}fs-10, .#{$prefix}fs-min2 {
+    @include fs(9, $media, $append);
+  }
+
+  .#{$prefix}fs-11, .#{$prefix}fs-tiny {
+    @include fs(11, $media, $append);
+  }
+
+  .#{$prefix}fs-12, .#{$prefix}fs-tiny2 {
+    @include fs(12, $media, $append);
+  }
+
+  .#{$prefix}fs-13, .#{$prefix}fs-small {
+    @include fs(13, $media, $append);
+  }
+
+  .#{$prefix}fs-14, .#{$prefix}fs-small2 {
+    @include fs(14, $media, $append);
+  }
+
+  .#{$prefix}fs-15, .#{$prefix}fs-regular {
+    @include fs(15, $media, $append);
+  }
+
+  .#{$prefix}fs-16, .#{$prefix}fs-regular2 {
+    @include fs(16, $media, $append);
+  }
+
+  .#{$prefix}fs-17, .#{$prefix}fs-big {
+    @include fs(17, $media, $append);
+  }
+
+  .#{$prefix}fs-18, .#{$prefix}fs-big2 {
+    @include fs(18, $media, $append);
+  }
+
+  .#{$prefix}fs-19, .#{$prefix}fs-large {
+    @include fs(19, $media, $append);
+  }
+
+  .#{$prefix}fs-20, .#{$prefix}fs-large2 {
+    @include fs(20, $media, $append);
+  }
+
+  .#{$prefix}fs-21, .#{$prefix}fs-huge {
+    @include fs(21, $media, $append);
+  }
+
+  .#{$prefix}fs-22, .#{$prefix}fs-huge2 {
+    @include fs(22, $media, $append);
+  }
+
+  .#{$prefix}fs-23, .#{$prefix}fs-giant {
+    @include fs(23, $media, $append);
+  }
+
+  .#{$prefix}fs-24, .#{$prefix}fs-giant2 {
+    @include fs(24, $media, $append);
+  }
+
+  .#{$prefix}fs-25, .#{$prefix}fs-monster {
+    @include fs(25, $media, $append);
+  }
+
+  .#{$prefix}fs-26, .#{$prefix}fs-monster2 {
+    @include fs(26, $media, $append);
+  }
+
+  .#{$prefix}fs-27, .#{$prefix}fs-colossal {
+    @include fs(27, $media, $append);
+  }
+
+  .#{$prefix}fs-28, .#{$prefix}fs-colossal2 {
+    @include fs(28, $media, $append);
+  }
+
+  .#{$prefix}fs-29, .#{$prefix}fs-titan {
+    @include fs(29, $media, $append);
+  }
+
+  .#{$prefix}fs-30, .#{$prefix}fs-titan2 {
+    @include fs(30, $media, $append);
+  }
+
 }
 
-@mixin size-generator-generic($prefix, $i, $media: null) {
+@mixin size-generator-generic($prefix, $i, $media: null, $append: null) {
   .#{$prefix}weight-#{$i} { 
-    @include weight($i, $media);
+    @include weight($i, $media, $append);
   }
   
   .#{$prefix}w-#{$i} { 
-    @include w($i, $media);
+    @include w($i, $media, $append);
   }
   
   .#{$prefix}h-#{$i} { 
-    @include h($i, $media);
+    @include h($i, $media, $append);
   }
   
   .#{$prefix}max-w-#{$i} { 
-    @include max-w($i, $media);
+    @include max-w($i, $media, $append);
   }
   
   .#{$prefix}max-h-#{$i} { 
-    @include max-h($i, $media);
+    @include max-h($i, $media, $append);
   }
   
   .#{$prefix}min-w-#{$i} { 
-    @include min-w($i, $media);
+    @include min-w($i, $media, $append);
   }
   
   .#{$prefix}min-h-#{$i} { 
-    @include min-h($i, $media);
+    @include min-h($i, $media, $append);
   }
   
   .#{$prefix}m-#{$i} { 
-    @include m($i, $media);
+    @include m($i, $media, $append);
   }
   
   .#{$prefix}p-#{$i} { 
-    @include p($i, $media);
+    @include p($i, $media, $append);
   }
   
   .#{$prefix}top-#{$i} { 
-    @include top($i, $media);
+    @include top($i, $media, $append);
   }
   
   .#{$prefix}right-#{$i} { 
-    @include right($i, $media);
+    @include right($i, $media, $append);
   }
   
   .#{$prefix}bottom-#{$i} { 
-    @include bottom($i, $media);
+    @include bottom($i, $media, $append);
   }
   
   .#{$prefix}left-#{$i} { 
-    @include left($i, $media);
+    @include left($i, $media, $append);
   }
   
   .#{$prefix}line-h-#{$i} { 
-    @include line-h($i, $media);
+    @include line-h($i, $media, $append);
   }
   
   .horiz.#{$prefix}gutter-#{$i}, .#{$prefix}horiz.#{$prefix}gutter-#{$i} {
-    @include x-gutter($i, $media);
+    @include x-gutter($i, $media, $append);
   }
   
   .verti.#{$prefix}gutter-#{$i}, .#{$prefix}verti.#{$prefix}gutter-#{$i} {
-    @include y-gutter($i, $media);
+    @include y-gutter($i, $media, $append);
   }
 }
 
-@mixin size-generator-h-or-v($prefix, $i, $media: null) {
+@mixin size-generator-h-or-v($prefix, $i, $media: null, $append: null) {
   .#{$prefix}mx-#{$i} { 
-    @include mx($i, $media);
+    @include mx($i, $media, $append);
   }
   
   .#{$prefix}my-#{$i} { 
-    @include my($i, $media);
+    @include my($i, $media, $append);
   }
   
   .#{$prefix}px-#{$i} { 
-    @include px($i, $media);
+    @include px($i, $media, $append);
   }
   
   .#{$prefix}py-#{$i} { 
-    @include py($i, $media);
+    @include py($i, $media, $append);
   }
 }
   
-@mixin size-generator-specific($prefix, $i, $media: null) {
+@mixin size-generator-specific($prefix, $i, $media: null, $append: null) {
   .#{$prefix}mt-#{$i} { 
-    @include mt($i, $media);
+    @include mt($i, $media, $append);
   }
   
   .#{$prefix}mr-#{$i} { 
-    @include mr($i, $media);
+    @include mr($i, $media, $append);
   }
   
   .#{$prefix}mb-#{$i} { 
-    @include mb($i, $media);
+    @include mb($i, $media, $append);
   }
   
   .#{$prefix}ml-#{$i} { 
-    @include ml($i, $media);
+    @include ml($i, $media, $append);
   }
   
   .#{$prefix}pt-#{$i} { 
-    @include pt($i, $media);
+    @include pt($i, $media, $append);
   }
   
   .#{$prefix}pr-#{$i} { 
-    @include pr($i, $media);
+    @include pr($i, $media, $append);
   }
   
   .#{$prefix}pb-#{$i} { 
-    @include pb($i, $media);
+    @include pb($i, $media, $append);
   }
   
   .#{$prefix}pl-#{$i} { 
-    @include pl($i, $media);
+    @include pl($i, $media, $append);
   }
 }
 
-.desktop {
-  @extend %desktop;
+@mixin build($append-prefix: '', $append: null) {
+
+  @include main-generator($append-prefix, null, $append);
+  @include main-generator($append-prefix + $desktop-prefix, $only-desktop, $append);
+  @include main-generator($append-prefix + $tablet-prefix, $only-tablet, $append);
+  @include main-generator($append-prefix + $phone-prefix, $only-phone, $append);
+
+  $i: 0;
+  @while $i < 2000 {
+    @include size-generator-generic($append-prefix, $i, null, $append);
+    @include size-generator-generic($append-prefix + $desktop-prefix, $i, $only-desktop, $append);
+    @include size-generator-generic($append-prefix + $tablet-prefix, $i, $only-tablet, $append);
+    @include size-generator-generic($append-prefix + $phone-prefix, $i, $only-phone, $append);
+
+    @if $i < 15 {
+      $i: $i + 1;
+    }
+    @else if $i < 30 {
+      $i: $i + 5;
+    }
+    @else if $i < 200 {
+      $i: $i + 10;
+    }
+    @else if $i < 1000 {
+      $i: $i + 50;
+    }
+    @else {
+      $i: $i + 100;
+    }
+  }
+
+  $i: 0;
+  @while $i < 2000 {
+    @include size-generator-h-or-v($append-prefix, $i, null, $append);
+    @include size-generator-h-or-v($append-prefix + $desktop-prefix, $i, $only-desktop, $append);
+    @include size-generator-h-or-v($append-prefix + $tablet-prefix, $i, $only-tablet, $append);
+    @include size-generator-h-or-v($append-prefix + $phone-prefix, $i, $only-phone, $append);
+
+    @if $i < 15 {
+      $i: $i + 1;
+    }
+    @else if $i < 30 {
+      $i: $i + 5;
+    }
+    @else if $i < 200 {
+      $i: $i + 10;
+    }
+    @else if $i < 1000 {
+      $i: $i + 50;
+    }
+    @else {
+      $i: $i + 100;
+    }
+  }
+
+  $i: 0;
+  @while $i < 2000 {
+    @include size-generator-specific($append-prefix, $i, null, $append);
+    @include size-generator-specific($append-prefix + $desktop-prefix, $i, $only-desktop, $append);
+    @include size-generator-specific($append-prefix + $tablet-prefix, $i, $only-tablet, $append);
+    @include size-generator-specific($append-prefix + $phone-prefix, $i, $only-phone, $append);
+
+    @if $i < 15 {
+      $i: $i + 1;
+    }
+    @else if $i < 30 {
+      $i: $i + 5;
+    }
+    @else if $i < 200 {
+      $i: $i + 10;
+    }
+    @else if $i < 1000 {
+      $i: $i + 50;
+    }
+    @else {
+      $i: $i + 100;
+    }
+  }
+
+  .#{$append-prefix}desktop {
+    @include desktop($append);
+  }
+
+  .#{$append-prefix}desktop-tablet {
+    @include desktop-tablet($append);
+  }
+
+  .#{$append-prefix}mobile {
+    @include mobile($append);
+  }
+
+  .#{$append-prefix}mobile-tablet {
+    @include mobile-tablet($append);
+  }
+
+  .#{$append-prefix}tablet {
+    @include tablet($append);
+  }
 }
 
-.desktop-tablet {
-  @extend %desktop-tablet;
-}
-
-.mobile {
-  @extend %mobile;
-}
-
-.mobile-tablet {
-  @extend %mobile-tablet;
-}
-
-.tablet {
-  @extend %tablet;
-}
-
-@include main-generator('');
-@include main-generator($desktop-prefix, $only-desktop);
-@include main-generator($tablet-prefix, $only-tablet);
-@include main-generator($phone-prefix, $only-phone);
-
-$i: 0;
-@while $i < 2000 {
-  @include size-generator-generic('', $i);
-  @include size-generator-generic($desktop-prefix, $i, $only-desktop);
-  @include size-generator-generic($tablet-prefix, $i, $only-tablet);
-  @include size-generator-generic($phone-prefix, $i, $only-phone);
-
-  @if $i < 15 {
-    $i: $i + 1;
-  }
-  @else if $i < 30 {
-    $i: $i + 5;
-  }
-  @else if $i < 200 {
-    $i: $i + 10;
-  }
-  @else if $i < 1000 {
-    $i: $i + 50;
-  }
-  @else {
-    $i: $i + 100;
-  }
-}
-
-$i: 0;
-@while $i < 2000 {
-  @include size-generator-h-or-v('', $i);
-  @include size-generator-h-or-v($desktop-prefix, $i, $only-desktop);
-  @include size-generator-h-or-v($tablet-prefix, $i, $only-tablet);
-  @include size-generator-h-or-v($phone-prefix, $i, $only-phone);
-
-  @if $i < 15 {
-    $i: $i + 1;
-  }
-  @else if $i < 30 {
-    $i: $i + 5;
-  }
-  @else if $i < 200 {
-    $i: $i + 10;
-  }
-  @else if $i < 1000 {
-    $i: $i + 50;
-  }
-  @else {
-    $i: $i + 100;
-  }
-}
-
-$i: 0;
-@while $i < 2000 {
-  @include size-generator-specific('', $i);
-  @include size-generator-specific($desktop-prefix, $i, $only-desktop);
-  @include size-generator-specific($tablet-prefix, $i, $only-tablet);
-  @include size-generator-specific($phone-prefix, $i, $only-phone);
-
-  @if $i < 15 {
-    $i: $i + 1;
-  }
-  @else if $i < 30 {
-    $i: $i + 5;
-  }
-  @else if $i < 200 {
-    $i: $i + 10;
-  }
-  @else if $i < 1000 {
-    $i: $i + 50;
-  }
-  @else {
-    $i: $i + 100;
-  }
-}
+@include build();
+@include build('force-', !important)

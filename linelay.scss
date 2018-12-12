@@ -13,35 +13,6 @@ $desktop-prefix: "des-";
 $tablet-prefix: "tab-";
 $phone-prefix: "mob-";
 
-%desktop {
-  @media #{$phone-and-tablet} {
-    display: none;
-  }
-}
-
-%desktop-tablet {
-  @media #{$only-phone} {
-    display: none;
-  }
-}
-
-%mobile {
-  @media #{$desktop-and-tablet} {
-    display: none;
-  }
-}
-
-%mobile-tablet {
-  @media #{$only-desktop} {
-    display: none;
-  }
-}
-
-%tablet {
-  @extend %mobile-tablet;
-  @extend %desktop-tablet;
-}
-
 @mixin mediaOrNot($media: null) {
   @if ($media) {
     @media #{$media} {
@@ -53,264 +24,293 @@ $phone-prefix: "mob-";
   }
 }
 
-@mixin horiz($media: null) {
+@mixin desktop($append) {
+  @media #{$phone-and-tablet} {
+    display: none $append;
+  }
+}
+
+@mixin desktop-tablet($append) {
+  @media #{$only-phone} {
+    display: none $append;
+  }
+}
+
+@mixin mobile($append) {
+  @media #{$desktop-and-tablet} {
+    display: none $append;
+  }
+}
+
+@mixin mobile-tablet($append) {
+  @media #{$only-desktop} {
+    display: none $append;
+  }
+}
+
+@mixin tablet($append) {
+  @include mobile-tablet($append);
+  @include desktop-tablet($append);
+}
+
+@mixin horiz($media: null, $append: null) {
   @include mediaOrNot($media) {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: flex $append;
+    flex-direction: row $append;
+    flex-wrap: wrap $append;
     & > * {
-      flex-shrink: 0;
+      flex-shrink: 0 $append;
     }
   }
 }
 
-@mixin verti($media: null) {
+@mixin verti($media: null, $append: null) {
   @include mediaOrNot($media) {
-    display: flex;
-    flex-direction: column;
+    display: flex $append;
+    flex-direction: column $append;
     & > * {
-      flex-shrink: 0;
+      flex-shrink: 0 $append;
     }
   }
 }
 
-@mixin nowrap($media: null) {
+@mixin nowrap($media: null, $append: null) {
   @include mediaOrNot($media) {
-    flex-wrap: nowrap;
+    flex-wrap: nowrap $append;
   }
 }
 
-@mixin items-start($media: null) {
+@mixin items-start($media: null, $append: null) {
   @include mediaOrNot($media) {
-      display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
+      display: flex $append;
+      justify-content: flex-start $append;
+      align-items: flex-start $append;
   }
 }
 
-@mixin items-start-center($media: null) {
+@mixin items-start-center($media: null, $append: null) {
   @include mediaOrNot($media) {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
+      display: flex $append;
+      justify-content: flex-start $append;
+      align-items: center $append;
   }
 }
 
-@mixin items-start-end($media: null) {
+@mixin items-start-end($media: null, $append: null) {
   @include mediaOrNot($media) {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
+    display: flex $append;
+    justify-content: flex-start $append;
+    align-items: flex-end $append;
   }
 }
 
-@mixin items-center-start($media: null) {
+@mixin items-center-start($media: null, $append: null) {
   @include mediaOrNot($media) {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    display: flex $append;
+    justify-content: center $append;
+    align-items: flex-start $append;
   }
 }
 
-@mixin items-center($media: null) {
+@mixin items-center($media: null, $append: null) {
   @include mediaOrNot($media) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: flex $append;
+      justify-content: center $append;
+      align-items: center $append;
   }
 }
 
-@mixin items-center-end($media: null) {
+@mixin items-center-end($media: null, $append: null) {
   @include mediaOrNot($media) {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    display: flex $append;
+    justify-content: center $append;
+    align-items: flex-end $append;
   }
 }
 
-@mixin items-end-start($media: null) {
+@mixin items-end-start($media: null, $append: null) {
   @include mediaOrNot($media) {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
+    display: flex $append;
+    justify-content: flex-end $append;
+    align-items: flex-start $append;
   }
 }
 
-@mixin items-end-center($media: null) {
+@mixin items-end-center($media: null, $append: null) {
   @include mediaOrNot($media) {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    display: flex $append;
+    justify-content: flex-end $append;
+    align-items: center $append;
   }
 }
 
-@mixin items-end($media: null) {
+@mixin items-end($media: null, $append: null) {
   @include mediaOrNot($media) {
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-end;
+      display: flex $append;
+      justify-content: flex-end $append;
+      align-items: flex-end $append;
   }
 }
 
-@mixin items-space-around($media: null) {
+@mixin items-space-around($media: null, $append: null) {
   @include mediaOrNot($media) {
-      display: flex;
-      justify-content: space-around;
+      display: flex $append;
+      justify-content: space-around $append;
   }
 }
 
-@mixin items-space-between($media: null) {
+@mixin items-space-between($media: null, $append: null) {
   @include mediaOrNot($media) {
-      display: flex;
-      justify-content: space-between;
+      display: flex $append;
+      justify-content: space-between $append;
   }
 }
 
-@mixin self-start($media: null) {
+@mixin self-start($media: null, $append: null) {
   @include mediaOrNot($media) {
-    align-self: flex-start;
+    align-self: flex-start $append;
   }
 }
 
-@mixin self-end($media: null) {
+@mixin self-end($media: null, $append: null) {
   @include mediaOrNot($media) {
-    align-self: flex-end;
+    align-self: flex-end $append;
   }
 }
 
-@mixin self-center($media: null) {
+@mixin self-center($media: null, $append: null) {
   @include mediaOrNot($media) {
-    align-self: center;
+    align-self: center $append;
   }
 }
 
-@mixin self-baseline($media: null) {
+@mixin self-baseline($media: null, $append: null) {
   @include mediaOrNot($media) {
-    align-self: baseline;
+    align-self: baseline $append;
   }
 }
 
-@mixin w-auto($media: null) {
+@mixin w-auto($media: null, $append: null) {
   @include mediaOrNot($media) {
-    display: inline-block;
+    display: inline-block $append;
   }
 }
 
-@mixin h-auto($media: null) {
+@mixin h-auto($media: null, $append: null) {
   @include mediaOrNot($media) {
-    flex-basis: auto;
+    flex-basis: auto $append;
   }
 }
 
-@mixin text-center($media: null) {
+@mixin text-center($media: null, $append: null) {
   @include mediaOrNot($media) {
-    text-align: center;
+    text-align: center $append;
   }
 }
 
-@mixin text-left($media: null) {
+@mixin text-left($media: null, $append: null) {
   @include mediaOrNot($media) {
-    text-align: left;
+    text-align: left $append;
   }
 }
 
-@mixin text-right($media: null) {
+@mixin text-right($media: null, $append: null) {
   @include mediaOrNot($media) {
-    text-align: right;
+    text-align: right $append;
   }
 }
 
-@mixin text-justify($media: null) {
+@mixin text-justify($media: null, $append: null) {
   @include mediaOrNot($media) {
-    text-align: justify;
+    text-align: justify $append;
   }
 }
 
-@mixin scroll($media: null) {
+@mixin scroll($media: null, $append: null) {
   @include mediaOrNot($media) {
-    overflow: scroll;
+    overflow: scroll $append;
   }
 }
 
-@mixin x-scroll($media: null) {
+@mixin x-scroll($media: null, $append: null) {
   @include mediaOrNot($media) {
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow-x: auto $append;
+    overflow-y: hidden $append;
   }
 }
 
-@mixin y-scroll($media: null) {
+@mixin y-scroll($media: null, $append: null) {
   @include mediaOrNot($media) {
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow-y: auto $append;
+    overflow-x: hidden $append;
   }
 }
 
-@mixin truncate($media: null) {
+@mixin truncate($media: null, $append: null) {
   @include mediaOrNot($media) {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: nowrap $append;
+    overflow: hidden $append;
+    text-overflow: ellipsis $append;
   }
 }
 
-@mixin relative($media: null) {
+@mixin relative($media: null, $append: null) {
   @include mediaOrNot($media) {
-    position: relative;
-    width: 0;
-    height: 0;
+    position: relative $append;
+    width: 0 $append;
+    height: 0 $append;
     
     > * {
-      position: absolute;
+      position: absolute $append;
     }
   }
 }
 
-@mixin absolute($media: null) {
+@mixin absolute($media: null, $append: null) {
   @include mediaOrNot($media) {
-    position: absolute;
+    position: absolute $append;
   }
 }
 
-@mixin fixed($media: null) {
+@mixin fixed($media: null, $append: null) {
   @include mediaOrNot($media) {
-    position: fixed;
+    position: fixed $append;
   }
 }
 
-@mixin w-window($media: null) {
+@mixin w-window($media: null, $append: null) {
   @include mediaOrNot($media) {
-    width: 100vw;
+    width: 100vw $append;
   }
 }
 
-@mixin h-window($media: null) {
+@mixin h-window($media: null, $append: null) {
   @include mediaOrNot($media) {
-    height: 100vh;
+    height: 100vh $append;
   }
 }
 
-@mixin min-w-window($media: null) {
+@mixin min-w-window($media: null, $append: null) {
   @include mediaOrNot($media) {
-    min-width: 100vw;
+    min-width: 100vw $append;
   }
 }
 
-@mixin min-h-window($media: null) {
+@mixin min-h-window($media: null, $append: null) {
   @include mediaOrNot($media) {
-    min-height: 100vh;
+    min-height: 100vh $append;
   }
 }
 
-@mixin w-full($media: null) {
+@mixin w-full($media: null, $append: null) {
   @include mediaOrNot($media) {
-    width: 100%;
+    width: 100% $append;
   }
 }
 
-@mixin h-full($media: null) {
+@mixin h-full($media: null, $append: null) {
   @include mediaOrNot($media) {
-    height: 100%;
+    height: 100% $append;
   }
 }
 
@@ -321,104 +321,104 @@ $phone-prefix: "mob-";
 
 
 
-@mixin weight($i, $media: null) {
+@mixin weight($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    flex-grow: $i;
-    flex-shrink: unset;
-    flex-basis: 0;
+    flex-grow: $i $append;
+    flex-shrink: unset $append;
+    flex-basis: 0 $append;
   }
 }
   
-@mixin w($i, $media: null) {
+@mixin w($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    width: #{$i}px;
+    width: #{$i}px $append;
   }
 }
   
-@mixin h($i, $media: null) {
+@mixin h($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    height: #{$i}px;
+    height: #{$i}px $append;
   }
 }
   
-@mixin max-w($i, $media: null) {
+@mixin max-w($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    max-width: #{$i}px;
+    max-width: #{$i}px $append;
   }
 }
   
-@mixin max-h($i, $media: null) {
+@mixin max-h($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    max-height: #{$i}px;
+    max-height: #{$i}px $append;
   }
 }
   
-@mixin min-w($i, $media: null) {
+@mixin min-w($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    min-width: #{$i}px;
+    min-width: #{$i}px $append;
   }
 }
   
-@mixin min-h($i, $media: null) {
+@mixin min-h($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    min-height: #{$i}px;
+    min-height: #{$i}px $append;
   }
 }
   
-@mixin m($i, $media: null) {
+@mixin m($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    margin: #{$i}px
+    margin: #{$i}px $append;
   }
 }
   
-@mixin p($i, $media: null) {
+@mixin p($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    padding: #{$i}px
+    padding: #{$i}px $append;
   }
 }
   
-@mixin top($i, $media: null) {
+@mixin top($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    top: #{$i}px
+    top: #{$i}px $append;
   }
 }
   
-@mixin right($i, $media: null) {
+@mixin right($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    right: #{$i}px
+    right: #{$i}px $append;
   }
 }
   
-@mixin bottom($i, $media: null) {
+@mixin bottom($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    bottom: #{$i}px
+    bottom: #{$i}px $append;
   }
 }
   
-@mixin left($i, $media: null) {
+@mixin left($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    left: #{$i}px
+    left: #{$i}px $append;
   }
 }
   
-@mixin line-h($i, $media: null) {
+@mixin line-h($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    line-height: #{$i}px;
+    line-height: #{$i}px $append;
   }
 }
 
-@mixin x-gutter($i, $media: null) {
+@mixin x-gutter($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     > *:not(:last-of-type) {
-      margin-right: #{$i}px;
+      margin-right: #{$i}px $append;
     }
   }
 }
 
-@mixin y-gutter($i, $media: null) {
+@mixin y-gutter($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     > *:not(:last-of-type) {
-      margin-bottom: #{$i}px;
+      margin-bottom: #{$i}px $append;
     }
   }
 }
@@ -429,31 +429,31 @@ $phone-prefix: "mob-";
 
 
 
-@mixin mx($i, $media: null) {
+@mixin mx($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    margin-left: #{$i}px;
-    margin-right: #{$i}px
+    margin-left: #{$i}px $append;
+    margin-right: #{$i}px $append;
   }
 }
   
-@mixin my($i, $media: null) {
+@mixin my($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    margin-top: #{$i}px;
-    margin-bottom: #{$i}px
+    margin-top: #{$i}px $append;
+    margin-bottom: #{$i}px $append;
   }
 }
   
-@mixin px($i, $media: null) {
+@mixin px($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    padding-left: #{$i}px;
-    padding-right: #{$i}px
+    padding-left: #{$i}px $append;
+    padding-right: #{$i}px $append;
   }
 }
   
-@mixin py($i, $media: null) {
+@mixin py($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    padding-top: #{$i}px;
-    padding-bottom: #{$i}px;
+    padding-top: #{$i}px $append;
+    padding-bottom: #{$i}px $append;
   }
 }
 
@@ -463,50 +463,74 @@ $phone-prefix: "mob-";
 
 
 
-@mixin mt($i, $media: null) {
+@mixin mt($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    margin-top: #{$i}px;
+    margin-top: #{$i}px $append;
   }
 }
   
-@mixin mr($i, $media: null) {
+@mixin mr($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    margin-right: #{$i}px;
+    margin-right: #{$i}px $append;
   }
 }
   
-@mixin mb($i, $media: null) {
+@mixin mb($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    margin-bottom: #{$i}px;
+    margin-bottom: #{$i}px $append;
   }
 }
   
-@mixin ml($i, $media: null) {
+@mixin ml($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    margin-left: #{$i}px;
+    margin-left: #{$i}px $append;
   }
 }
   
-@mixin pt($i, $media: null) {
+@mixin pt($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    padding-top: #{$i}px;
+    padding-top: #{$i}px $append;
   }
 }
   
-@mixin pr($i, $media: null) {
+@mixin pr($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    padding-right: #{$i}px;
+    padding-right: #{$i}px $append;
   }
 }
   
-@mixin pb($i, $media: null) {
+@mixin pb($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    padding-bottom: #{$i}px;
+    padding-bottom: #{$i}px $append;
   }
 }
   
-@mixin pl($i, $media: null) {
+@mixin pl($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    padding-left: #{$i}px;
+    padding-left: #{$i}px $append;
+  }
+}
+
+@mixin f-bold($media: null, $append: null) {
+  @include mediaOrNot($media) {
+    font-weight: bold $append;
+  }
+}
+
+@mixin f-normal($media: null, $append: null) {
+  @include mediaOrNot($media) {
+    font-weight: normal $append;
+  }
+}
+
+@mixin ff($name, $media: null, $append: null) {
+  @include mediaOrNot($media) {
+    font-family: $name $append;
+  }
+}
+
+@mixin fs($i, $media: null, $append: null) {
+  @include mediaOrNot($media) {
+    font-size: #{$i}px $append;
   }
 }
