@@ -1,6 +1,6 @@
 {
   "name": "linelay",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "A CSS port of LinearLayout. Save space and work with vertical spacing too.",
   "main": "linelay.scss",
   "scripts": {
