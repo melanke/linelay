@@ -534,3 +534,9 @@ $phone-prefix: "mob-";
     font-size: #{$i}px $append;
   }
 }
+
+@mixin z($i, $media: null, $append: null) {
+  @include mediaOrNot($media) {
+    z-index: #{$i} $append;
+  }
+}

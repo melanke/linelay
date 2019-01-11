@@ -253,6 +253,58 @@
     @include fs(30, $media, $append);
   }
 
+  .#{$prefix}z-0 {
+    @include z(0, $media, $append);
+  }
+
+  .#{$prefix}z-auto {
+    @include z(auto, $media, $append);
+  }
+
+  .#{$prefix}z-1, .#{$prefix}z-pop {
+    @include z(1, $media, $append);
+  }
+
+  .#{$prefix}z-2, .#{$prefix}z-header {
+    @include z(2, $media, $append);
+  }
+
+  .#{$prefix}z-3, .#{$prefix}z-scrim {
+    @include z(3, $media, $append);
+  }
+
+  .#{$prefix}z-4, .#{$prefix}z-modal {
+    @include z(4, $media, $append);
+  }
+
+  .#{$prefix}z-5, .#{$prefix}z-alert {
+    @include z(5, $media, $append);
+  }
+
+  .#{$prefix}z-6, .#{$prefix}z-high {
+    @include z(6, $media, $append);
+  }
+
+  .#{$prefix}z-7, .#{$prefix}z-higher {
+    @include z(7, $media, $append);
+  }
+
+  .#{$prefix}z-99999), .#{$prefix}z-highest {
+    @include z(99999, $media, $append);
+  }
+
+  .#{$prefix}z-low {
+    @include z(-1, $media, $append);
+  }
+
+  .#{$prefix}z-lower {
+    @include z(-2, $media, $append);
+  }
+
+  .#{$prefix}z-lowest {
+    @include z(99999, $media, $append);
+  }
+
 }
 
 @mixin size-generator-generic($prefix, $i, $iname, $media: null, $append: null) {
