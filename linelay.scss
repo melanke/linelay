@@ -409,7 +409,7 @@ $phone-prefix: "mob-";
 
 @mixin x-gutter($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    > *:not(:last-of-type) {
+    > *:not(:last-child) {
       margin-right: #{$i}px $append;
     }
   }
@@ -417,7 +417,7 @@ $phone-prefix: "mob-";
 
 @mixin y-gutter($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    > *:not(:last-of-type) {
+    > *:not(:last-child) {
       margin-bottom: #{$i}px $append;
     }
   }
