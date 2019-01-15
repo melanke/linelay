@@ -560,18 +560,18 @@ The child element is positioned relative to its normal position, so `left: 20px`
 
 Changes the Z order, overlapping elements with a larger z-index cover those with a smaller one.
 
-`.z-0`
-`.z-auto`
-`.z-1` or `.z-pop`
-`.z-2` or `.z-header`
-`.z-3` or `.z-scrim`
-`.z-4` or `.z-modal`
-`.z-5` or `.z-alert`
-`.z-6` or `.z-high`
-`.z-7` or `.z-higher`
-`.z-99999` or `.z-highest`
-`.z-low` (-1)
-`.z-lower` (-2)
+`.z-0`; 
+`.z-auto`; 
+`.z-1` or `.z-pop`; 
+`.z-2` or `.z-header`; 
+`.z-3` or `.z-scrim`; 
+`.z-4` or `.z-modal`; 
+`.z-5` or `.z-alert`; 
+`.z-6` or `.z-high`; 
+`.z-7` or `.z-higher`; 
+`.z-99999` or `.z-highest`; 
+`.z-low` (-1); 
+`.z-lower` (-2); 
 `.z-lowest` (-99999)
 
 ## Breakpoints
