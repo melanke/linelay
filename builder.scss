@@ -419,6 +419,10 @@
   .#{$prefix}pl-#{$iname} { 
     @include pl($i, $media, $append);
   }
+  
+  .#{$prefix}items-mb-#{$iname} { 
+    @include items-mb($i, $media, $append);
+  }
 }
 
 @mixin weight-generator($prefix, $i, $media: null, $append: null) {
