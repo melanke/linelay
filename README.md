@@ -27,7 +27,8 @@ or
 
 # Using with Sass
 - If you import `linelay.scss` you will have only the variables, extensions and mixins.
-- If you import `build.scss` you will have the classes too.
+- If you import `defaultBuild.scss` you will have the classes too. (**RECOMENDED**)
+- If you want to customize the sizes you can import `builder.scss` and call `build` include, check `defaultBuild.scss` code as an example
 
 # Docs
 - [Orientation](#orientation)
@@ -37,10 +38,12 @@ or
 - [Self Alignment](#self-alignment)
 - [Items Alignment](#items-alignment)
 - [Text Utils](#text-utils)
+- [Font Utils](#font-utils)
 - [Scroll](#scroll)
 - [Above the surface](#above-the-surface)
 - [Sizing](#sizing)
 - [Breakpoints](#breakpoints)
+- [Force a style](#force-a-style)
 
 ## Orientation
 You are able to control your rows the same way you control your columns, make use of it using nested elements with different orientations.
@@ -114,7 +117,7 @@ The element will use as many space it needs.
 <br/>Click to explore
 
 ### .w-window
-The element will have the browser window's width.
+The element will have the browser window's width. You can also use `.min-w-window`.
 
 <sub><sup>With Sass you can use `width: 100vw`, `@include w-window()` or `@include w-window($mediaquery)`<sup><sub>
 
@@ -122,7 +125,7 @@ The element will have the browser window's width.
 <br/>Click to explore
 
 ### .h-window
-The element will have the browser window's height.
+The element will have the browser window's height. You can also use `.min-h-window`.
 
 <sub><sup>With Sass you can use `height: 100vh`, `@include h-window()` or `@include h-window($mediaquery)`<sup><sub>
 
@@ -156,7 +159,7 @@ Defines the max height.
 <br/>Click to explore
 
 ### .min-w-{number}
-Defines the min width.
+Defines the min width. You can also use `.min-w-window`.
 
 <sub><sup>With Sass you can use `min-width: {number}px`, `@include min-w($number)` or `@include min-w($number, $mediaquery)`<sup><sub>
 
@@ -164,7 +167,7 @@ Defines the min width.
 <br/>Click to explore
 
 ### .min-h-{number}
-Defines the min height.
+Defines the min height. You can also use `.min-h-window`.
 
 <sub><sup>With Sass you can use `min-height: {number}px`, `@include min-h($number)` or `@include min-h($number, $mediaquery)`<sup><sub>
 
@@ -213,7 +216,7 @@ Defines the left margin.
 <sub><sup>With Sass you can use `margin-left: {number}px`, `@include ml($number)` or `@include ml($number, $mediaquery)`<sup><sub>
 
 ### .gutter-{number}
-Defines margins between all children elements.
+Defines margins between all children elements. Consider using `.items-mb-{number}` to help when the line breaks.
 
 <sub><sup>With Sass you can use `@include x-gutter($number)`, `@include y-gutter($number)`, `@include x-gutter($number, $mediaquery)` or `@include y-gutter($number, $mediaquery)`<sup><sub>
 
@@ -398,6 +401,14 @@ Arrange elements with equal space between them. To be used with `.horiz` or `.ve
 [![Imgur](http://i.imgur.com/3mqnD6A.png)](https://codepen.io/melanke/embed/vWWXEg?theme-id=dark&default-tab=result,html&embed-version=2)
 <br/>Click to explore
 
+### .items-mb-{number}
+Adds a bottom margin to all children elements, useful when you are usign `horiz` and `gutter`, so when the children wraps to a second line they get a margin between them.
+
+<sub><sup>With Sass you can use `@include items-mb($number)` or `@include items-mb($number, $mediaquery)`<sup><sub>
+
+[![Imgur](http://i.imgur.com/MudwGC8.png)](https://codepen.io/melanke/embed/REdLaN?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
+
 ## Text Utils
 Some useful classes to deal with text.
 
@@ -447,6 +458,31 @@ Defines the line height, usefull to center text vertically. Avoid using this to 
 <sub><sup>With Sass you can use `line-height: {number}px`, `@include line-h($number)` or `@include line-h($number, $mediaquery)`<sup><sub>
 
 [![Imgur](http://i.imgur.com/btHE9B2.png)](https://codepen.io/melanke/embed/bRZQVQ?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
+
+## Font Utils
+Useful classes to control the fonts
+
+### .f-bold and .f-normal
+Use `.f-bold` to make the text bold or `.f-normal` to make it normal.
+
+[![Imgur](http://i.imgur.com/ooWleBH.png)](https://codepen.io/melanke/embed/KbEXeR?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
+
+### .ff-primary and .ff-secondary
+You can use this classes to quickly swap between fonts, but to make it work properly you will need to define the font-face in your CSS.
+
+<sub><sup>With Sass you can use `@include ff($fontname)` or `@include ff($fontname, $mediaquery)`<sup><sub>
+
+[![Imgur](http://i.imgur.com/VhOEe0Q.png)](https://codepen.io/melanke/embed/MZxEzP?theme-id=dark&default-tab=result,html&embed-version=2)
+<br/>Click to explore
+
+### .fs-{number} and it's alias
+Changes the font-size using a number or a name
+
+<sub><sup>With Sass you can use `@include fs($number)` or `@include fs($number, $mediaquery)`<sup><sub>
+
+[![Imgur](http://i.imgur.com/qKRDDCi.png)](https://codepen.io/melanke/embed/NeJwqz?theme-id=dark&default-tab=result,html&embed-version=2)
 <br/>Click to explore
 
 ## Scroll
@@ -520,6 +556,24 @@ The child element is positioned relative to its normal position, so `left: 20px`
 
 <sub><sup>With Sass you can use `left: {number}px`, `@include left($number)` or `@include left($number, $mediaquery)`<sup><sub>
 
+##### .z-{number} or it's alias
+
+Changes the Z order, overlapping elements with a larger z-index cover those with a smaller one.
+
+`.z-0`
+`.z-auto`
+`.z-1` or `.z-pop`
+`.z-2` or `.z-header`
+`.z-3` or `.z-scrim`
+`.z-4` or `.z-modal`
+`.z-5` or `.z-alert`
+`.z-6` or `.z-high`
+`.z-7` or `.z-higher`
+`.z-99999` or `.z-highest`
+`.z-low` (-1)
+`.z-lower` (-2)
+`.z-lowest` (-99999)
+
 ## Breakpoints
 Breakpoints are useful when you want to change the layout depending on user's device. 
 
@@ -577,3 +631,6 @@ Modify any class described here with `.tab-` to make it work only on tablet devi
 Modify any class described here with `.mob-` to make it work only on mobile devices.
 
 <sub><sup>With Sass you can pass `$only-mobile` in the last argument of the mixin<sup><sub>
+
+## Force a style
+Modify any class described here with `.force-` to add an `!important` and have a CSS rule priority

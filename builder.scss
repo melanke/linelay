@@ -170,7 +170,7 @@
   }
 
   .#{$prefix}fs-10, .#{$prefix}fs-min2 {
-    @include fs(9, $media, $append);
+    @include fs(10, $media, $append);
   }
 
   .#{$prefix}fs-11, .#{$prefix}fs-tiny {
@@ -302,7 +302,7 @@
   }
 
   .#{$prefix}z-lowest {
-    @include z(99999, $media, $append);
+    @include z(-99999, $media, $append);
   }
 
 }
