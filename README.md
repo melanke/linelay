@@ -636,5 +636,7 @@ Modify any class described here with `.mob-` to make it work only on mobile devi
 ## Apply for all children
 Modify any class described here with `.children-` to apply the style to all children instead of the actual element
 
+[![Imgur](http://i.imgur.com/TnffBhK.png)](https://codepen.io/melanke/embed/XOMoME?theme-id=dark&default-tab=result,html&embed-version=2)
+
 ## Force a style
 Modify any class described here with `.force-` to add an `!important` and have a CSS rule priority
