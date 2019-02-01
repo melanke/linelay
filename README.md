@@ -43,6 +43,7 @@ or
 - [Above the surface](#above-the-surface)
 - [Sizing](#sizing)
 - [Breakpoints](#breakpoints)
+- [Apply for all children](#apply-for-all-children)
 - [Force a style](#force-a-style)
 
 ## Orientation
@@ -560,22 +561,22 @@ The child element is positioned relative to its normal position, so `left: 20px`
 
 Changes the Z order, overlapping elements with a larger z-index cover those with a smaller one.
 
-`.z-0`; 
-`.z-auto`; 
-`.z-1` or `.z-pop`; 
-`.z-2` or `.z-header`; 
-`.z-3` or `.z-scrim`; 
-`.z-4` or `.z-modal`; 
-`.z-5` or `.z-alert`; 
-`.z-6` or `.z-high`; 
-`.z-7` or `.z-higher`; 
-`.z-99999` or `.z-highest`; 
-`.z-low` (-1); 
-`.z-lower` (-2); 
+`.z-0`;
+`.z-auto`;
+`.z-1` or `.z-pop`;
+`.z-2` or `.z-header`;
+`.z-3` or `.z-scrim`;
+`.z-4` or `.z-modal`;
+`.z-5` or `.z-alert`;
+`.z-6` or `.z-high`;
+`.z-7` or `.z-higher`;
+`.z-99999` or `.z-highest`;
+`.z-low` (-1);
+`.z-lower` (-2);
 `.z-lowest` (-99999)
 
 ## Breakpoints
-Breakpoints are useful when you want to change the layout depending on user's device. 
+Breakpoints are useful when you want to change the layout depending on user's device.
 
 <table>
 	<tr>
@@ -631,6 +632,9 @@ Modify any class described here with `.tab-` to make it work only on tablet devi
 Modify any class described here with `.mob-` to make it work only on mobile devices.
 
 <sub><sup>With Sass you can pass `$only-mobile` in the last argument of the mixin<sup><sub>
+
+## Apply for all children
+Modify any class described here with `.children-` to apply the style to all children instead of the actual element
 
 ## Force a style
 Modify any class described here with `.force-` to add an `!important` and have a CSS rule priority

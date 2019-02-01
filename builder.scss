@@ -1,432 +1,689 @@
 @import 'linelay.scss';
 
+@mixin childrenAndNormal($prefix, $name) {
+  .#{$prefix}#{$name} {
+    @content;
+  }
+  .#{$prefix}children-#{$name} {
+    > * {
+      @content;
+    }
+  }
+}
+
 @mixin main-generator($prefix, $media: null, $append: null) {
-  .#{$prefix}horiz {
+  @include childrenAndNormal($prefix, 'horiz') {
     @include horiz($media, $append);
   }
 
-  .#{$prefix}verti {
+  @include childrenAndNormal($prefix, 'verti') {
     @include verti($media, $append);
   }
 
-  .#{$prefix}nowrap {
+  @include childrenAndNormal($prefix, 'nowrap') {
     @include nowrap($media, $append);
   }
 
-  .#{$prefix}items-left-top, .#{$prefix}items-start {
+  @include childrenAndNormal($prefix, 'items-left-top') {
+      @include items-start($media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'items-start') {
     @include items-start($media, $append);
   }
 
-  .#{$prefix}items-left-center, .#{$prefix}verti.items-center-top, .#{$prefix}items-start-center {
+  @include childrenAndNormal($prefix, 'items-left-center') {
     @include items-start-center($media, $append);
   }
 
-  .#{$prefix}items-left-bottom, .#{$prefix}verti.items-right-top, .#{$prefix}items-start-end {
+  @include childrenAndNormal($prefix, 'items-start-center') {
+    @include items-start-center($media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'items-left-bottom') {
     @include items-start-end($media, $append);
   }
 
-  .#{$prefix}items-center-top, .#{$prefix}verti.items-left-center, .#{$prefix}items-center-start {
+  @include childrenAndNormal($prefix, 'items-start-end') {
+    @include items-start-end($media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'items-center-top') {
     @include items-center-start($media, $append);
   }
 
-  .#{$prefix}items-center {
+  @include childrenAndNormal($prefix, 'items-center-start') {
+    @include items-center-start($media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'items-center') {
     @include items-center($media, $append);
   }
 
-  .#{$prefix}items-center-bottom, .#{$prefix}verti.items-right-center, .#{$prefix}items-center-end {
+  @include childrenAndNormal($prefix, 'items-center-bottom') {
     @include items-center-end($media, $append);
   }
 
-  .#{$prefix}items-right-top, .#{$prefix}verti.items-left-bottom, .#{$prefix}items-end-start {
+  @include childrenAndNormal($prefix, 'items-center-end') {
+    @include items-center-end($media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'items-right-top') {
     @include items-end-start($media, $append);
   }
 
-  .#{$prefix}items-right-center, .#{$prefix}verti.items-center-bottom, .#{$prefix}items-end-center {
+  @include childrenAndNormal($prefix, 'items-end-start') {
+    @include items-end-start($media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'items-right-center') {
     @include items-end-center($media, $append);
   }
 
-  .#{$prefix}items-space-around {
+  @include childrenAndNormal($prefix, 'items-end-center') {
+    @include items-end-center($media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'items-space-around') {
     @include items-space-around($media, $append);
   }
 
-  .#{$prefix}items-space-between {
+  @include childrenAndNormal($prefix, 'items-space-between') {
     @include items-space-between($media, $append);
   }
 
-  .#{$prefix}items-right-bottom, .#{$prefix}items-end {
+  @include childrenAndNormal($prefix, 'items-right-bottom') {
     @include items-end($media, $append);
   }
 
-  .#{$prefix}self-start, .#{$prefix}self-top, .#{$prefix}self-left {
+  @include childrenAndNormal($prefix, 'items-end') {
+    @include items-end($media, $append);
+  }
+
+  .#{$prefix}verti.items-center-top {
+    @include items-start-center($media, $append);
+  }
+  .#{$prefix}children-verti.children-items-center-top {
+    > * {
+      @include items-start-center($media, $append);
+    }
+  }
+
+  .#{$prefix}verti.items-right-top {
+    @include items-start-end($media, $append);
+  }
+  .#{$prefix}children-verti.children-items-right-top {
+    > * {
+      @include items-start-end($media, $append);
+    }
+  }
+
+  .#{$prefix}verti.items-left-center {
+    @include items-center-start($media, $append);
+  }
+  .#{$prefix}children-verti.children-items-left-center {
+    > * {
+      @include items-center-start($media, $append);
+    }
+  }
+
+  .#{$prefix}verti.items-right-center {
+    @include items-center-end($media, $append);
+  }
+  .#{$prefix}children-verti.children-items-right-center {
+    > * {
+      @include items-center-end($media, $append);
+    }
+  }
+
+  .#{$prefix}verti.items-left-bottom {
+    @include items-end-start($media, $append);
+  }
+  .#{$prefix}children-verti.children-items-left-bottom {
+    > * {
+      @include items-end-start($media, $append);
+    }
+  }
+
+  .#{$prefix}verti.items-center-bottom {
+    @include items-end-center($media, $append);
+  }
+  .#{$prefix}children-verti.children-items-center-bottom {
+    > * {
+      @include items-end-center($media, $append);
+    }
+  }
+
+  @include childrenAndNormal($prefix, 'self-start') {
     @include self-start($media, $append);
   }
 
-  .#{$prefix}self-end, .#{$prefix}self-bottom, .#{$prefix}self-right {
+  @include childrenAndNormal($prefix, 'self-top') {
+    @include self-start($media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'self-left') {
+    @include self-start($media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'self-end') {
     @include self-end($media, $append);
   }
 
-  .#{$prefix}self-center {
+  @include childrenAndNormal($prefix, 'self-bottom') {
+    @include self-end($media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'self-right') {
+    @include self-end($media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'self-center') {
     @include self-center($media, $append);
   }
 
-  .#{$prefix}self-baseline {
+  @include childrenAndNormal($prefix, 'self-baseline') {
     @include self-baseline($media, $append);
   }
 
-  .#{$prefix}w-auto {
+  @include childrenAndNormal($prefix, 'w-auto') {
     @include w-auto($media, $append);
   }
 
-  .#{$prefix}h-auto {
+  @include childrenAndNormal($prefix, 'h-auto') {
     @include h-auto($media, $append);
   }
 
-  .#{$prefix}text-center {
+  @include childrenAndNormal($prefix, 'text-center') {
     @include text-center($media, $append);
   }
 
-  .#{$prefix}text-left {
+  @include childrenAndNormal($prefix, 'text-left') {
     @include text-left($media, $append);
   }
 
-  .#{$prefix}text-right {
+  @include childrenAndNormal($prefix, 'text-right') {
     @include text-right($media, $append);
   }
 
-  .#{$prefix}text-justify {
+  @include childrenAndNormal($prefix, 'text-justify') {
     @include text-justify($media, $append);
   }
 
-  .#{$prefix}scroll {
+  @include childrenAndNormal($prefix, 'scroll') {
     @include scroll($media, $append);
   }
 
-  .#{$prefix}x-scroll {
+  @include childrenAndNormal($prefix, 'x-scroll') {
     @include x-scroll($media, $append);
   }
 
-  .#{$prefix}y-scroll {
+  @include childrenAndNormal($prefix, 'y-scroll') {
     @include y-scroll($media, $append);
   }
 
-  .#{$prefix}truncate {
+  @include childrenAndNormal($prefix, 'truncate') {
     @include truncate($media, $append);
   }
 
-  .#{$prefix}relative {
+  @include childrenAndNormal($prefix, 'relative') {
     @include relative($media, $append);
   }
 
-  .#{$prefix}absolute {
+  @include childrenAndNormal($prefix, 'absolute') {
     @include absolute($media, $append);
   }
 
-  .#{$prefix}fixed {
+  @include childrenAndNormal($prefix, 'fixed') {
     @include fixed($media, $append);
   }
 
-  .#{$prefix}w-window {
+  @include childrenAndNormal($prefix, 'w-window') {
     @include w-window($media, $append);
   }
 
-  .#{$prefix}h-window {
+  @include childrenAndNormal($prefix, 'h-window') {
     @include h-window($media, $append);
   }
 
-  .#{$prefix}min-w-window {
+  @include childrenAndNormal($prefix, 'min-w-window') {
     @include w-window($media, $append);
   }
 
-  .#{$prefix}min-h-window {
+  @include childrenAndNormal($prefix, 'min-h-window') {
     @include h-window($media, $append);
   }
 
-  .#{$prefix}w-full {
+  @include childrenAndNormal($prefix, 'w-full') {
     @include w-full($media, $append);
   }
 
-  .#{$prefix}h-full {
+  @include childrenAndNormal($prefix, 'h-full') {
     @include h-full($media, $append);
   }
 
-  .#{$prefix}f-bold {
+  @include childrenAndNormal($prefix, 'f-bold') {
     @include f-bold($media, $append);
   }
 
-  .#{$prefix}f-normal {
+  @include childrenAndNormal($prefix, 'f-normal') {
     @include f-normal($media, $append);
   }
 
-  .#{$prefix}ff-primary {
+  @include childrenAndNormal($prefix, 'ff-primary') {
     @include ff('primary', $media, $append);
   }
 
-  .#{$prefix}ff-secondary {
+  @include childrenAndNormal($prefix, 'ff-secondary') {
     @include ff('secondary', $media, $append);
   }
 
-  .#{$prefix}fs-9, .#{$prefix}fs-min {
+  @include childrenAndNormal($prefix, 'fs-9') {
     @include fs(9, $media, $append);
   }
 
-  .#{$prefix}fs-10, .#{$prefix}fs-min2 {
+  @include childrenAndNormal($prefix, 'fs-min') {
+    @include fs(9, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'fs-10') {
     @include fs(10, $media, $append);
   }
 
-  .#{$prefix}fs-11, .#{$prefix}fs-tiny {
+  @include childrenAndNormal($prefix, 'fs-min2') {
+    @include fs(10, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'fs-11') {
     @include fs(11, $media, $append);
   }
 
-  .#{$prefix}fs-12, .#{$prefix}fs-tiny2 {
+  @include childrenAndNormal($prefix, 'fs-tiny') {
+    @include fs(11, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'fs-12') {
     @include fs(12, $media, $append);
   }
 
-  .#{$prefix}fs-13, .#{$prefix}fs-small {
+  @include childrenAndNormal($prefix, 'fs-tiny2') {
+    @include fs(12, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'fs-13') {
     @include fs(13, $media, $append);
   }
 
-  .#{$prefix}fs-14, .#{$prefix}fs-small2 {
+  @include childrenAndNormal($prefix, 'fs-small') {
+    @include fs(13, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'fs-14') {
     @include fs(14, $media, $append);
   }
 
-  .#{$prefix}fs-15, .#{$prefix}fs-regular {
+  @include childrenAndNormal($prefix, 'fs-small2') {
+    @include fs(14, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'fs-15') {
     @include fs(15, $media, $append);
   }
 
-  .#{$prefix}fs-16, .#{$prefix}fs-regular2 {
+  @include childrenAndNormal($prefix, 'fs-regular') {
+    @include fs(15, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'fs-16') {
     @include fs(16, $media, $append);
   }
 
-  .#{$prefix}fs-17, .#{$prefix}fs-big {
+  @include childrenAndNormal($prefix, 'fs-regular2') {
+    @include fs(16, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'fs-17') {
     @include fs(17, $media, $append);
   }
 
-  .#{$prefix}fs-18, .#{$prefix}fs-big2 {
+  @include childrenAndNormal($prefix, 'fs-big') {
+    @include fs(17, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'fs-18') {
     @include fs(18, $media, $append);
   }
 
-  .#{$prefix}fs-19, .#{$prefix}fs-large {
+  @include childrenAndNormal($prefix, 'fs-big2') {
+    @include fs(18, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'fs-19') {
     @include fs(19, $media, $append);
   }
 
-  .#{$prefix}fs-20, .#{$prefix}fs-large2 {
+  @include childrenAndNormal($prefix, 'fs-large') {
+    @include fs(19, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'fs-20') {
     @include fs(20, $media, $append);
   }
 
-  .#{$prefix}fs-21, .#{$prefix}fs-huge {
+  @include childrenAndNormal($prefix, 'fs-large2') {
+    @include fs(20, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'fs-21') {
     @include fs(21, $media, $append);
   }
 
-  .#{$prefix}fs-22, .#{$prefix}fs-huge2 {
+  @include childrenAndNormal($prefix, 'fs-huge') {
+    @include fs(21, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'fs-22') {
     @include fs(22, $media, $append);
   }
 
-  .#{$prefix}fs-23, .#{$prefix}fs-giant {
+  @include childrenAndNormal($prefix, 'fs-huge2') {
+    @include fs(22, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'fs-23') {
     @include fs(23, $media, $append);
   }
 
-  .#{$prefix}fs-24, .#{$prefix}fs-giant2 {
+  @include childrenAndNormal($prefix, 'fs-giant') {
+    @include fs(23, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'fs-24') {
     @include fs(24, $media, $append);
   }
 
-  .#{$prefix}fs-25, .#{$prefix}fs-monster {
+  @include childrenAndNormal($prefix, 'fs-giant2') {
+    @include fs(24, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'fs-25') {
     @include fs(25, $media, $append);
   }
 
-  .#{$prefix}fs-26, .#{$prefix}fs-monster2 {
+  @include childrenAndNormal($prefix, 'fs-monster') {
+    @include fs(25, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'fs-26') {
     @include fs(26, $media, $append);
   }
 
-  .#{$prefix}fs-27, .#{$prefix}fs-colossal {
+  @include childrenAndNormal($prefix, 'fs-monster2') {
+    @include fs(26, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'fs-27') {
     @include fs(27, $media, $append);
   }
 
-  .#{$prefix}fs-28, .#{$prefix}fs-colossal2 {
+  @include childrenAndNormal($prefix, 'fs-colossal') {
+    @include fs(27, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'fs-28') {
     @include fs(28, $media, $append);
   }
 
-  .#{$prefix}fs-29, .#{$prefix}fs-titan {
+  @include childrenAndNormal($prefix, 'fs-colossal2') {
+    @include fs(28, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'fs-29') {
     @include fs(29, $media, $append);
   }
 
-  .#{$prefix}fs-30, .#{$prefix}fs-titan2 {
+  @include childrenAndNormal($prefix, 'fs-titan') {
+    @include fs(29, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'fs-30') {
     @include fs(30, $media, $append);
   }
 
-  .#{$prefix}z-0 {
+  @include childrenAndNormal($prefix, 'fs-titan2') {
+    @include fs(30, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'z-0') {
     @include z(0, $media, $append);
   }
 
-  .#{$prefix}z-auto {
+  @include childrenAndNormal($prefix, 'z-auto') {
     @include z(auto, $media, $append);
   }
 
-  .#{$prefix}z-1, .#{$prefix}z-pop {
+  @include childrenAndNormal($prefix, 'z-1') {
     @include z(1, $media, $append);
   }
 
-  .#{$prefix}z-2, .#{$prefix}z-header {
+  @include childrenAndNormal($prefix, 'z-pop') {
+    @include z(1, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'z-2') {
     @include z(2, $media, $append);
   }
 
-  .#{$prefix}z-3, .#{$prefix}z-scrim {
+  @include childrenAndNormal($prefix, 'z-header') {
+    @include z(2, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'z-3') {
     @include z(3, $media, $append);
   }
 
-  .#{$prefix}z-4, .#{$prefix}z-modal {
+  @include childrenAndNormal($prefix, 'z-scrim') {
+    @include z(3, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'z-4') {
     @include z(4, $media, $append);
   }
 
-  .#{$prefix}z-5, .#{$prefix}z-alert {
+  @include childrenAndNormal($prefix, 'z-modal') {
+    @include z(4, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'z-5') {
     @include z(5, $media, $append);
   }
 
-  .#{$prefix}z-6, .#{$prefix}z-high {
+  @include childrenAndNormal($prefix, 'z-alert') {
+    @include z(5, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'z-6') {
     @include z(6, $media, $append);
   }
 
-  .#{$prefix}z-7, .#{$prefix}z-higher {
+  @include childrenAndNormal($prefix, 'z-high') {
+    @include z(6, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'z-7') {
     @include z(7, $media, $append);
   }
 
-  .#{$prefix}z-99999), .#{$prefix}z-highest {
+  @include childrenAndNormal($prefix, 'z-higher') {
+    @include z(7, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'z-99999') {
     @include z(99999, $media, $append);
   }
 
-  .#{$prefix}z-low {
+  @include childrenAndNormal($prefix, 'z-highest') {
+    @include z(99999, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'z-low') {
     @include z(-1, $media, $append);
   }
 
-  .#{$prefix}z-lower {
+  @include childrenAndNormal($prefix, 'z-lower') {
     @include z(-2, $media, $append);
   }
 
-  .#{$prefix}z-lowest {
+  @include childrenAndNormal($prefix, 'z-lowest') {
     @include z(-99999, $media, $append);
   }
 
 }
 
 @mixin size-generator-generic($prefix, $i, $iname, $media: null, $append: null) {
-  .#{$prefix}w-#{$iname} { 
+  @include childrenAndNormal($prefix, 'w-' + $iname) {
     @include w($i, $media, $append);
   }
-  
-  .#{$prefix}h-#{$iname} { 
+
+  @include childrenAndNormal($prefix, 'h-' + $iname) {
     @include h($i, $media, $append);
   }
-  
-  .#{$prefix}max-w-#{$iname} { 
+
+  @include childrenAndNormal($prefix, 'max-w-' + $iname) {
     @include max-w($i, $media, $append);
   }
-  
-  .#{$prefix}max-h-#{$iname} { 
+
+  @include childrenAndNormal($prefix, 'max-h-' + $iname) {
     @include max-h($i, $media, $append);
   }
-  
-  .#{$prefix}min-w-#{$iname} { 
+
+  @include childrenAndNormal($prefix, 'min-w-' + $iname) {
     @include min-w($i, $media, $append);
   }
-  
-  .#{$prefix}min-h-#{$iname} { 
+
+  @include childrenAndNormal($prefix, 'min-h-' + $iname) {
     @include min-h($i, $media, $append);
   }
-  
-  .#{$prefix}m-#{$iname} { 
+
+  @include childrenAndNormal($prefix, 'm-' + $iname) {
     @include m($i, $media, $append);
   }
-  
-  .#{$prefix}p-#{$iname} { 
+
+  @include childrenAndNormal($prefix, 'p-' + $iname) {
     @include p($i, $media, $append);
   }
-  
-  .#{$prefix}top-#{$iname} { 
+
+  @include childrenAndNormal($prefix, 'top-' + $iname) {
     @include top($i, $media, $append);
   }
-  
-  .#{$prefix}right-#{$iname} { 
+
+  @include childrenAndNormal($prefix, 'right-' + $iname) {
     @include right($i, $media, $append);
   }
-  
-  .#{$prefix}bottom-#{$iname} { 
+
+  @include childrenAndNormal($prefix, 'bottom-' + $iname) {
     @include bottom($i, $media, $append);
   }
-  
-  .#{$prefix}left-#{$iname} { 
+
+  @include childrenAndNormal($prefix, 'left-' + $iname) {
     @include left($i, $media, $append);
   }
-  
-  .#{$prefix}line-h-#{$iname} { 
+
+  @include childrenAndNormal($prefix, 'line-h-' + $iname) {
     @include line-h($i, $media, $append);
   }
-  
-  .horiz.#{$prefix}gutter-#{$iname}, .#{$prefix}horiz.#{$prefix}gutter-#{$iname} {
+
+  .horiz.#{$prefix}gutter-#{$iname} {
     @include x-gutter($i, $media, $append);
   }
-  
-  .verti.#{$prefix}gutter-#{$iname}, .#{$prefix}verti.#{$prefix}gutter-#{$iname} {
+  .children-horiz.#{$prefix}children-gutter-#{$iname} {
+    > * {
+      @include x-gutter($i, $media, $append);
+    }
+  }
+
+  .#{$prefix}horiz.#{$prefix}gutter-#{$iname} {
+    @include x-gutter($i, $media, $append);
+  }
+  .#{$prefix}children-horiz.#{$prefix}children-gutter-#{$iname} {
+    > * {
+      @include x-gutter($i, $media, $append);
+    }
+  }
+
+  .verti.#{$prefix}gutter-#{$iname} {
     @include y-gutter($i, $media, $append);
+  }
+  .children-verti.#{$prefix}children-gutter-#{$iname} {
+    > * {
+      @include y-gutter($i, $media, $append);
+    }
+  }
+
+  .#{$prefix}verti.#{$prefix}gutter-#{$iname} {
+    @include y-gutter($i, $media, $append);
+  }
+  .#{$prefix}children-verti.#{$prefix}children-gutter-#{$iname} {
+    > * {
+      @include y-gutter($i, $media, $append);
+    }
   }
 }
 
 @mixin size-generator-h-or-v($prefix, $i, $iname, $media: null, $append: null) {
-  .#{$prefix}mx-#{$iname} { 
+  @include childrenAndNormal($prefix, 'mx-' + $iname) {
     @include mx($i, $media, $append);
   }
-  
-  .#{$prefix}my-#{$iname} { 
+
+  @include childrenAndNormal($prefix, 'my-' + $iname) {
     @include my($i, $media, $append);
   }
-  
-  .#{$prefix}px-#{$iname} { 
+
+  @include childrenAndNormal($prefix, 'px-' + $iname) {
     @include px($i, $media, $append);
   }
-  
-  .#{$prefix}py-#{$iname} { 
+
+  @include childrenAndNormal($prefix, 'py-' + $iname) {
     @include py($i, $media, $append);
   }
 }
-  
+
 @mixin size-generator-specific($prefix, $i, $iname, $media: null, $append: null) {
-  .#{$prefix}mt-#{$iname} { 
+  @include childrenAndNormal($prefix, 'mt-' + $iname) {
     @include mt($i, $media, $append);
   }
-  
-  .#{$prefix}mr-#{$iname} { 
+
+  @include childrenAndNormal($prefix, 'mr-' + $iname) {
     @include mr($i, $media, $append);
   }
-  
-  .#{$prefix}mb-#{$iname} { 
+
+  @include childrenAndNormal($prefix, 'mb-' + $iname) {
     @include mb($i, $media, $append);
   }
-  
-  .#{$prefix}ml-#{$iname} { 
+
+  @include childrenAndNormal($prefix, 'ml-' + $iname) {
     @include ml($i, $media, $append);
   }
-  
-  .#{$prefix}pt-#{$iname} { 
+
+  @include childrenAndNormal($prefix, 'pt-' + $iname) {
     @include pt($i, $media, $append);
   }
-  
-  .#{$prefix}pr-#{$iname} { 
+
+  @include childrenAndNormal($prefix, 'pr-' + $iname) {
     @include pr($i, $media, $append);
   }
-  
-  .#{$prefix}pb-#{$iname} { 
+
+  @include childrenAndNormal($prefix, 'pb-' + $iname) {
     @include pb($i, $media, $append);
   }
-  
-  .#{$prefix}pl-#{$iname} { 
+
+  @include childrenAndNormal($prefix, 'pl-' + $iname) {
     @include pl($i, $media, $append);
-  }
-  
-  .#{$prefix}items-mb-#{$iname} { 
-    @include items-mb($i, $media, $append);
   }
 }
 
 @mixin weight-generator($prefix, $i, $media: null, $append: null) {
-  .#{$prefix}weight-#{$i} { 
+  @include childrenAndNormal($prefix, 'weight-' + $i) {
     @include weight($i, $media, $append);
   }
 }
@@ -469,23 +726,23 @@
     @include weight-generator($append-prefix + $phone-prefix, $i, $only-phone, $append);
   }
 
-  .#{$append-prefix}desktop {
+  @include childrenAndNormal($append-prefix, 'desktop') {
     @include desktop($append);
   }
 
-  .#{$append-prefix}desktop-tablet {
+  @include childrenAndNormal($append-prefix, 'desktop-tablet') {
     @include desktop-tablet($append);
   }
 
-  .#{$append-prefix}mobile {
+  @include childrenAndNormal($append-prefix, 'mobile') {
     @include mobile($append);
   }
 
-  .#{$append-prefix}mobile-tablet {
+  @include childrenAndNormal($append-prefix, 'mobile-tablet') {
     @include mobile-tablet($append);
   }
 
-  .#{$append-prefix}tablet {
+  @include childrenAndNormal($append-prefix, 'tablet') {
     @include tablet($append);
   }
 }

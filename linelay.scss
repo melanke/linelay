@@ -423,14 +423,6 @@ $phone-prefix: "mob-";
   }
 }
 
-@mixin items-mb($i, $media: null, $append: null) {
-  @include mediaOrNot($media) {
-    > * {
-      margin-bottom: #{$i}px $append;
-    }
-  }
-}
-
 
 
 
