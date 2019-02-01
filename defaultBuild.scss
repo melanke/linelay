@@ -23,5 +23,5 @@ $i: 0;
   }
 }
 
-@include build($sizeMap);
-@include build($sizeMap, 'force-', !important)
+@include linelayBuild($sizeMap);
+@include linelayBuild($sizeMap, 'force-', !important)

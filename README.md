@@ -28,7 +28,8 @@ or
 # Using with Sass
 - If you import `linelay.scss` you will have only the variables, extensions and mixins.
 - If you import `defaultBuild.scss` you will have the classes too. (**RECOMENDED**)
-- If you want to customize the sizes you can import `builder.scss` and call `build` include, check `defaultBuild.scss` code as an example
+- If you want to customize the sizes you can import `builder.scss` and call `linelayBuild` include, check `defaultBuild.scss` code as an example
+- **EXTRA:** You can generate [Classes by colors](#classes-by-colors) if you import `builder.scss` or `defaultBuild.scss` and call `linelayColors`, check `colorSample.scss`
 
 # Docs
 - [Orientation](#orientation)
@@ -44,6 +45,7 @@ or
 - [Sizing](#sizing)
 - [Breakpoints](#breakpoints)
 - [Apply for all children](#apply-for-all-children)
+- [Classes by colors](#classes-by-colors)
 - [Force a style](#force-a-style)
 
 ## Orientation
@@ -637,6 +639,15 @@ Modify any class described here with `.mob-` to make it work only on mobile devi
 Modify any class described here with `.children-` to apply the style to all children instead of the actual element
 
 [![Imgur](http://i.imgur.com/TnffBhK.png)](https://codepen.io/melanke/embed/XOMoME?theme-id=dark&default-tab=result,html&embed-version=2)
+
+## Classes by colors
+If you choose to [build linelay with **Sass**](#using-with-sass) you can customize the colors you want and use classes that customize the view colors.
+
+### .bg-{colorname}
+It's used to change the background color. If you build using a `grey` variable with `#eee` value you will be able to use `.bg-grey` class that will apply `background: #eee`
+
+### .tc-{colorname}
+It's used to change the text color. If you build using a `blue` variable with `#00f` value you will be able to use `.tc-blue` class that will apply `color: #00f`
 
 ## Force a style
 Modify any class described here with `.force-` to add an `!important` and have a CSS rule priority

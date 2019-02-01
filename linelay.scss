@@ -537,6 +537,18 @@ $phone-prefix: "mob-";
 
 @mixin z($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
-    z-index: #{$i} $append;
+    z-index: $i $append;
+  }
+}
+
+@mixin bg($color, $media: null, $append: null) {
+  @include mediaOrNot($media) {
+    background: $color $append;
+  }
+}
+
+@mixin tc($color, $media: null, $append: null) {
+  @include mediaOrNot($media) {
+    color: $color $append;
   }
 }

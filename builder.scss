@@ -688,7 +688,17 @@
   }
 }
 
-@mixin build($sizes, $append-prefix: '', $append: null) {
+@mixin color-generator($prefix, $color, $colorname, $media: null, $append: null) {
+  @include childrenAndNormal($prefix, 'bg-' + $colorname) {
+    @include bg($color, $media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'tc-' + $colorname) {
+    @include tc($color, $media, $append);
+  }
+}
+
+@mixin linelayBuild($sizes, $append-prefix: '', $append: null) {
 
   @include main-generator($append-prefix, null, $append);
   @include main-generator($append-prefix + $desktop-prefix, $only-desktop, $append);
@@ -744,5 +754,14 @@
 
   @include childrenAndNormal($append-prefix, 'tablet') {
     @include tablet($append);
+  }
+}
+
+@mixin linelayColors($colors, $append-prefix: '', $append: null) {
+  @each $colorname, $color in $colors {
+    @include color-generator($append-prefix, $color, $colorname, null, $append);
+    @include color-generator($append-prefix + $desktop-prefix, $color, $colorname, $only-desktop, $append);
+    @include color-generator($append-prefix + $tablet-prefix, $color, $colorname, $only-tablet, $append);
+    @include color-generator($append-prefix + $phone-prefix, $color, $colorname, $only-phone, $append);
   }
 }
