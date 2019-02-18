@@ -80,6 +80,14 @@
     @include items-end-center($media, $append);
   }
 
+  @include childrenAndNormal($prefix, 'items-right') {
+    @include items-end-start($media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'items-left') {
+    @include items-start($media, $append);
+  }
+
   @include childrenAndNormal($prefix, 'items-end-center') {
     @include items-end-center($media, $append);
   }
@@ -538,6 +546,14 @@
     @include z(-99999, $media, $append);
   }
 
+  @include childrenAndNormal($prefix, 'img-crop') {
+    @include img-crop($media, $append);
+  }
+
+  @include childrenAndNormal($prefix, 'img-inside') {
+    @include img-inside($media, $append);
+  }
+
 }
 
 @mixin size-generator-generic($prefix, $i, $iname, $media: null, $append: null) {
@@ -685,6 +701,42 @@
 @mixin weight-generator($prefix, $i, $media: null, $append: null) {
   @include childrenAndNormal($prefix, 'weight-' + $i) {
     @include weight($i, $media, $append);
+  }
+
+  .horiz.#{$prefix}split-#{$i} {
+    @include x-split($i, 0, $media, $append);
+  }
+  .children-horiz.#{$prefix}children-split-#{$i} {
+    > * {
+      @include x-split($i, 0, $media, $append);
+    }
+  }
+
+  .horiz.#{$prefix}split-#{$i}-gutter-5 {
+    @include x-split($i, 5, $media, $append);
+  }
+  .children-horiz.#{$prefix}children-split-#{$i}-gutter-5 {
+    > * {
+      @include x-split($i, 5, $media, $append);
+    }
+  }
+
+  .horiz.#{$prefix}split-#{$i}-gutter-10 {
+    @include x-split($i, 10, $media, $append);
+  }
+  .children-horiz.#{$prefix}children-split-#{$i}-gutter-10 {
+    > * {
+      @include x-split($i, 10, $media, $append);
+    }
+  }
+
+  .horiz.#{$prefix}split-#{$i}-gutter-15 {
+    @include x-split($i, 15, $media, $append);
+  }
+  .children-horiz.#{$prefix}children-split-#{$i}-gutter-15 {
+    > * {
+      @include x-split($i, 15, $media, $append);
+    }
   }
 }
 

@@ -39,6 +39,7 @@ or
 - [Items Alignment](#items-alignment)
 - [Text Utils](#text-utils)
 - [Font Utils](#font-utils)
+- [Image Utils](#image-utils)
 - [Scroll](#scroll)
 - [Above the surface](#above-the-surface)
 - [Sizing](#sizing)
@@ -224,6 +225,12 @@ Defines margins between all children elements. Consider using `.items-mb-{number
 
 [![Imgur](http://i.imgur.com/qqHWGet.png)](https://codepen.io/melanke/embed/weOwvr?theme-id=dark&default-tab=result,html&embed-version=2)
 <br/>Click to explore
+
+### .split-{number}
+The children will split the parent space, if there is more children than the split value they will breakline.
+You can use this classes to add margins between the views: `.split-{number}-gutter-5`, `.split-{number}-gutter-10` and `.split-{number}-gutter-15`
+
+<sub><sup>With Sass you can use `@include x-split($number, $margin)` or `@include x-split($number, $margin, $mediaquery)`<sup><sub>
 
 ## Padding
 Just like margin, padding is defined with fixed values.
@@ -489,6 +496,19 @@ Changes the font-size using a number or a name
 
 ## Scroll
 Try to use a scrollable div inside your page instead of letting the whole page scrollable, you will have more control over what is fixed and what is scrollable.
+
+## Image Utils
+Useful classes to style the images
+
+### .img-crop
+Scale the image uniformly (maintain the image's aspect ratio) so that both dimensions (width and height) of the image will be equal to or larger than the corresponding dimension of the view
+
+<sub><sup>With Sass you can use `@include img-crop()` or `@include img-crop($mediaquery)`<sup><sub>
+
+### .img-inside
+Scale the image uniformly (maintain the image's aspect ratio) so that both dimensions (width and height) of the image will be equal to or less than the corresponding dimension of the view
+
+<sub><sup>With Sass you can use `@include img-inside()` or `@include img-inside($mediaquery)`<sup><sub>
 
 ### .scroll
 Allow scroll in all directions.

@@ -228,7 +228,7 @@ $phone-prefix: "mob-";
 
 @mixin scroll($media: null, $append: null) {
   @include mediaOrNot($media) {
-    overflow: scroll $append;
+    overflow: auto $append;
   }
 }
 
@@ -259,7 +259,7 @@ $phone-prefix: "mob-";
     position: relative $append;
     width: 0 $append;
     height: 0 $append;
-    
+
     > * {
       position: absolute $append;
     }
@@ -328,79 +328,79 @@ $phone-prefix: "mob-";
     flex-basis: 0 $append;
   }
 }
-  
+
 @mixin w($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     width: #{$i}px $append;
   }
 }
-  
+
 @mixin h($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     height: #{$i}px $append;
   }
 }
-  
+
 @mixin max-w($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     max-width: #{$i}px $append;
   }
 }
-  
+
 @mixin max-h($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     max-height: #{$i}px $append;
   }
 }
-  
+
 @mixin min-w($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     min-width: #{$i}px $append;
   }
 }
-  
+
 @mixin min-h($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     min-height: #{$i}px $append;
   }
 }
-  
+
 @mixin m($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     margin: #{$i}px $append;
   }
 }
-  
+
 @mixin p($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     padding: #{$i}px $append;
   }
 }
-  
+
 @mixin top($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     top: #{$i}px $append;
   }
 }
-  
+
 @mixin right($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     right: #{$i}px $append;
   }
 }
-  
+
 @mixin bottom($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     bottom: #{$i}px $append;
   }
 }
-  
+
 @mixin left($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     left: #{$i}px $append;
   }
 }
-  
+
 @mixin line-h($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     line-height: #{$i}px $append;
@@ -423,7 +423,16 @@ $phone-prefix: "mob-";
   }
 }
 
-
+@mixin x-split($parts, $margin, $media: null, $append: null) {
+  @include mediaOrNot($media) {
+    width: calc((100% / #{parts}) - ((#{parts} - 1) * #{$margin}px / #{parts})) $append;
+    margin-right: #{$margin}px $append;
+    margin-bottom: #{$margin}px $append;
+    &:nth-child(#{$parts}n) {
+      margin-right: 0 $append;
+    }
+  }
+}
 
 
 
@@ -435,21 +444,21 @@ $phone-prefix: "mob-";
     margin-right: #{$i}px $append;
   }
 }
-  
+
 @mixin my($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     margin-top: #{$i}px $append;
     margin-bottom: #{$i}px $append;
   }
 }
-  
+
 @mixin px($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     padding-left: #{$i}px $append;
     padding-right: #{$i}px $append;
   }
 }
-  
+
 @mixin py($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     padding-top: #{$i}px $append;
@@ -468,43 +477,43 @@ $phone-prefix: "mob-";
     margin-top: #{$i}px $append;
   }
 }
-  
+
 @mixin mr($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     margin-right: #{$i}px $append;
   }
 }
-  
+
 @mixin mb($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     margin-bottom: #{$i}px $append;
   }
 }
-  
+
 @mixin ml($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     margin-left: #{$i}px $append;
   }
 }
-  
+
 @mixin pt($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     padding-top: #{$i}px $append;
   }
 }
-  
+
 @mixin pr($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     padding-right: #{$i}px $append;
   }
 }
-  
+
 @mixin pb($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     padding-bottom: #{$i}px $append;
   }
 }
-  
+
 @mixin pl($i, $media: null, $append: null) {
   @include mediaOrNot($media) {
     padding-left: #{$i}px $append;
@@ -550,5 +559,17 @@ $phone-prefix: "mob-";
 @mixin tc($color, $media: null, $append: null) {
   @include mediaOrNot($media) {
     color: $color $append;
+  }
+}
+
+@mixin img-crop($media: null, $append: null) {
+  @include mediaOrNot($media) {
+    object-fit: cover $append;
+  }
+}
+
+@mixin img-inside($media: null, $append: null) {
+  @include mediaOrNot($media) {
+    object-fit: contain $append;
   }
 }
