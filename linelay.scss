@@ -426,7 +426,7 @@ $phone-prefix: "mob-";
 @mixin x-split($parts, $margin, $media: null, $append: null) {
   @include mediaOrNot($media) {
     > * {
-      width: calc((100% / #{$parts}) - ((#{$parts} - 1) * #{$margin}px / #{$parts})) $append;
+      flex-basis: calc((100% / #{$parts}) - ((#{$parts} - 1) * #{$margin}px / #{$parts})) $append;
       margin-right: #{$margin}px $append;
       margin-bottom: #{$margin}px $append;
       &:nth-child(#{$parts}n) {
