@@ -1,3 +1,8 @@
+# 📣 DEPRECATED
+This project is deprecated. Linelay now is a [Tailwind plugin](https://github.com/melanke/tailwindcss-linelay)
+
+---
+
 ![LineLay](http://i.imgur.com/VddYz5e.png)
 
 Linelay is a utility library on flex layout with multidiretional capabilities that saves more space than usual grid systems.
